@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.icons {
+    display: flex;
+    padding: 0;
+}
+
+.icons a img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+nav a {
+    padding: 20px;
+    z-index: 1;
+
+}
+
+
+.logo a img {
+    width: 10rem;
+    height: 10rem;
+}
+
+.logo {
+    position: relative;
+    margin: -85px auto;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 100px;
+    letter-spacing: 5px;
+}
+
+.stage-0 {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container1 {
+    background-color: #f0ebe5;
+    padding: 2rem 10%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.checkIn,
+.checkOut {
+    background-color: white;
+
+    margin: 10px;
+    padding: 2.5rem 25%;
+    border: 1px solid black;
+
+}
