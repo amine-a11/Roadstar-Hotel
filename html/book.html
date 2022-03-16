@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/book-style.css">
+    <script src="../js/book-script.js"></script>
     <title>Book Your Room</title>
 </head>
 <body>
@@ -24,7 +25,7 @@
                         CHECK-IN DATE
                     </div>
                     <div class="cid">
-                        <input type="date" id="check-in-calender">
+                        <input type="date" id="check-in-calender" onchange="handlecod()">
                         
                     </div>
                 </div>
@@ -33,7 +34,7 @@
                         CHECK-OUT DATE
                     </div>
                     <div class="cod">
-                        <input type="date" id="check-out-calender">                        
+                        <input type="date" id="check-out-calender" onchange="handlecid()">   
                     </div>
                 </div>
             </div>
