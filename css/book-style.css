@@ -80,6 +80,14 @@ h1 {
     text-align: center;
 }
 
-#check-in-calender {
-    /* display: none; */
+.nights {
+    background-color: #f0ebe5;
+    margin-top: 20px;
+    text-align: center;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    font-size: 20px;
 }
