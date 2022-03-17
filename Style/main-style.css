@@ -1,0 +1,297 @@
+/*Start Global Rules & Variables*/
+:root{
+    --primary-color:#4a4a49;
+    --secondary-color:#b89535;
+    --background-color:#f0ebe5;
+}
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    scroll-behavior: smooth;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* Small */
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  /* Medium */
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  /* Large */
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+/* body{
+    font-family:;
+} */
+
+/*End Global Rules & Variables*/
+
+
+/*---------------------------------------Start The Header-----------------------------------*/
+body{
+    /* width: 100vw;
+    height: 100vh; */
+    font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    background-image: url(../images/background.jpg); 
+     height:100vh ;
+     background-size: cover;
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid;
+}
+header .container .logo{
+    width: 10%;
+    position: relative;
+}
+header .container .logo img{
+    height: 100%;
+    width:100% ;
+    position: relative;
+}
+header nav{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.allnavbar{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header nav li{
+    list-style: none;
+    text-align: center;
+}
+header nav a, header .book a{
+    text-decoration: none;
+    color: white;
+    padding:12px 20px;
+    transition:  0.5s 0.1s;
+    -webkit-transition:  0.5s 0.1s;
+    -moz-transition:  0.5s 0.1s;
+    -ms-transition:  0.5s 0.1s;
+    -o-transition:  0.5s 0.1s;
+    font-size: 1.1rem;
+}
+header nav a:hover{
+    text-decoration: underline;
+    letter-spacing: 1px;
+}
+.book{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+}
+.book:hover{
+border-color: var(--secondary-color);}
+.book:hover  a{
+    transform: translateX(10px);
+    -webkit-transform: translateX(10px);
+    -moz-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    -o-transform: translateX(10px);
+    color: var(--secondary-color);
+   
+}
+.book span{
+    margin-right: 20px;
+    font-size: 13px;
+}
+.book span:hover{
+    color: var(--primary-color);
+    transition-delay: 2s;
+}
+
+/*----------------------------End The Header--------------------------------------*/
+/*----------------------------Start Collection-1--------------------------------*/
+
+.content{
+    border: 5px solid;
+   
+}
+.content .description{
+    width: 50%;
+    margin-top: 40px;
+}
+.content .description .title{
+    font-size: 50px;
+    color: var(--primary-color);
+}
+.content .description .title span{
+    color: var(--secondary-color);
+}
+.content .description p{
+    margin: 20px 0;
+}
+.content .description-grid{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.content .description-grid>div{
+}
+.content .description-grid>div.class-one{
+    width: 30%;
+}
+
+.content .description-grid>div.class-two{
+    width: 30%;
+}
+
+.content .description-grid>div.class-three{
+    width: 30%;
+}
+.content .description-grid>div>img{
+    height:300px;
+    width: 100%;
+    
+    text-align: center;  
+}
+.content .description-grid>div>.title{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0 ;
+}
+.content .explore-more{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 100px;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+.content .explore-more a{
+    text-decoration: none;
+    color: black;
+    transition: 1s 0.25s;
+    -webkit-transition: 1s 0.25s;
+    -moz-transition: 1s 0.25s;
+    -ms-transition: 1s 0.25s;
+    -o-transition: 1s 0.15s;
+}
+.content .explore-more a.arrow{
+    content: "";
+    margin-right: 20px;
+    border: 1px black solid;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    padding: 20px;
+    transition-delay: 0s;
+
+}
+.content .explore-more:hover a{
+    transform: translateX(30px);
+    -webkit-transform: translateX(30px);
+    -moz-transform: translateX(30px);
+    -ms-transform: translateX(30px);
+    -o-transform: translateX(30px);
+}
+.content .explore-more:hover a::before{
+    transform: translateX(-30px);
+    -webkit-transform: translateX(-30px);
+    -moz-transform: translateX(-30px);
+    -ms-transform: translateX(-30px);
+    -o-transform: translateX(-30px);
+}
+/*----------------------------End Collection-1--------------------------------*/
+/*Start Services */
+.services{
+    background-color: var(--background-color);
+}
+
+/*end services*/
+
+/*Start get in touch*/
+.get-in-touch{
+    border: 5px solid;
+    margin-bottom: 60px;
+}
+.get-in-touch .container{
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap;
+    width: 60%;
+    margin: auto;
+}
+.get-in-touch .container .title{
+    color: var(--primary-color);
+    font-size: 40px;
+    margin-top: 50px;
+}
+.get-in-touch .container p{
+    margin-top: 50px;
+    text-align: center;
+}
+.get-in-touch .contact-us{
+    margin-top: 50px;
+    border: 2.5px solid var(--primary-color);
+    padding: 40px 60px;
+    justify-content: space-between;
+    font-size: 25px;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+.get-in-touch .container a{
+    text-decoration: none;
+    color: var(--primary-color);
+    
+}
+.get-in-touch .contact-us a.arrow{
+    margin-right: 20px;
+    transition: 0.5s 0s;
+    -webkit-transition: 0.5s 0s;
+    -moz-transition: 0.5s 0s;
+    -ms-transition: 0.5s 0s;
+    -o-transition: 0.5s 0s;
+}
+.get-in-touch .contact-us a.link{
+    transition: 0.5s 0.25s;
+    -webkit-transition: 0.5s 0.25s;
+    -moz-transition: 0.5s 0.25s;
+    -ms-transition: 0.5s 0.25s;
+    -o-transition: 0.5s 0.25s;
+}
+.get-in-touch .contact-us:hover{
+    border-color: var(--secondary-color);
+}
+.get-in-touch .contact-us:hover a.arrow{
+    margin-left: 20px;
+    color: var(--secondary-color);
+}
+.get-in-touch .contact-us:hover a.link{
+    margin-left: 20px;
+    color: var(--secondary-color);
+}
+/*End Get in touch*/
+
