@@ -45,10 +45,6 @@ function stepper(btn) {
 let nb_of_rooms = 1;
 
 function addRoom() {
-    if (nb_of_rooms === 4) {
-        alert("max number of rooms is 4");
-        return;
-    }
     let room = document.getElementById("room1");
     let newRoom = room.cloneNode(true);
     nb_of_rooms++;
@@ -69,5 +65,34 @@ function addRoom() {
     input_chi.id = "room" + nb_of_rooms.toString() + "-nb-of-chi-value";
     newRoom.querySelector("#room-nb").textContent = "ROOM" + nb_of_rooms.toString();
     document.querySelector(".container2").appendChild(newRoom);
+    if (nb_of_rooms === 4) {
+        let butn = document.getElementById("add-new-room");
+        butn.classList.remove("show");
+        butn.classList.add("hide");
+    }
+    if (nb_of_rooms >= 1) {
+        let butn = document.getElementById("remove-room");
+        butn.classList.remove("hide");
+        butn.classList.add("show");
+    }
 
+}
+
+
+//this function remove the last room
+function removeRoom() {
+
+    let elem = document.getElementById("room" + nb_of_rooms.toString());
+    elem.remove();
+    nb_of_rooms--;
+    if (nb_of_rooms === 1) {
+        let butn = document.getElementById("remove-room");
+        butn.classList.remove("show");
+        butn.classList.add("hide");
+    }
+    if (nb_of_rooms < 4) {
+        let butn = document.getElementById("add-new-room");
+        butn.classList.remove("hide");
+        butn.classList.add("show");
+    }
 }

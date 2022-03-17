@@ -20,8 +20,8 @@
     <h1>BOOK A ROOM</h1>
     <!-- from contains :
         -check-in check-out date ✅
-        -number of adults and children in each room
-        -
+        -number of adults and children in each room ✅
+        -next page button 
      -->
     <form action="#">
 
@@ -66,8 +66,8 @@
 
             <!-- container2 for the number of adults and children in each room-->
             <div class="container2">
-                <button type="button" id="add-new-room" onclick="addRoom()">+ ADD ANOTHER ROOM</button>
-
+                <button type="button" class="show" id="add-new-room" onclick="addRoom()">+ ADD ANOTHER ROOM</button>
+                <button type="button" class="hide" id="remove-room" onclick="removeRoom()">- REMOVE ROOM</button>
                 <!-- class room represents one room -->
                 <div class="room" id="room1">
                     <span id="room-nb">ROOM 1</span>
@@ -101,6 +101,7 @@
                 </div>
 
             </div>
+            <hr>
 
         </div>
 

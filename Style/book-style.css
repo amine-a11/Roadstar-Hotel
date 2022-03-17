@@ -6,7 +6,8 @@ body {
     background-color: white;
     margin: 0;
     padding: 0;
-
+    /* just for testing */
+    min-height: 2000px;
 }
 
 /* logo mail call */
@@ -185,10 +186,11 @@ input::-webkit-inner-spin-button {
 }
 
 /* new room button */
-#add-new-room {
-    display: block;
+#add-new-room,
+#remove-room {
     margin-left: 0;
     margin-right: auto;
+    padding: 10px;
     font-size: .9375rem;
     font-weight: bold;
     letter-spacing: .175rem;
@@ -196,6 +198,16 @@ input::-webkit-inner-spin-button {
     border: none;
 }
 
-#add-new-room:hover {
+#add-new-room,
+#remove-room:hover {
     cursor: pointer;
+}
+
+/* to show and hide the add-new-room button and remove-room */
+.show {
+    display: block;
+}
+
+.hide {
+    display: none !important;
 }
