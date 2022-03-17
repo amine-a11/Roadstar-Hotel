@@ -84,10 +84,64 @@ h1 {
     background-color: #f0ebe5;
     margin-top: 20px;
     text-align: center;
-    width: 50%;
+    width: 70%;
     display: block;
     margin-left: auto;
     margin-right: auto;
     font-weight: bold;
     font-size: 20px;
+}
+
+.container2 {
+    border: 2px solid red;
+    width: 70%;
+    margin-top: 3em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.room {
+    border: 2px solid blue;
+    width: 50%;
+    display: block;
+    margin: 15px;
+}
+
+.adult,
+.young {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.8125rem 0;
+    border: 2px solid blue;
+}
+
+.increase,
+.decrease {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    text-align: center;
+    margin: 10px;
+}
+
+.nb-of-chi,
+.nb-of-adu {
+    display: flex;
+    /* position: relative; */
+
+}
+
+input[type=number] {
+    width: 20px;
+    border: none;
+    text-align: center;
+}
+
+input[type=number]:checked {
+    border: none;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }

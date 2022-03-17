@@ -13,14 +13,10 @@ function calc_number_of_nights() {
     const cid = document.getElementById("check-in-calender");
     let cod1;
     let cid1;
-    if (cod !== null) {
-        cod1 = cod.value;
-    }
-    if (cid !== null) {
-        cid1 = cid.value;
-    }
+    if (cod !== null) cod1 = (new Date(cod.value)).getTime();
+    if (cid !== null) cid1 = (new Date(cid.value)).getTime();
     if (cod1 !== null && cid1 !== null) {
-        const diffdays = Math.ceil(((new Date(cod1)).getTime() - (new Date(cid1)).getTime()) / (1000 * 60 * 60 * 24));
+        const diffdays = Math.ceil(cod1 - cid1) / (1000 * 60 * 60 * 24);
         document.getElementById("nb-of-nights").innerHTML = (diffdays ? diffdays : "");
     }
 }
