@@ -4,9 +4,12 @@
 
 body {
     background-color: white;
+    margin: 0;
+    padding: 0;
 
 }
 
+/* logo mail call */
 nav {
     display: flex;
     justify-content: space-between;
@@ -29,7 +32,6 @@ nav a {
 
 }
 
-
 .logo a img {
     width: 10rem;
     height: 10rem;
@@ -41,17 +43,20 @@ nav a {
     text-align: center;
 }
 
+/* page title  */
 h1 {
     text-align: center;
     margin-top: 100px;
     letter-spacing: 5px;
 }
 
+
 .stage-0 {
     max-width: 1200px;
     margin: 0 auto;
 }
 
+/* check in check out container */
 .container1 {
     background-color: #f0ebe5;
     padding: 2rem 10%;
@@ -70,6 +75,12 @@ h1 {
     align-items: center;
 }
 
+/* 
+ci=check-in
+co=check-out
+cid=check-in-date
+cod=check-out-date
+*/
 .cid,
 .cod,
 .ci,
@@ -80,6 +91,7 @@ h1 {
     text-align: center;
 }
 
+/* nnumber of nights */
 .nights {
     background-color: #f0ebe5;
     margin-top: 20px;
@@ -92,28 +104,30 @@ h1 {
     font-size: 20px;
 }
 
+/* number of adults and children in each room */
 .container2 {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     width: 70%;
     margin-top: 3em;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    min-width: 420px;
 }
 
 .room {
-    border: 2px solid blue;
-    width: 50%;
-    display: block;
+    /* border: 2px solid blue; */
+    width: 387px;
+    display: inline-block;
     margin: 15px;
 }
 
 .adult,
 .young {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 0.8125rem 0;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
 }
 
 .increase,
@@ -121,27 +135,67 @@ h1 {
     width: 40px;
     height: 40px;
     border: 1px solid black;
-    text-align: center;
     margin: 10px;
+    background-color: #ffffff;
+}
+
+.increase,
+.decrease:hover {
+    cursor: pointer;
 }
 
 .nb-of-chi,
 .nb-of-adu {
     display: flex;
-    /* position: relative; */
-
+    margin-right: 80px;
 }
 
-input[type=number] {
+.adu,
+.chi {
+    font-size: .9375rem;
+    font-weight: 400;
+    letter-spacing: .175rem;
+    margin-bottom: 5px;
+}
+
+.years {
+    color: #aba095;
+    font-size: .6875rem;
+    font-weight: 900;
+    letter-spacing: .09375rem;
+    line-height: 1.5;
+}
+
+input[type="number"] {
     width: 20px;
     border: none;
     text-align: center;
+    -moz-appearance: textfield;
+    font-size: 18px;
+    background-color: #ffffff;
+    color: #202030;
 }
 
-input[type=number]:checked {
+input[type="number"]:hover {
+    cursor: default;
+}
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+/* new room button */
+#add-new-room {
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+    font-size: .9375rem;
+    font-weight: bold;
+    letter-spacing: .175rem;
+    background-color: #ffffff;
     border: none;
 }
 
-input[type=number]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+#add-new-room:hover {
+    cursor: pointer;
 }

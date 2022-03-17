@@ -8,18 +8,36 @@
 </head>
 <body>
     <header>
+        <!-- logo mail call -->
         <nav>
             <div class="icons">
                 <a href="mailto:mohamedaminehajji11@gmail.com"><img src="../images/icons/email.png" alt="email"></a>
                 <a href="#"><img src="../images/icons/call.png" alt="call"></a>
             </div>
         </nav>
-        <div class="logo"><a href="#"><img src="../images/logo.png" alt="logo"></a></div>
+        <div class="logo"><a href="main.html"><img src="../images/logo.png" alt="logo"></a></div>
     </header>
     <h1>BOOK A ROOM</h1>
+    <!-- from contains :
+        -check-in check-out date ✅
+        -number of adults and children in each room
+        -
+     -->
     <form action="#">
+
+        <!-- stage-0 first page -->
         <div class="stage-0">
+
+            <!-- container1 :check-in check-out date -->
             <div class="container1">
+
+                <!-- check-in -->
+                <!-- 
+                    ci=check-in
+                    co=check-out
+                    cid=check-in-date
+                    cod=check-out-date
+                 -->
                 <div class="checkIn">
                     <div class="ci">
                         CHECK-IN DATE
@@ -28,6 +46,8 @@
                         <input type="date" id="check-in-calender" onchange="handlecod()">  
                     </div>
                 </div>
+
+                <!-- check-out -->
                 <div class="checkOut">
                     <div class="ci">
                         CHECK-OUT DATE
@@ -36,38 +56,54 @@
                         <input type="date" id="check-out-calender" onchange="handlecid()">   
                     </div>
                 </div>
+
             </div>
+
+            <!-- number of nights ((check-out)-(check-in)) -->
             <div class="nights">
                 YOUR ARE BOOKING <span id="nb-of-nights"></span> NIGHTS
             </div>
+
+            <!-- container2 for the number of adults and children in each room-->
             <div class="container2">
-                <div class="room">
+                <button type="button" id="add-new-room" onclick="addRoom()">+ ADD ANOTHER ROOM</button>
+
+                <!-- class room represents one room -->
+                <div class="room" id="room1">
                     <span id="room-nb">ROOM 1</span>
+
+                    <!-- adults -->
                     <div class="adult">
                         <div class="client">
                             <div class="adu">ADULTS</div>
                             <div class="years">(12 YEARS AND ABOVE)</div>
                         </div>
                         <div class="nb-of-adu">
-                            <div class="decrease">-</div>
-                            <input type="number" value="1">
-                            <div class="increase">+</div>
+                            <button class="decrease" id="room1-decrease" type='button' onclick="stepper(this)">-</button>
+                            <input type="number" id="room1-nb-of-adu-value" value="1" min="1" max="8" readonly>
+                            <button class="increase" id="room1-increase" type='button' onclick="stepper(this)">+</button>
                         </div>
                     </div>
+
+                    <!-- children  -->
                     <div class="young">
                         <div class="client">
                             <div class="chi">CHILDREN</div>
                             <div class="years">(0-11 YEARS)</div>
                         </div>
                         <div class="nb-of-chi">
-                            <div class="decrease">-</div>
-                            <input type="number" value="0">
-                            <div class="increase">+</div>
+                            <button class="decrease" id="room1-decrease" type='button' onclick="stepper(this)">-</button>
+                            <input type="number" id="room1-nb-of-chi-value" value="0" min="0" max="4" readonly>
+                            <button class="increase" id="room1-increase" type='button' onclick="stepper(this)">+</button>
                         </div>
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </form>
 </body>
 </html>
