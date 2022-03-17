@@ -96,3 +96,62 @@ function removeRoom() {
         butn.classList.add("show");
     }
 }
+
+
+//move between the diffrente form steps
+
+let nextBtn = document.querySelectorAll(".next-button");
+let progressSteps = document.querySelectorAll(".progress-step");
+let formSteps = document.querySelectorAll(".form-step");
+let formStepNum = 0;
+nextBtn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        formStepNum++;
+        if (formStepNum === 1) {
+            fillBookingInfo();
+        }
+        updateFormStep();
+        updateProgressSteps();
+    });
+});
+
+function updateFormStep() {
+    formSteps.forEach(step => {
+        if (step.classList.contains("form-step-active")) {
+            step.classList.remove("form-step-active");
+        }
+    });
+    formSteps[formStepNum].classList.add("form-step-active");
+}
+
+function updateProgressSteps() {
+    progressSteps.forEach((step, idx) => {
+        if (idx - 1 < formStepNum) {
+            step.classList.add("progress-step-active");
+        } else {
+            step.classList.remove("progress-step-active");
+        }
+    });
+}
+
+
+
+function fillBookingInfo() {
+    const cid = document.getElementById("check-in-calender").value;
+    const cod = document.getElementById("check-out-calender").value;
+    let num_of_adu = 0;
+    let num_of_child = 0;
+    for (let i = 1; i <= nb_of_rooms; i++) {
+        num_of_adu += parseInt(document.getElementById("room" + i.toString() + "-nb-of-adu-value").value);
+    }
+    for (let i = 1; i <= nb_of_rooms; i++) {
+        num_of_child += parseInt(document.getElementById("room" + i.toString() + "-nb-of-chi-value").value);
+    }
+
+    let date = document.getElementById("cid-cod");
+    date.innerHTML = cid + " - " + cod;
+    let nb_adu_chi = document.getElementById("nb-adu-child");
+    nb_adu_chi.innerHTML = num_of_adu.toString() + " ADULTS" + (num_of_child === 0 ? " " : " & " + num_of_child.toString() + " CHILDREN");
+    let nbRooms = document.getElementById("nbOfRooms");
+    nbRooms.innerHTML = nb_of_rooms.toString();
+}

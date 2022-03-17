@@ -7,7 +7,7 @@ body {
     margin: 0;
     padding: 0;
     /* just for testing */
-    min-height: 2000px;
+    min-height: 1000px;
 }
 
 /* logo mail call */
@@ -51,10 +51,65 @@ h1 {
     letter-spacing: 5px;
 }
 
+/* progress bar */
+.progressbar {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 6rem;
+    counter-reset: step;
+}
 
-.stage-0 {
+.progressbar::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translate(0%);
+    height: 2px;
+    width: 75%;
+    background-color: gray;
+}
+
+.progress-step {
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border: 3px solid #aba095;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.progress-step::before {
+    counter-increment: step;
+    content: counter(step);
+    font-size: 20px;
+}
+
+.progress-step::after {
+    content: attr(data-title);
+    position: absolute;
+    top: 3.5rem;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: .17rem;
+}
+
+.progress-step-active {
+    border-color: #b89535;
+}
+
+/* form step */
+.form-step {
     max-width: 1200px;
     margin: 0 auto;
+    display: none;
+}
+
+.form-step-active {
+    display: block;
 }
 
 /* check in check out container */
@@ -210,4 +265,53 @@ input::-webkit-inner-spin-button {
 
 .hide {
     display: none !important;
+}
+
+/* find room button */
+.next-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    padding: 1rem 8rem;
+    text-align: center;
+    letter-spacing: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+    background-color: black;
+}
+
+.next-button:hover {
+    cursor: pointer;
+}
+
+
+/* 3rd container the first thing in the 2nd step-form */
+.container3 {
+    background-color: #f0ebe5;
+    padding: 2rem 10%;
+    /* width: 90%; */
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6rem 2rem;
+}
+
+.bookingInfo {
+    background-color: white;
+    margin: 13px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+.bookingInfo>div {
+    display: inline-block;
+    margin: 0.9rem 2.5rem;
+
 }

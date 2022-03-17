@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../Style/book-style.css">
-    <script src="../js/book-script.js"></script>
+    <script src="../js/book-script.js" defer></script>
     <title>Book Your Room</title>
 </head>
+
 <body>
     <header>
         <!-- logo mail call -->
@@ -17,18 +19,23 @@
         </nav>
         <div class="logo"><a href="main.html"><img src="../images/logo.png" alt="logo"></a></div>
     </header>
-    <h1>BOOK A ROOM</h1>
     <!-- from contains :
         -check-in check-out date ✅
         -number of adults and children in each room ✅
-        -next page button 
-     -->
+        -next page button ✅ 
+    -->
     <form action="#">
+        <div class="progressbar">
+            <div class="progress-step progress-step-active" data-title="intro"></div>
+            <div class="progress-step" data-title="select Room"></div>
+            <div class="progress-step" data-title="your deatails"></div>
+            <div class="progress-step" data-title="confirmation"></div>
+        </div>
+        <!-- step-0  -->
+        <div class="form-step form-step-active">
+            <h1>BOOK A ROOM</h1>
 
-        <!-- stage-0 first page -->
-        <div class="stage-0">
-
-            <!-- container1 :check-in check-out date -->
+            <!-- check-in check-out date  -->
             <div class="container1">
 
                 <!-- check-in -->
@@ -43,7 +50,7 @@
                         CHECK-IN DATE
                     </div>
                     <div class="cid">
-                        <input type="date" id="check-in-calender" onchange="handlecod()">  
+                        <input type="date" id="check-in-calender" onchange="handlecod()">
                     </div>
                 </div>
 
@@ -53,7 +60,7 @@
                         CHECK-OUT DATE
                     </div>
                     <div class="cod">
-                        <input type="date" id="check-out-calender" onchange="handlecid()">   
+                        <input type="date" id="check-out-calender" onchange="handlecid()">
                     </div>
                 </div>
 
@@ -61,7 +68,7 @@
 
             <!-- number of nights ((check-out)-(check-in)) -->
             <div class="nights">
-                YOUR ARE BOOKING <span id="nb-of-nights"></span> NIGHTS
+                YOUR ARE BOOKING <span id="nb-of-nights">0</span> NIGHTS
             </div>
 
             <!-- container2 for the number of adults and children in each room-->
@@ -79,9 +86,11 @@
                             <div class="years">(12 YEARS AND ABOVE)</div>
                         </div>
                         <div class="nb-of-adu">
-                            <button class="decrease" id="room1-decrease" type='button' onclick="stepper(this)">-</button>
+                            <button class="decrease" id="room1-decrease" type='button'
+                                onclick="stepper(this)">-</button>
                             <input type="number" id="room1-nb-of-adu-value" value="1" min="1" max="8" readonly>
-                            <button class="increase" id="room1-increase" type='button' onclick="stepper(this)">+</button>
+                            <button class="increase" id="room1-increase" type='button'
+                                onclick="stepper(this)">+</button>
                         </div>
                     </div>
 
@@ -92,9 +101,11 @@
                             <div class="years">(0-11 YEARS)</div>
                         </div>
                         <div class="nb-of-chi">
-                            <button class="decrease" id="room1-decrease" type='button' onclick="stepper(this)">-</button>
+                            <button class="decrease" id="room1-decrease" type='button'
+                                onclick="stepper(this)">-</button>
                             <input type="number" id="room1-nb-of-chi-value" value="0" min="0" max="4" readonly>
-                            <button class="increase" id="room1-increase" type='button' onclick="stepper(this)">+</button>
+                            <button class="increase" id="room1-increase" type='button'
+                                onclick="stepper(this)">+</button>
                         </div>
                     </div>
 
@@ -102,9 +113,27 @@
 
             </div>
             <hr>
+            <button type="button" class="next-button">FIND A ROOM</button>
+        </div>
+        <!-- Select room -->
 
+        <div class="form-step">
+            <div class="container3">
+                <div class="bookingInfo">
+                    <div>
+                        <span id="cid-cod"></span>
+                    </div>
+                    <div>
+                        <span id="nb-adu-child"></span>
+                    </div>
+                    <div>
+                        <span id="nbOfRooms"></span>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </form>
 </body>
+
 </html>
