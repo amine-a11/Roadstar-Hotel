@@ -1,3 +1,12 @@
+/*
+TO DO:
+- add the tomorrow Date
+- refactor the fillBookingSummary function and fillBookingInfo function
+*/
+let today = new Date();
+let tomorrow = new Date();
+document.getElementById("check-in-calender").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+document.getElementById("check-in-calender").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
 /* handlecid(handle check-in-date) : add a max date to the check out calender 
    handlecod(handle check-out-date): add a min date to the check in calender
 */
@@ -101,6 +110,7 @@ function removeRoom() {
 //move between the diffrente form steps
 
 let nextBtn = document.querySelectorAll(".next-button");
+let prevBtn = document.querySelectorAll(".prev-button");
 let progressSteps = document.querySelectorAll(".progress-step");
 let formSteps = document.querySelectorAll(".form-step");
 let formStepNum = 0;
@@ -111,9 +121,19 @@ nextBtn.forEach((btn) => {
             fillBookingInfo();
         }
         updateFormStep();
+        if (formStepNum !== 3) {
+            updateProgressSteps();
+        }
+    });
+});
+prevBtn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        formStepNum--;
+        updateFormStep();
         updateProgressSteps();
     });
 });
+
 
 function updateFormStep() {
     formSteps.forEach(step => {
@@ -135,7 +155,7 @@ function updateProgressSteps() {
 }
 
 
-
+//this function fills the booking info in the 2nd step
 function fillBookingInfo() {
     const cid = document.getElementById("check-in-calender").value;
     const cod = document.getElementById("check-out-calender").value;
@@ -155,3 +175,69 @@ function fillBookingInfo() {
     let nbRooms = document.getElementById("nbOfRooms");
     nbRooms.innerHTML = nb_of_rooms.toString();
 }
+
+
+
+//drop down for the sort and filter in the 2nd step
+
+document.addEventListener('click', e => {
+    const isdropdownbutton = e.target.matches("[data-dropdown-button]");
+    //                               |  this click is inside of a dropdown
+    //                               v  
+    if (!isdropdownbutton && e.target.closest('[data-dropdown]') != null) return;
+
+    let currdropdown
+    if (isdropdownbutton) {
+        currdropdown = e.target.closest('[data-dropdown]');
+        currdropdown.classList.toggle('active');
+    }
+    document.querySelectorAll('[data-dropdown].active').forEach(dd => {
+        if (dd === currdropdown) return
+        dd.classList.remove("active");
+    });
+
+});
+
+
+//this function fills the booking summarry
+
+function fillBookingSummary() {
+    const cid = document.getElementById("check-in-calender").value;
+    const cod = document.getElementById("check-out-calender").value;
+    let num_of_adu = 0;
+    let num_of_child = 0;
+    for (let i = 1; i <= nb_of_rooms; i++) {
+        num_of_adu += parseInt(document.getElementById("room" + i.toString() + "-nb-of-adu-value").value);
+    }
+    for (let i = 1; i <= nb_of_rooms; i++) {
+        num_of_child += parseInt(document.getElementById("room" + i.toString() + "-nb-of-chi-value").value);
+    }
+
+    let cod1;
+    let cid1;
+    if (cod !== null) cod1 = (new Date(cod.value)).getTime();
+    if (cid !== null) cid1 = (new Date(cid.value)).getTime();
+    if (cod1 !== null && cid1 !== null) {
+        const diffdays = Math.ceil(cod1 - cid1) / (1000 * 60 * 60 * 24);
+        document.getElementById("nb-of-nights-span").innerHTML = (diffdays ? diffdays : "");
+    }
+    let date = document.getElementById("date-span");
+    date.innerHTML = cid + " - " + cod;
+    let nb_adu_chi = document.getElementById("guests-span");
+    nb_adu_chi.innerHTML = num_of_adu.toString() + " ADULTS" + (num_of_child === 0 ? " " : " & " + num_of_child.toString() + " CHILDREN");
+    let nbRooms = document.getElementById("room-info-span");
+    nbRooms.innerHTML = nb_of_rooms.toString();
+
+}
+
+
+
+//this part is for the accordion 
+document.querySelectorAll(".accordion-header").forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const panel = btn.nextElementSibling;
+        panel.classList.toggle("active");
+        btn.classList.toggle("active");
+    });
+});
+
