@@ -149,4 +149,13 @@ h1 {
     width: 80%;
 }
 
+@media(max-width: 767px) {
+    .hotels {
+        margin-top: 10rem;
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
+}
+
 /* end The Collection */
