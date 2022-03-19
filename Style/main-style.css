@@ -54,7 +54,24 @@
  body{
     font-family:Arial, Helvetica, sans-serif;
 } 
-
+.back-to-top{
+    background-color: var(--primary-color);
+    border-radius:50% ;
+    -webkit-border-radius:50% ;
+    -moz-border-radius:50% ;
+    -ms-border-radius:50% ;
+    -o-border-radius:50% ;
+    padding: var(--main-padding);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
 /*---------------------------------------------------------End Global Rules & Variables-----------------------------------------------*/
 
 
@@ -240,6 +257,11 @@ header .fixed-nav .book{
     letter-spacing: var(--main-letter-spacing-for-paragraphs);
 
 }
+.content .parent-explore-more{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
 .content .explore-more{
     display: flex;
     justify-content: flex-end;
@@ -260,6 +282,8 @@ header .fixed-nav .book{
     -ms-transition: var(--main-duration) 0.1s;
     -o-transition: var(--main-duration) 0.1s;
     font-size: 20px;
+    width: fit-content;
+
 }
 .content .explore-more span.arrow{
     content: "";
@@ -272,8 +296,8 @@ header .fixed-nav .book{
     -o-border-radius: 50%;
     padding: 20px;
     transition-delay: 0s;
-
 }
+
 .content .explore-more:hover span{
     transform: translateX(30px);
     -webkit-transform: translateX(30px);
@@ -400,6 +424,11 @@ footer{
     margin-top: var(--margin-between-sections);
 
 }
+footer .parent-contact{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
 footer .container .contact{
     display: flex;
     justify-content: center;
@@ -468,24 +497,7 @@ footer .container .end-footer{
 }
 /*--------------------------------------------------------end Footer-----------------------------------------------*/
 /**/
-.back-to-top{
-    background-color: var(--primary-color);
-    border-radius:50% ;
-    -webkit-border-radius:50% ;
-    -moz-border-radius:50% ;
-    -ms-border-radius:50% ;
-    -o-border-radius:50% ;
-    padding: var(--main-padding);
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-}
+
 /**/
 
 
