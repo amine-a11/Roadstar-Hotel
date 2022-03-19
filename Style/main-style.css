@@ -8,6 +8,9 @@
     --margin-between-sections:50px;
     --main-padding:30px;
     --main-duration:0.5s;
+    --main-letter-spacing-for-paragraphs:1.3px;
+    --intern-margin:30px;
+    --arrow-margin:20px;
 
 }
 *{
@@ -26,30 +29,30 @@
     .container {
       width: 750px;
     }
-    .fixed-nav{
+    /* .fixed-nav{
         width: 750px;
-    }
+    } */
   }
   /* Medium */
   @media (min-width: 992px) {
     .container {
       width: 970px;
     }
-    .fixed-nav{
+    /* .fixed-nav{
         width: 970px;
-    }
+    } */
   }
   /* Large */
   @media (min-width: 1200px) {
     .container {
       width: 1170px;
     }
-    .fixed-nav{
+    /* .fixed-nav{
         width: 1170px;
-    }
+    } */
   }
  body{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
 } 
 
 /*---------------------------------------------------------End Global Rules & Variables-----------------------------------------------*/
@@ -76,7 +79,12 @@ header .fixed-nav{
     /* background-color: white; */
     border-bottom: var(--sec-background-color) 1px solid;
     text-align: center;
+    width: 100%;
+    background-color: white;
+    padding: 0 var(--main-padding) ;
 }
+/* I Delected The Responsive Fixed Nav And I Added Width 100% Background-color And The Padding*/
+/*I Am Gonna Add The JS code background-color  Transperent ==> White */
 header .fixed-nav .logo{
     width: 10%;
     display: flex;
@@ -85,13 +93,13 @@ header .fixed-nav .logo{
     flex-wrap: wrap;
    
 }
-header .container .logo img{
+header  .logo img{
     height: 100px;
     width:100px ;
     animation: turn 3s linear  infinite  ;
     -webkit-animation: turn 3s linear  infinite  ;
 }
-header .container .logo div{
+header  .logo div{
     text-align: center;
     font-size: 20px;
 }
@@ -145,7 +153,7 @@ border-color: var(--secondary-color);}
    
 }
 .book span{
-    margin-right: 20px;
+    margin-right: var(--arrow-margin);
     font-size: 13px;
 }
 .book span:hover{
@@ -176,7 +184,7 @@ header .fixed-nav nav{
     flex-direction: column;
 }
     header .fixed-nav nav li{
-        margin-bottom: 30px;
+        margin-bottom: var(--intern-margin);
     }
 header .fixed-nav .book{
     width: 200px;
@@ -193,14 +201,15 @@ header .fixed-nav .book{
     width: 50%;
 }
 .content .description .title{
-    font-size: 50px;
+    font-size: 45px;
     color: var(--primary-color);
 }
 .content .description .title span{
     color: var(--secondary-color);
 }
 .content .description p{
-    margin: 20px 0;
+    margin: var(--intern-margin) 0;
+    letter-spacing: var(--main-letter-spacing-for-paragraphs);
 }
 .content .description-grid{
     display: flex;
@@ -225,7 +234,11 @@ header .fixed-nav .book{
 .content .description-grid>div>.title{
     font-size: 20px;
     font-weight: bold;
-    margin: 20px 0 ;
+    margin: var(--intern-margin) 0 ;
+}
+.content .description-grid>div>p{
+    letter-spacing: var(--main-letter-spacing-for-paragraphs);
+
 }
 .content .explore-more{
     display: flex;
@@ -250,7 +263,7 @@ header .fixed-nav .book{
 }
 .content .explore-more span.arrow{
     content: "";
-    margin-right: 20px;
+    margin-right: var(--arrow-margin);
     border: 1px black solid;
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -268,6 +281,7 @@ header .fixed-nav .book{
     -ms-transform: translateX(30px);
     -o-transform: translateX(30px);
 }
+
 @media(max-width: 767px){
     
     .content .description{
@@ -283,7 +297,7 @@ header .fixed-nav .book{
 .content .description-grid>div.class-one,.content .description-grid>div.class-two,.content .description-grid>div.class-three{
     min-width: 80%;
     max-width: 400px;
-    margin: 20px auto;
+    margin: var(--arrow-margin) auto;
     border-bottom: 1px var(--primary-color) solid;
     padding-bottom: 20px;
 }
@@ -341,7 +355,7 @@ header .fixed-nav .book{
     
 }
 .get-in-touch .contact-us span.arrow{
-    margin-right: 20px;
+    margin-right: var(--arrow-margin);
     transition: var(--main-duration) 0s;
     -webkit-transition: var(--main-duration) 0s;
     -moz-transition: var(--main-duration) 0s;
@@ -359,7 +373,7 @@ header .fixed-nav .book{
     border-color: var(--secondary-color);
 }
 .get-in-touch .contact-us:hover span.arrow{
-    margin-left: 20px;
+    margin-left: var(--arrow-margin);
     color: var(--secondary-color);
 }
 .get-in-touch .contact-us:hover span.link{
@@ -401,7 +415,7 @@ footer .container .contact{
     -o-transition: var(--main-duration);
 }
 footer .container .contact .contact-us{
-    margin-bottom: 20px;
+    margin-bottom: var(--intern-margin);
     font-size: 25px;
 }
 footer .container .contact:hover{
@@ -448,7 +462,7 @@ footer .container .end-footer{
         flex-wrap: wrap;
     }
     footer .container .end-footer div{
-        margin-top: 20px;
+        margin-top: var(--intern-margin);
     }
 
 }
