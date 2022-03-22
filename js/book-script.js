@@ -230,18 +230,23 @@ function fillBookingSummary() {
 
     let cod1;
     let cid1;
-    if (cod !== null) cod1 = (new Date(cod.value)).getTime();
-    if (cid !== null) cid1 = (new Date(cid.value)).getTime();
+    cod1 = (new Date(cod)).getTime();
+    cid1 = (new Date(cid)).getTime();
     if (cod1 !== null && cid1 !== null) {
         const diffdays = Math.ceil(cod1 - cid1) / (1000 * 60 * 60 * 24);
-        document.getElementById("nb-of-nights-span").innerHTML = (diffdays ? diffdays : "");
+        document.querySelectorAll(".nb-of-nights-span").forEach(ele => {
+            ele.innerHTML = diffdays;
+        })
     }
-    let date = document.getElementById("date-span");
-    date.innerHTML = cid + " - " + cod;
-    let nb_adu_chi = document.getElementById("guests-span");
-    nb_adu_chi.innerHTML = num_of_adu.toString() + " ADULTS" + (num_of_child === 0 ? " " : " & " + num_of_child.toString() + " CHILDREN");
-    let nbRooms = document.getElementById("room-info-span");
-    nbRooms.innerHTML = nb_of_rooms.toString();
+    document.querySelectorAll(".date-span").forEach(ele => {
+        ele.innerHTML = cid + " - " + cod;
+    })
+    document.querySelectorAll(".guests-span").forEach(ele => {
+        ele.innerHTML = num_of_adu.toString() + " ADULTS" + (num_of_child === 0 ? " " : " & " + num_of_child.toString() + " CHILDREN");
+    })
+    document.querySelectorAll(".room-info-span").forEach(ele => {
+        ele.innerHTML = nb_of_rooms.toString();
+    })
 
 }
 

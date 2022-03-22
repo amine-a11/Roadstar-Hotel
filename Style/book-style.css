@@ -108,6 +108,14 @@ h1 {
     border-color: #b89535;
 }
 
+@media (max-width:650px) {
+    .progress-step::after {
+        letter-spacing: 0;
+        font-size: 12px;
+    }
+}
+
+
 /* form step */
 .form-step {
     max-width: 1200px;
@@ -126,6 +134,8 @@ h1 {
     display: flex;
     justify-content: center;
 }
+
+
 
 .checkIn,
 .checkOut {
@@ -150,7 +160,7 @@ cod=check-out-date
 .co {
     width: 10em;
     height: 20px;
-    margin: 5px;
+    margin: 8px;
     text-align: center;
 }
 
