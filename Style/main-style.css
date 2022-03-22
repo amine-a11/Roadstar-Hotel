@@ -99,6 +99,7 @@ header .fixed-nav{
     width: 100%;
     background-color: white;
     padding: 0 var(--main-padding) ;
+    background-image: linear-gradient(to bottom, #FFFFFF ,#eee);
 }
 /* I Delected The Responsive Fixed Nav And I Added Width 100% Background-color And The Padding*/
 /*I Am Gonna Add The JS code background-color  Transperent ==> White */
