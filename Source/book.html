@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../Style/main-style.css">
     <link rel="stylesheet" href="../Style/book-style.css">
     <link rel="stylesheet" href="../Style/all.min.css">
@@ -33,7 +34,7 @@
             <div class="progress-step" data-title="your deatails"></div>
             <div class="progress-step" data-title="confirmation"></div>
         </div>
-        <!-- step-0  -->
+<!-------------------------------form step-1  ------------------------------------------------------------------>
         <div class="form-step form-step-active">
             <h1>BOOK A ROOM</h1>
 
@@ -52,7 +53,7 @@
                         CHECK-IN DATE
                     </div>
                     <div class="cid">
-                        <input type="date" id="check-in-calender" onchange="handlecod()" onload="getDate()">
+                        <input type="date" id="check-in-calender" onchange="handlecod()" required>
                     </div>
                 </div>
 
@@ -62,7 +63,7 @@
                         CHECK-OUT DATE
                     </div>
                     <div class="cod">
-                        <input type="date" id="check-out-calender" onchange="handlecid()">
+                        <input type="date" id="check-out-calender" onchange="handlecid()" required>
                     </div>
                 </div>
 
@@ -119,7 +120,7 @@
         </div>
 
 
-        <!-- Select room -->
+<!--------------------------------------------form step-2 Select room ------------------------------------------------->
 
         <div class="form-step">
             <div class="container3">
@@ -172,7 +173,7 @@
             </div>
         </div>
 
-        <!-- user info 3re step -->
+<!------------------------------------------- form step-3 user info ------------------------------------------>
 
         <div class="form-step">
             <div class="page-title">
@@ -220,7 +221,7 @@
                     <div class="accordion-body">
                         <div class="one-data">
                             <label for="title">TITLE*</label>
-                            <select name="title" id="title" aria-readonly="true">
+                            <select name="title" id="title" aria-readonly="true" required>
                                 <option value="MR.">MR.</option>
                                 <option value="MRS.">MRS.</option>
                                 <option value="MS.">MS.</option>
@@ -229,7 +230,7 @@
                         </div>
                         <div class="one-data">
                             <label for="country">COUNTRY OF RESIDENCE*</label>
-                            <select name="country" id="country">
+                            <select name="country" id="country" required>
                                 <option value="tunisia">Tunisia</option>
                                 <option value="tunisia">Tunisia</option>
                                 <option value="tunisia">Tunisia</option>
@@ -238,37 +239,37 @@
                         </div>
                         <div class="one-data">
                             <label for="firstName">FIRST NAME*</label>
-                            <input name="firstName" id="firstName" type="text">
+                            <input name="firstName" id="firstName" type="text" required>
                         
                         </div>
                         <div class="one-data">
                             <label for="city">CITY*</label>
-                            <input name="city" id="city" type="text">
+                            <input name="city" id="city" type="text" required>
                         
                         </div>
                         <div class="one-data">
                             <label for="lastName">LAST NAME*</label>
-                            <input name="lastName" id="lastName" type="text">
+                            <input name="lastName" id="lastName" type="text" required>
                         
                         </div>
                         <div class="one-data">
                             <label for="address1">ADDRESS1*</label>
-                            <input name="address1" id="address1" type="text">
+                            <input name="address1" id="address1" type="text" required>
                         
                         </div>
                         <div class="one-data">
                             <label for="email">EMAIL*</label>
-                            <input name="email" id="email" type="email">
+                            <input name="email" id="email" type="email" required>
                         
                         </div>
                         <div class="one-data">
-                            <label for="address2">ADDRESS2*</label>
+                            <label for="address2">ADDRESS2</label>
                             <input name="address2" id="address2" type="text">
                         
                         </div>
                         <div class="one-data">
                             <label for="confirmEmail">CONFIRM EMAIL*</label>
-                            <input name="confirmEmail" id="confirmEmail" type="text">
+                            <input name="confirmEmail" id="confirmEmail" type="text" required>
                         
                         </div>
                         <div class="one-data">
@@ -278,7 +279,7 @@
                         </div>
                         <div class="one-data">
                             <label for="phone">TELEPHONE NUMBER*</label>
-                            <input name="phone" id="phone" type="text">
+                            <input name="phone" id="phone" type="text" required>
                         
                         </div>
                     </div>
@@ -338,6 +339,7 @@
             <button type="button" class="next-button" >CREDIT CARD DETAILS</button>
 
         </div>
+<!------------------------------------------ form-step-3 ---------------------------------------------->
         <div class="form-step">
             <div class="page-title">
                 <h2>PAYMENT</h2>
@@ -386,14 +388,14 @@
                 <div class="container7">
                     <div class="one-data">
                         <label for="cardNumber">CARD NUMBER*</label>
-                        <input name="cardNumber" id="cardNumber" type="text">
+                        <input name="cardNumber" id="cardNumber" type="text" required>
                     </div>
 
                     <div class="month-year">
                         <div class="month-data">
 
                             <label for="month">MONTH*</label>
-                            <select name="month" id="month" type="text">
+                            <select name="month" id="month" type="text" required>
                                 <option value="JAN">JAN.</option>
                                 <option value="FEB">FEB.</option>
                                 <option value="MAR">MAR.</option>
@@ -411,7 +413,7 @@
 
                         <div class="year-data">
                             <label for="year">YEAR*</label>
-                            <select name="year" id="year">
+                            <select name="year" id="year" required>
                                 <option value="2019">2019</option>
                                 <option value="2020">2020</option>
                                 <option value="2022">2022</option>
@@ -423,12 +425,12 @@
 
                     <div class="one-data">
                         <label for="nameOfCard">NAME ON CARD*</label>
-                        <input name="nameOfCard" id="nameOfCard" type="text">
+                        <input name="nameOfCard" id="nameOfCard" type="text" required>
                     </div>
 
                     <div class="one-data">
                         <label for="securityCode">SECURITY CODE*</label>
-                        <input name="securityCode" id="securityCode" type="text">
+                        <input name="securityCode" id="securityCode" type="text" required>
                     </div>
 
                 </div>

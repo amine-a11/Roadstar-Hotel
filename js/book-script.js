@@ -1,12 +1,14 @@
 /*
-TO DO:
+TO DO: 
 - add the tomorrow Date
 - refactor the fillBookingSummary function and fillBookingInfo function
 */
 let today = new Date();
-let tomorrow = new Date();
-document.getElementById("check-in-calender").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
-document.getElementById("check-in-calender").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+// let tomorrow = new Date(today);
+// tomorrow.setDate(tomorrow.getDate() + 1);
+// document.getElementById("check-in-calender").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+document.getElementById("check-in-calender").setAttribute("min", today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2));
+// document.getElementById("check-out-calender").value = tomorrow.getFullYear() + '-' + ('0' + (tomorrow.getMonth() + 1)).slice(-2) + '-' + ('0' + tomorrow.getDate()).slice(-2);
 /* handlecid(handle check-in-date) : add a max date to the check out calender 
    handlecod(handle check-out-date): add a min date to the check in calender
 */
@@ -70,8 +72,10 @@ function addRoom() {
     });
     let input_adu = newRoom.querySelector("#room1-nb-of-adu-value");
     input_adu.id = "room" + nb_of_rooms.toString() + "-nb-of-adu-value";
+    input_adu.value = "1";
     let input_chi = newRoom.querySelector("#room1-nb-of-chi-value");
     input_chi.id = "room" + nb_of_rooms.toString() + "-nb-of-chi-value";
+    input_chi.value = "0";
     newRoom.querySelector("#room-nb").textContent = "ROOM" + nb_of_rooms.toString();
     document.querySelector(".container2").appendChild(newRoom);
     if (nb_of_rooms === 4) {
@@ -106,7 +110,15 @@ function removeRoom() {
     }
 }
 
-
+//function stepValid()
+function stepValid() {
+    let inputs = document.querySelector(".form-step-active").querySelectorAll("input");
+    inputs.forEach(input => {
+        //input.attributes.required !== undefined
+        console.log(input.validity.valid);
+    });
+    return true;
+}
 //move between the diffrente form steps
 
 let nextBtn = document.querySelectorAll(".next-button");
@@ -116,13 +128,16 @@ let formSteps = document.querySelectorAll(".form-step");
 let formStepNum = 0;
 nextBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
-        formStepNum++;
-        if (formStepNum === 1) {
-            fillBookingInfo();
-        }
-        updateFormStep();
-        if (formStepNum !== 3) {
-            updateProgressSteps();
+        if (stepValid()) {
+            formStepNum++;
+            if (formStepNum === 1) {
+                fillBookingInfo();
+            }
+            updateFormStep();
+            if (formStepNum !== 3) {
+                updateProgressSteps();
+            }
+            window.scrollTo(0, 0);
         }
     });
 });
