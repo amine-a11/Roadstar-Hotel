@@ -27,15 +27,31 @@ h1 {
 /* end header image */
 
 /* start img slider */
+.slider-img {
+    width: 100%;
+    height: 400px;
+    display: none;
+}
 
 .slider-img>img {
     width: 100%;
-    height: 30rem;
+    height: 400px;
+}
+
+.active-img {
+    display: block;
+}
+
+.slides {
+    /* position: relative; */
+    display: flex;
+
 }
 
 
 .slider {
     position: relative;
+
 }
 
 .move {
@@ -43,11 +59,10 @@ h1 {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 13%;
+    width: 14%;
     margin: auto 10rem 3rem auto;
     display: flex;
     justify-content: space-between;
-
 }
 
 .prev,
@@ -70,6 +85,19 @@ h1 {
 .next:hover>i {
     transform: translateX(5px);
     transition: transform 150ms ease-in-out;
+}
+
+@media(max-width: 992px) {
+    .move {
+        /* z-index: 1; */
+        position: absolute;
+        bottom: 40%;
+        right: 0;
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 /* end img slider */

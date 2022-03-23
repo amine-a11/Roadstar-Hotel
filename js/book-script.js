@@ -110,22 +110,23 @@ function removeRoom() {
     }
 }
 
-//function stepValid()
-function stepValid() {
-    let inputs = document.querySelector(".form-step-active").querySelectorAll("input");
-    inputs.forEach(input => {
-        //input.attributes.required !== undefined
-        console.log(input.validity.valid);
-    });
-    return true;
-}
-//move between the diffrente form steps
+
+
 
 let nextBtn = document.querySelectorAll(".next-button");
 let prevBtn = document.querySelectorAll(".prev-button");
 let progressSteps = document.querySelectorAll(".progress-step");
 let formSteps = document.querySelectorAll(".form-step");
 let formStepNum = 0;
+
+//function stepValid()
+
+function stepValid() {
+    const inputsValid = [...formSteps[formStepNum].querySelectorAll("input")].every(input => input.reportValidity());
+    return inputsValid;
+}
+//move between the diffrente form steps 
+
 nextBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
         if (stepValid()) {

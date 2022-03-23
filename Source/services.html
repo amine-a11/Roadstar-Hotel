@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../Style/normalize.css">   
      <!-- services CSS file -->
      <link rel="stylesheet" href="../Style/services-style.css">
+     <script src="../js/services-script.js" defer></script>
     <title>Ultima Signature Services</title>
 </head>
 <body>
@@ -55,16 +56,22 @@
 <!--------------------------------------------- image slider --------------------------------------->
 <div class="container">
     <div class="slider">
-        <div class="slides">
+        <div class="slides" id="slides">
+            <span class="slider-img active-img">
+                <img src="../images/slide_img1.jpg" alt=""> 
+            </span>
             <span class="slider-img">
-                <img src="../images/slide_img1.jpg" alt="">
+                <img src="../images/slide_img2.jpg" alt=""> 
+            </span>
+            <span class="slider-img">
+                <img src="../images/slide_img3.jpg" alt=""> 
             </span>
         </div>
         <div class="move">
-            <div class="prev">
+            <div class="prev" id="prev">
                 <i class="fa-solid fa-arrow-left"></i>
             </div>
-            <div class="next">
+            <div class="next" id="next">
                 <i class="fa-solid fa-arrow-right"></i>
             </div>
         </div>
