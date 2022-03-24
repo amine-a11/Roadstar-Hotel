@@ -77,7 +77,7 @@
 /*---------------------------------Start Header------------------------*/
 header{
     background-image: url(../images/about-us.jpg);
-    background-size: cover;
+    background-size:cover;
 }
 
 /*---------------------------------End Header------------------------*/
@@ -253,4 +253,5 @@ footer{
     margin-top: 0;
 }
 /*--------------------End Footer-----------------------------*/
+
 
