@@ -83,9 +83,27 @@ body {
     right: -100px;
     z-index: 999;
     cursor: pointer;
-    transition: .3s;
+    transition: var(--main-duration);
+    -webkit-transition: var(--main-duration);
+    -moz-transition: var(--main-duration);
+    -ms-transition: var(--main-duration);
+    -o-transition: var(--main-duration);
 }
-
+.back-to-top img{
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transition: var(--main-duration);
+    -webkit-transition: var(--main-duration);
+    -moz-transition: var(--main-duration);
+    -ms-transition: var(--main-duration);
+    -o-transition: var(--main-duration);
+}
+.back-to-top:hover img{
+    margin-bottom: 10px;
+}
 .show-back-to-top {
     right: 20px;
 }
@@ -106,6 +124,7 @@ header .background-video {
     min-width: 100%;
     min-height: 100%;
     z-index: -1;
+    opacity: 1;
 }
 
 header .fixed-nav {
@@ -116,21 +135,24 @@ header .fixed-nav {
     border-bottom: var(--sec-background-color) 1px solid;
     text-align: center;
     width: 100%;
-    background-color: rgba(255, 255, 255, .1);
     padding: 0 var(--main-padding);
-    background-image: linear-gradient(to bottom, #FFFFFF, #eee);
     z-index: 9999;
+    transition: var(--main-duration);
+    -webkit-transition: var(--main-duration);
+    -moz-transition: var(--main-duration);
+    -ms-transition: var(--main-duration);
+    -o-transition: var(--main-duration);
 }
-
-/* I Delected The Responsive Fixed Nav And I Added Width 100% Background-color And The Padding*/
-/*I Am Gonna Add The JS code background-color  Transperent ==> White */
+header .fixed-nav:hover{
+    background-color: var(--sec-background-color);
+}
 header .fixed-nav .logo {
     width: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-
+    text-decoration: none;
 }
 
 header .logo img {
@@ -139,14 +161,15 @@ header .logo img {
     animation: turn 3s linear infinite;
     -webkit-animation: turn 3s linear infinite;
 }
-
 header .logo div {
     text-align: center;
     font-size: 20px;
+    color: var(--prim-background-color);
+    font-weight: bold;
 }
 
 header .fixed-nav nav {
-    width: 70%;
+    width: 60%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -154,13 +177,10 @@ header .fixed-nav nav {
 
 header .fixed-nav nav li {
     list-style: none;
-    text-align: center;
 }
-
-header .fixed-nav nav a,
-header .book a {
+header .fixed-nav nav a{
     text-decoration: none;
-    color: black;
+    color: var(--prim-background-color);
     padding: 12px 20px;
     transition: var(--main-duration) 0.1s;
     -webkit-transition: var(--main-duration) 0.1s;
@@ -169,51 +189,52 @@ header .book a {
     -o-transition: var(--main-duration) 0.1s;
     font-size: 1.1rem;
     text-align: center;
-}
-
-header .fixed-nav .book {
-    width: 10%;
-}
-
-header .fixed-nav .book a {
+    font-weight: bold;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-header nav a:hover {
-    text-decoration: underline;
-}
-
 .book {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid var(--primary-color);
 }
-
-.book:hover {
+header .fixed-nav .book a {
+    text-align: center;
+    border: 2px solid var(--primary-color);
+    transition: var(--main-duration);
+    -webkit-transition: var(--main-duration);
+    -moz-transition: var(--main-duration);
+    -ms-transition: var(--main-duration);
+    -o-transition: var(--main-duration);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+header nav li a:hover {
+    text-decoration: underline;
+}
+header .fixed-nav .book:hover a {
     border-color: var(--secondary-color);
-}
-
-.book:hover a {
     transform: translateX(10px);
     -webkit-transform: translateX(10px);
     -moz-transform: translateX(10px);
     -ms-transform: translateX(10px);
     -o-transform: translateX(10px);
     color: var(--secondary-color);
-
+    border-color: var(--secondary-color);
 }
-
-.book span {
+header .fixed-nav .book span {
     margin-right: var(--arrow-margin);
     font-size: 13px;
 }
-
-.book span:hover {
+header .fixed-nav .book span:hover {
     color: var(--primary-color);
     transition-delay: 1s;
 }
-
 @keyframes turn {
     100% {
         transform: rotateY(360deg);
@@ -224,7 +245,16 @@ header nav a:hover {
     }
 
 }
-
+@media (max-width: 1200px) {
+    header .fixed-nav nav {
+        width: 70%;
+    }
+}
+@media (max-width: 992px) {
+    header .fixed-nav nav {
+        width: 80%;
+    }
+}
 @media(max-width: 767px) {
     header .fixed-nav {
         flex-direction: column;
@@ -248,7 +278,9 @@ header nav a:hover {
         width: 200px;
     }
 }
-
+.change-status{
+    background-color: var(--sec-background-color);
+}
 /*----------------------------------------------------------------End The Header------------------------------------------------------*/
 /*-----------------------------------------------------------Start Collection-1--------------------------------*/
 
