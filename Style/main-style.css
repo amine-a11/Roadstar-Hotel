@@ -132,7 +132,7 @@ header .fixed-nav {
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    border-bottom: var(--sec-background-color) 1px solid;
+    /* border-bottom: var(--sec-background-color) 1px solid; */
     text-align: center;
     width: 100%;
     padding: 0 var(--main-padding);
@@ -264,8 +264,11 @@ header .fixed-nav .book span:hover {
         position: absolute;
         top: 0;
         right: 0;
+        justify-content: space-around;
     }
-
+    header .fixed-nav:hover{
+        background-color: transparent;
+    }
     header .fixed-nav nav {
         flex-direction: column;
     }
@@ -802,3 +805,15 @@ footer .container .end-footer {
 /**/
 
 /**/
+/* Reveal Elements On Scroll */
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.reveal.active {
+    transform: translateY(0px);
+    opacity: 1;
+}
