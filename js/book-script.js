@@ -272,3 +272,10 @@ window.onscroll = () => {
 backToTop.onclick = () => {
     window.scrollTo(0, 0);
 }
+
+// booking info dropdown
+const togglebutton = document.getElementsByClassName("seeInfo")[0];
+const info = document.getElementsByClassName("bookingInfo")[0];
+togglebutton.addEventListener('click', () => {
+    info.classList.toggle("active");
+})
