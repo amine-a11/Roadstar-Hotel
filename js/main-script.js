@@ -1,19 +1,19 @@
 //the header
 const nav = document.querySelector('.fixed-nav');
 const header = document.querySelector('header');
-const options ={
-    rootMargin:'-150px'
+const options = {
+    rootMargin: '-150px'
 }
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-        if(entry.isIntersecting){
+        if (entry.isIntersecting) {
             nav.classList.remove('change-status')
         }
-        else{
+        else {
             nav.classList.add('change-status')
         }
     })
-} , options)
+}, options)
 
 observer.observe(header)
 

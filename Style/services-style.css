@@ -45,15 +45,11 @@ h1 {
 .slides {
     /* position: relative; */
     display: flex;
-
 }
-
-
 .slider {
     position: relative;
-
+    overflow: hidden;
 }
-
 .move {
     /* z-index: 1; */
     position: absolute;
