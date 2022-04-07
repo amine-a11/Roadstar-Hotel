@@ -107,7 +107,17 @@ body {
 .show-back-to-top {
     right: 20px;
 }
-
+/* .image{
+    overflow: hidden;
+}
+img:hover{
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    overflow: hidden;
+} */
 /*---------------------------------------------------------End Global Rules & Variables-----------------------------------------------*/
 
 
