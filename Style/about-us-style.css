@@ -93,11 +93,8 @@ body {
 /*---------------------------------------------------------End Global Rules & Variables-----------------------------------------------*/
 
 /*---------------------------------Start Header------------------------*/
-header {
-    background-image: url(../images/about-us.jpg);
-    background-size: cover;
-}
-
+header .home-title div{
+font-size: 30px;}
 /*---------------------------------End Header------------------------*/
 
 

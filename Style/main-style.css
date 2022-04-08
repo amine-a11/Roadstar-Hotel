@@ -136,7 +136,21 @@ header .background-video {
     z-index: -1;
     opacity: 1;
 }
-
+header .home-title{
+    color: var(--prim-background-color);
+    position: absolute;
+    font-size: max(60px , 5vw);
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    -webkit-transform: translate(50%,-50%);
+    -moz-transform: translate(50%,-50%);
+    -ms-transform: translate(50%,-50%);
+    -o-transform: translate(50%,-50%);
+    width: 100%;
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
 header .fixed-nav {
     display: flex;
     justify-content: space-between;
@@ -289,6 +303,9 @@ header .fixed-nav .book span:hover {
 
     header .fixed-nav .book {
         width: 200px;
+    }
+    header .home-title{
+        display: none;
     }
 }
 .change-status{
@@ -726,7 +743,7 @@ header .fixed-nav .book span:hover {
 
 footer {
     background-color: var(--sec-background-color);
-    /* margin-top: var(--margin-between-sections); */
+    margin-top: var(--margin-between-sections);
 
 }
 
