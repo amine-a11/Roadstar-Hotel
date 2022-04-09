@@ -21,23 +21,11 @@
     <!---------------------------------------------------------Start Header---------------------------------------->
     <header>
         <img src="../images/about-us.jpg" alt="" class="background-video">
-        <div class="fixed-nav change-status">
-            <a href="main.html" class="logo">
-                <img src="../images/logo.png" alt="Logo">
-                <div>RoadStar <br> Hotel</div>
-            </a>
-            <nav>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="services.html">Signature Services</a></li>
-                <li><a href="sustainability.html">Sustainability</a></li>
-                <div class="book">
-                    <a href="book.html"> <span>&#10132;</span> Book now</a>
-                </div>
-            </nav>
-            
-        </div>
+        <?php
+        require "../Source/nav.php"
+        ?>
         <div class="home-title">About Us<div>Multi-Award-Winning Luxury Hospitality Brand </div></div>
-</header>
+    </header>
 
 <!----------------------------------------------------End Header------------------------------------------------------->
 <!----------------------------------------Start General Descritption ------------------------------>
@@ -189,7 +177,7 @@
             <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
             <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://www.twitter.com/"><i class="fa-brands fa-twitter" ></i></a>
+            <a href="https://www.twitter.com/"><i class="fa-brands fa-twitter"></i></a>
         </div>
         <div class="end-footer">
             <div class="copyright">
@@ -207,4 +195,6 @@
     &#8593;	
 </div>
 </body>
+<script src="../js/main-script.js"></script>
+
 </html>
