@@ -247,9 +247,11 @@
         require "../Source/footer.php"
     ?>
     <!------------------------------------------------------End Footer-------------------------------------------------->
-        <div class="back-to-top">
-            <img src="../images/arrow.png" alt="">	
-        </div>
+    <?php
+        require "go-to-top.php"
+    ?>
+
     <script src="../js/main-script.js"></script>
+    <script src="../js/Reveal-On-Scroll.js"></script>
 </body>
 </html>

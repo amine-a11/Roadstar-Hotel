@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../Style/sustainability-style.css">
     <!-- script -->
     <script src="../js/sustainability.js" defer></script>
+    <script src="../js/Reveal-On-Scroll.js" defer></script>
 
 </head>
 <body>
@@ -174,9 +175,9 @@
         require "../Source/footer.php"
     ?>
 <!------------------------------------------------------End Footer-------------------------------------------------->
-<div class="back-to-top">
-    &#8593;	
-</div>
+<?php
+    require "go-to-top.php"
+?>
 
 
 
