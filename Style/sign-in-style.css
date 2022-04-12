@@ -1,3 +1,237 @@
-body{
-    background-color: black;
+/* --------------------------------------------------Start Global Rules & Variables---------------------------------------------*/
+:root {
+    --primary-color: #4a4a49;
+    --secondary-color: #b89535;
+    --prim-background-color: #f0ebe5;
+    --sec-background-color: #212121;
+    --third-background-color: rgb(253, 244, 230);
+    --margin-between-sections: 50px;
+    --main-padding: 30px;
+    --main-duration: 0.5s;
+    --main-letter-spacing-for-paragraphs: 1.3px;
+    --intern-margin: 30px;
+    --arrow-margin: 20px;
+
 }
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    scroll-behavior: smooth;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+
+    /* .fixed-nav{
+        width: 750px;
+    } */
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+
+    /* .fixed-nav{
+        width: 970px;
+    } */
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+
+    /* .fixed-nav{
+        width: 1170px;
+    } */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.back-to-top {
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    padding: var(--main-padding);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    position: fixed;
+    bottom: 20px;
+    right: -100px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+
+.show-back-to-top {
+    right: 20px;
+}
+
+/*---------------------------------------------------------End Global Rules & Variables-----------------------------------------------*/
+.sign-in{
+    background-color: var(--prim-background-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sign-in .container{
+    display: flex;
+}
+.sign-in .aside-image{
+    width: 60%;
+    background-size: cover;
+}
+.sign-in .aside-image img{
+    width: 100%;
+    height: 100%;
+}
+.sign-in .sign-in-form{
+    background-color: white;
+    width: 40%;
+    padding: var(--main-padding) 70px ;
+}
+.sign-in .sign-in-form .logo-heading{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    width: fit-content;
+}
+.sign-in .sign-in-form .logo-heading img{
+    height: 50px;
+    width: 50px;
+    animation: turn 3s linear infinite;
+    -webkit-animation: turn 3s linear infinite;
+}
+@keyframes turn {
+    100% {
+        transform: rotateY(360deg);
+        -webkit-transform: rotateY(360deg);
+        -moz-transform: rotateY(360deg);
+        -ms-transform: rotateY(360deg);
+        -o-transform: rotateY(360deg);
+    }
+}
+.sign-in .logo-heading div{
+    margin-left: 20px;
+    text-decoration: none;
+    letter-spacing: var(--main-letter-spacing-for-paragraphs);
+    color: var(--sec-background-color);
+    font-weight: bold;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+
+}
+.sign-in .sign-in-content{
+    margin-top: 70px;
+}
+.sign-in .sign-in-content .title{
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.sign-in .sign-in-content .description{
+    margin-top: var(--margin-between-sections);
+    color: var(--primary-color);
+}
+.sign-in .description .min-title{
+    font-weight: bold;
+}
+.sign-in .description .text{
+    font-size: 13px;
+    margin: 20px 3px ;
+}
+.sign-in .sign-in-content form{
+    margin-top: 30px;
+}
+.sign-in form .field{
+    margin-bottom: 30px;
+}
+.sign-in form .field label{
+    margin-bottom: 10px;
+    display: block;
+    color: var(--primary-color);
+}
+.sign-in form .field input{
+    padding:  5px 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border: none;
+    background-color: white;
+    /* outline: 1px solid var(--primary-color); */
+    box-shadow: 0px 0px 5px var(--primary-color);
+    width: 100%;
+}
+.sign-in form .sign-in-button{
+    background-color: rgb(0 128 255 / 80%);
+    border: none;
+    width: 100%;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    cursor: pointer;
+}
+.sign-in form .sign-in-button:hover{
+    background-color: rgb(0 128 255);
+}
+.sign-in form .to-sign-up{
+    font-size: 14px;
+    margin-top: 20px;
+}
+.sign-in form .to-sign-up a{
+    text-decoration: none;
+    color:rgb(0, 128, 255) ;
+    font-weight: bold;
+}
+
+/* Medium */
+@media (max-width: 992px) {
+    .sign-in .aside-image{
+        width: 40%;
+    }
+    .sign-in .sign-in-form{
+        width: 60%;
+    }
+}
+/* Small */
+@media (max-width: 768px) {
+    .sign-in .aside-image{
+        display: none;
+    }
+    .sign-in .sign-in-form{
+        width: 100%;
+        padding: var(--main-padding) 30px;
+    }
+    
+}
+

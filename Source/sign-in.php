@@ -13,12 +13,12 @@
     <!--Main CSS File --> 
     <link rel="stylesheet" href="../Style/main-style.css">
     <!--CSS File-->
-    <link rel="stylesheet" href="../Style/sign-in-style.css">
+    <link rel="stylesheet" href="../Style/Sign-in-style.css">
 </head>
 <body>
     <div class="sign-in">
         <div class="container">
-            <div class="asideimage .image">
+            <div class="aside-image .image">
                 <img src="../images/hotel2.png" alt="Hotel">
             </div>
 
@@ -44,13 +44,13 @@
                         <form action="" method="post">
 
                             <!-- still Control-->
-                            <div class="user-name-field">
+                            <div class="user-name-field field">
                                 <label for="user-name" class="user-name">Username</label>
                                 <input type="text" placeholder="Email or Phone Number" id="user-name" required name="user name">
                             </div>
 
-                            <div class="password-field">
-                                <div class="password" for="password">Password</div>
+                            <div class="password-field field">
+                                <label class="password" for="password">Password</label>
                                 <input type="password" name="password" id="password" placeholder="password" required>
                             </div>
 
