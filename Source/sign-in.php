@@ -8,32 +8,62 @@
     <title>Sign In</title>
     <!--Web Icons -->
     <link rel="stylesheet" href="../Style/all.min.css">
-    <!--Main CSS File-->
-    <link rel="stylesheet" href="../Style/sign-in-style.css">
     <!--Normalize the elements-->
     <link rel="stylesheet" href="../Style/normalize.css">
+    <!--Main CSS File --> 
+    <link rel="stylesheet" href="../Style/main-style.css">
+    <!--CSS File-->
+    <link rel="stylesheet" href="../Style/sign-in-style.css">
 </head>
 <body>
-    <div class="content">
-        <a href="../Source/main.php" class="logo"><img src="../images/logo.png" alt="LOGO"></a>
-        <div class="title">
-            Sign in to to RoadStar Hotel
-        </div>
-        <div class="sign-in">
-            <form action="" method="post">
-                <div class="field">
-                    <label for="user-name"><i class="fa-solid fa-user"></i>Username or email address</label>
-                    <input type="text" id="user-name" required name="Username">
+    <div class="sign-in">
+        <div class="container">
+            <div class="asideimage .image">
+                <img src="../images/hotel2.png" alt="Hotel">
+            </div>
+
+            <div class="sign-in-form">
+                <a href="main.php" class="logo-heading" title="Back to the main page">
+                    <img src="../images/logo.png" alt="Logo">
+                    <div>RoadStar Hotel</div>
+                </a>
+                <div class="sign-in-content">
+                    <div class="title">
+                        Login
+                    </div>
+
+                    <div class="description">
+                        <div class="min-title">
+                            Login To Your Account
+                        </div>
+                        
+                        <div class="text">
+                            Thank you for get back to RoadStar Hotel, let's our the best recommendation for you
+                        </div>
+
+                        <form action="" method="post">
+
+                            <!-- still Control-->
+                            <div class="user-name-field">
+                                <label for="user-name" class="user-name">Username</label>
+                                <input type="text" placeholder="Email or Phone Number" id="user-name" required name="user name">
+                            </div>
+
+                            <div class="password-field">
+                                <div class="password" for="password">Password</div>
+                                <input type="password" name="password" id="password" placeholder="password" required>
+                            </div>
+
+                            <input type="submit" value="Sign In" class="sign-in-button">
+
+                            <div class="to-sign-up">
+                                Don't have an account yet? <a href="sign-up.php" target="_blank" title="create an account">Join RoadStar Hotel</a>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="field">
-                    <label for="pswd"><i class="fa-solid fa-lock"></i> Password</label>
-                    <input type="password" id="pswd" required maxlength="50" name="Password">
-                </div>
-                <input type="submit" value="Sign in" class="sign-in-button">
-            </form>
-        </div>
-        <div class="sign-up">
-            New to RoadStar Hotel? <a href="sign-up.php" target="_blank" title="Click here to create a new account !"> create an account</a>
+            </div>
+            
         </div>
     </div>
 </body>
