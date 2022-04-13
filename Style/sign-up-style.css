@@ -7,117 +7,15 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding:50px;
-    background-image:linear-gradient(#c2e59c,#64b3f4);
+    padding:20px 50px;
+    overflow: hidden;
+    background-color: #f0ebe5;
 }
 .left-container{
     width:30%;
-    height:110%;
-    background-color: #78938A;
+    height:100%;
     position :relative;
-}
-.right-container{
-    width:50%;
-    height:110%;
-    background-color: antiquewhite;
-    border-left:80px solid #78938A;
-    border-bottom: 525px solid transparent;
-    box-sizing: border-box;
-}
-
-.right-container form .user-details{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-form .user-details .input-box{
-    width:50%;
-    padding:10px;
-}
-.user-details .input-box input,
-.user-details .input-box select{
-    height:30px;
-    width:100%;
-}
-.user-details .input-box label{
-    margin-bottom: 10%;
-}
-.text{
-    padding:10px;
-}
-.title{
-    font-size:25px;
-    font-weight: 500;
-    padding:10px;
-}
-.agree-class{
-    padding:10px;
-}
-.register{
-    padding: 10px;
-}
-.have-account{
-    padding: 4px;
-}
-a{
-    text-decoration: none;
-    color:#0071ff;
-}
-input[type="submit"]{
-    background-color:#0071ff;
-    color:white;
-    font-size:13px;
-    padding:10px 30px;
-    border: none;
-    border-radius: 5px;
-}
-input[type="submit"]:hover{
-    cursor:pointer;
-}
-
-.left-container .welcom{
-    font-size:40px;
-    margin:10px 10px;
-    color:white;
-}
-
-img{
-    width:100%;
-    height:50%;
-    position :absolute;
-    bottom: 0px;
-}
-/*-------------------------------------------Mehrez----------------------------*/
-body{
-    overflow: hidden;
-    background-image: none;
-    background-color: #f0ebe5;
-}
-.left-container .welcom{
-    text-align: center;
-}
-.right-container{
-    border: none;
-    height: 100%;
     background-color: transparent;
-    position: relative;
-    z-index: 2;
-    padding-left: 100px;
-}
-.right-container::after{
-    content:"";
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: white;
-    z-index: -1;
-}
-.left-container{
-    background-color: transparent;
-    height: 100%;
     z-index: 4;
 }
 .left-container::after{
@@ -144,4 +42,122 @@ body{
     z-index: 999999;
     top: 0;
     right: 100%;
+}
+.right-container{
+    width:50%;
+    height:100%;
+    background-color: antiquewhite;
+    border:none;
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+    padding-left: calc(10% - 1rem);
+}
+
+.right-container::after{
+    content:"";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: white;
+    z-index: -1;
+}
+
+.right-container form .user-details{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+form .user-details .input-box{
+    width:50%;
+    padding:8px;
+}
+.user-details .input-box input,
+.user-details .input-box select{
+    height:30px;
+    width:100%;
+}
+.user-details .input-box label{
+    margin-bottom: 10%;
+}
+.text{
+    padding:8px;
+}
+.title{
+    font-size:25px;
+    font-weight: 500;
+    padding:8px;
+}
+.agree-class{
+    padding:10px;
+}
+.register{
+    padding: 0px;
+}
+.have-account{
+    padding: 4px;
+}
+a{
+    text-decoration: none;
+    color:#0071ff;
+}
+input[type="submit"]{
+    background-color:#0071ff;
+    color:white;
+    font-size:13px;
+    padding:10px 30px;
+    border: none;
+    border-radius: 5px;
+}
+input[type="submit"]:hover{
+    cursor:pointer;
+}
+
+.left-container .welcom{
+    font-size:40px;
+    margin:10px 10px;
+    color:white;
+    text-align: center;
+}
+
+img{
+    width:100%;
+    height:50%;
+    position :absolute;
+    bottom: 0px;
+}
+
+@media (max-width:784px) {
+    body{
+        overflow: scroll;
+    }
+    .left-container{
+        display: none;
+    }
+    .right-container{
+        width:100%;
+        height:100%;
+        background-color: antiquewhite;
+        display:block;  
+        padding:20px 10%;    
+        
+    }
+    .right-container form{
+        width:100%;
+    }
+    .right-container::after{
+        height:930px;
+    }
+    form .user-details .input-box{
+        width:100%;
+        padding:10px;
+    }
+    .user-details .input-box input,
+    .user-details .input-box select{
+        width:100%;
+    }
+    
 }

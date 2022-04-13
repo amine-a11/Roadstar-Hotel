@@ -17,7 +17,7 @@
     </div>
     <div class="right-container">
         <div class="title">Register</div>
-        <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae aspernatur quis ipsum,</div>
+        <div class="text">Let's get you all set up so you can verify your personal account and begin setting up your profile.</div>
         <form action="">
             <div class="user-details">
                 <div class="input-box">
@@ -29,7 +29,7 @@
                     <input type="text" name="LastName" id="LastName" Required>
                 </div>
                 <div class="input-box">
-                    <label for="Country">Country Of Residence</label>
+                    <label for="Country">Country</label>
                     <select name="Country" id="Country" required>
                                 <option value="tunisia">Tunisia</option>
                                 <option value="tunisia">Tunisia</option>
@@ -42,8 +42,8 @@
                     <input type="text" name="City" id="City" Required>
                 </div>
                 <div class="input-box">
-                    <label for="Address">Address</label>
-                    <input type="text" name="Address" id="Address" Required>
+                    <label for="PhoneNumber">PhoneNumber</label>
+                    <input type="tel" name="PhoneNumber" id="PhoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" Required>
                 </div>
                 <div class="input-box">
                     <label for="Email">Email</label>
@@ -52,15 +52,19 @@
                 <div class="input-box">
                     <label for="Password">Password</label>
                     <input type="password" name="Password" id="Password" Required>
-                </div>
+                </div>                
                 <div class="input-box">
                     <label for="Cpassword">Confirm Password</label>
                     <input type="password" name="Cpassword" id="Cpassword" Required>
                 </div>
+                <div class="input-box">
+                    <label for="Address">Address</label>
+                    <input type="text" name="Address" id="Address" Required>
+                </div>
             </div>
             <div class="agree-class">
                 <input type="checkbox" name="agree" id="agree">
-                <label for="agree">I agree to all <a href="#">Term</a>,<a href="#">Privacy Policy</a> and <a href="#">Fees</a></label>
+                <label for="agree">I agree to all <a href="#">Privacy Policy</a></label>
             </div>
             <div class="register">
                 <input type="submit" value="Create Account">

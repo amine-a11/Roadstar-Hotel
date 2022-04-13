@@ -451,10 +451,10 @@
     require "../Source/footer.php"
 ?>
 <!------------------------------------------------------End Footer-------------------------------------------------->
-<div class="back-to-top">
-    &#8593;	
-</div>
 
+<?php
+    require "go-to-top.php"
+?>
 </body>
 
 </html>
