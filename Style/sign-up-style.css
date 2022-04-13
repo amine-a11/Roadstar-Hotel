@@ -88,3 +88,60 @@ img{
     position :absolute;
     bottom: 0px;
 }
+/*-------------------------------------------Mehrez----------------------------*/
+body{
+    overflow: hidden;
+    background-image: none;
+    background-color: #f0ebe5;
+}
+.left-container .welcom{
+    text-align: center;
+}
+.right-container{
+    border: none;
+    height: 100%;
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+    padding-left: 100px;
+}
+.right-container::after{
+    content:"";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: white;
+    z-index: -1;
+}
+.left-container{
+    background-color: transparent;
+    height: 100%;
+    z-index: 4;
+}
+.left-container::after{
+    content: "";
+    position: absolute;
+    width: 130%;
+    height: 100%;
+    background-color:#212121;
+    top: 0;
+    right: -15%;
+    z-index: -1;
+    transform: skewX(-7deg);
+    -webkit-transform: skewX(-7deg);
+    -moz-transform: skewX(-7deg);
+    -ms-transform: skewX(-7deg);
+    -o-transform: skewX(-7deg);
+}
+.left-container::before{
+    content: "";
+    position: absolute;
+    width: 130%;
+    height: 100%;
+    background-color: #f0ebe5;
+    z-index: 999999;
+    top: 0;
+    right: 100%;
+}

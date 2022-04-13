@@ -13,7 +13,7 @@
     <!--Main CSS File --> 
     <link rel="stylesheet" href="../Style/main-style.css">
     <!--CSS File-->
-    <link rel="stylesheet" href="../Style/Sign-in-style.css">
+    <link rel="stylesheet" href="../Style/sign-in-style.css">
 </head>
 <body>
     <div class="sign-in">

@@ -259,6 +259,22 @@ header .fixed-nav .book span:hover {
     color: var(--primary-color);
     transition-delay: 1s;
 }
+header .fixed-nav i{
+    color: var(--prim-background-color);
+    font-size: 25px;
+    border: 1px solid var(--primary-color);
+    padding: 10px;
+    border-radius:50% ;
+    -webkit-border-radius:50% ;
+    -moz-border-radius:50% ;
+    -ms-border-radius:50% ;
+    -o-border-radius:50% ;
+    margin-left: 10px;
+}
+header .fixed-nav i:hover{
+    background-color: var(--primary-color);
+    border-color: var(--secondary-color);
+}
 @keyframes turn {
     100% {
         transform: rotateY(360deg);
@@ -279,7 +295,7 @@ header .fixed-nav .book span:hover {
         width: 80%;
     }
 }
-@media(max-width: 767px) {
+/* @media(max-width: 767px) {
     header .fixed-nav {
         flex-direction: column;
         height: 100%;
@@ -307,10 +323,12 @@ header .fixed-nav .book span:hover {
     header .home-title{
         display: none;
     }
-}
+}*/
 .change-status{
     background-color: var(--sec-background-color);
-}
+} 
+
+
 /*----------------------------------------------------------------End The Header------------------------------------------------------*/
 /*-----------------------------------------------------------Start Collection-1--------------------------------*/
 
@@ -843,4 +861,108 @@ footer .container .end-footer {
 .reveal.active {
     transform: translateY(0px);
     opacity: 1;
+}
+/* -------------------header----------------------- */
+@media(max-width: 767px){
+    .fixed-nav nav{
+        flex-direction: column;
+    }
+    header .fixed-nav:hover{
+        background-color: transparent;
+    }
+    header .fixed-nav{
+        padding: var(--main-padding);
+        position: relative;
+    }
+    header .fixed-nav .logo{
+        margin-left: 20px;
+    }
+    header .fixed-nav .bars{
+        width: 50px;
+        height: 20px;
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        flex-direction: column;
+        position: absolute;
+        right: 30px;
+
+    }
+    header .fixed-nav .bars:hover :nth-child(3){
+        width: 100%;
+
+    }
+    header .fixed-nav .bars span{
+        background-color: var(--prim-background-color);
+        height: 15%;
+        width: 100%;
+        display: inline-block;
+   
+    }
+    header .fixed-nav .bars :nth-child(3){
+        width: 70%;
+        transition: var(--main-duration);
+        -webkit-transition: var(--main-duration);
+        -moz-transition: var(--main-duration);
+        -ms-transition: var(--main-duration);
+        -o-transition: var(--main-duration);
+}
+    header .fixed-nav nav{
+        position: absolute;
+        right: 30px;
+        width: fit-content;
+        top:130px;
+        background-color: var(--sec-background-color);
+        display: none;
+        transition: var(--main-duration);
+        -webkit-transition: var(--main-duration);
+        -moz-transition: var(--main-duration);
+        -ms-transition: var(--main-duration);
+        -o-transition: var(--main-duration);
+}
+    header .fixed-nav nav li{
+        border-bottom: 1px solid;
+        width: 100%;
+        transition: var(--main-duration);
+        -webkit-transition: var(--main-duration);
+        -moz-transition: var(--main-duration);
+        -ms-transition: var(--main-duration);
+        -o-transition: var(--main-duration);
+        margin-top: 20px;
+    }
+    header .fixed-nav nav .book a{
+        border: none;
+        margin-top: 20px;
+    }
+    header .fixed-nav nav::before{
+        content: "";
+        height: 0;
+        width: 0;
+        border: 20px  solid;
+        border-color: transparent transparent var(--sec-background-color) ;
+        position: absolute;
+        right: 5px;
+        top: -35px;
+    }
+    header .home-title{
+        top: 80%;
+        font-size: 40px;
+    }
+    .fixed-nav:hover  nav{
+        display: block;
+    }
+    .fixed-nav:hover .bars  :nth-child(3){
+        width: 100%;
+    }
+    header .fixed-nav i{
+        margin-bottom: 100px;
+        margin-left :-20px;
+    } 
+    .background-video{
+        display: none;
+    }
+    header{
+        background-image: url(../images/main-background.jpg);
+        background-size: cover;
+    }
 }
