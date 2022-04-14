@@ -151,6 +151,9 @@ header .home-title{
     text-align: center;
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
+.hide{
+    display: none;
+}
 header .fixed-nav {
     display: flex;
     justify-content: space-between;

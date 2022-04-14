@@ -21,7 +21,7 @@
     <!---------------------------------------------------------Start Header---------------------------------------->
     <header>
         <?php
-            require "../Source/nav.php"
+            include "../Source/nav.php"
         ?>
         <div class="background-image">
                 <h1>RoadStar Signature Services</h1>
@@ -170,11 +170,11 @@
 </div>
 <!-------------------------------------------------Start Footer--------------------------------------------->
 <?php
-    require "../Source/footer.php"
+    include "../Source/footer.php"
 ?>
 <!------------------------------------------------------End Footer-------------------------------------------------->
 <?php
-    require "go-to-top.php"
+    include "go-to-top.php"
 ?>
 
 </body>
