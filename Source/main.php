@@ -18,9 +18,9 @@
     <!---------------------------------------------------------Start Header---------------------------------------->
     <header>
     <?php
-        require "../Source/nav.php"
-    ?>
-            <div class="home-title .delete-on-scroll">Where Home Feels Like an Escape </div>
+        include "../Source/nav.php"
+    ?> 
+            <div class="home-title">Where Home Feels Like an Escape </div>
         <video autoplay muted loop class="background-video">
             <source src="../videos/cover.mp4" type="video/mp4">
             Your browser does not support the video element.
@@ -244,11 +244,11 @@
     <!--------------------------------------------------In The Press---------------------------------------------->
     <!-------------------------------------------------Start Footer--------------------------------------------->
     <?php
-        require "../Source/footer.php"
+        include "../Source/footer.php"
     ?>
     <!------------------------------------------------------End Footer-------------------------------------------------->
     <?php
-        require "go-to-top.php"
+        include "go-to-top.php"
     ?>
 
     <script src="../js/main-script.js"></script>

@@ -23,7 +23,7 @@
     <header>
         <img src="../images/about-us.jpg" alt="" class="background-video">
         <?php
-        require "../Source/nav.php"
+        include "../Source/nav.php"
         ?>
         <div class="home-title">About Us<div>Multi-Award-Winning Luxury Hospitality Brand </div></div>
     </header>
@@ -165,12 +165,12 @@
 <!-------------------------------------------------End Home-------------------------------------------------->
 <!-------------------------------------------------Start Footer--------------------------------------------->
 <?php
-    require "../Source/footer.php"
+    include "../Source/footer.php"
 ?>
 <!------------------------------------------------------End Footer-------------------------------------------------->
 
 <?php
-    require "go-to-top.php"
+    include "go-to-top.php"
 ?>
 
 </body>

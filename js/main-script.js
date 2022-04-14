@@ -36,14 +36,8 @@ productContainers.forEach((item, i) => {
         item.scrollLeft -= 350;
     })
 })
-// Reveal Elements On Scroll
-
-// window.addEventListener("scroll", () => {
-//     document.querySelectorAll(".reveal").forEach(ele => {
-//         const windowheight = window.innerHeight;
-//         const revealtop = ele.getBoundingClientRect().top;
-//         const revealpoint = 10;
-//         (revealtop < windowheight - revealpoint) ? ele.classList.add("active") : ele.classList.remove("active");
-//     });
-// })
-
+// Remove the home-title on scroll
+const homeTitle = document.querySelector(".home-title");
+window.onscroll = () => {
+    this.scrollY >= 100 ? homeTitle.classList.add("hide") : homeTitle.classList.remove("hide");
+}
