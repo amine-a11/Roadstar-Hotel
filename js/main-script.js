@@ -37,7 +37,15 @@ productContainers.forEach((item, i) => {
     })
 })
 // Remove the home-title on scroll
+console.log("hii");
 const homeTitle = document.querySelector(".home-title");
 window.onscroll = () => {
-    this.scrollY >= 100 ? homeTitle.classList.add("hide") : homeTitle.classList.remove("hide");
+    if (this.scrollY >= 100) {
+        homeTitle.classList.remove("show");
+        homeTitle.classList.add("hide");
+    } else {
+        homeTitle.classList.remove("hide");
+        homeTitle.classList.add("show");
+    }
+
 }
