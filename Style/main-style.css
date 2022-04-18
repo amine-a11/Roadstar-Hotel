@@ -153,11 +153,19 @@ header .home-title{
 }
 .hide{
     opacity:0;
-    transition:1s;
+    transition:0.5s;
+    -webkit-transition:0.5s;
+    -moz-transition:0.5s;
+    -ms-transition:0.5s;
+    -o-transition:0.5s;
 }
 .show{
     opacity:1;
-    transition:1s;
+    transition:0.5s;
+    -webkit-transition:0.5s;
+    -moz-transition:0.5s;
+    -ms-transition:0.5s;
+    -o-transition:0.5s;
 }
 header .fixed-nav {
     display: flex;
