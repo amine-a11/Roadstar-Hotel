@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo URLROOT ?>/public/images/logo.png" type="image/x-icon">
     <title>RoadStar Hotel</title>
     <!--Web Icons -->
-    <link rel="stylesheet" href="../Style/all.min.css">
+    <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/all.min.css">
     <!--Main CSS File-->
-    <link rel="stylesheet" href="../Style/main-style.css">
+    <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/main-style.css">
     <!--Normalize the elements-->
-    <link rel="stylesheet" href="../Style/normalize.css">
+    <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/normalize.css">
     
 </head>
 <body>
     <!---------------------------------------------------------Start Header---------------------------------------->
     <header>
     <?php
-        include "../Source/nav.php"
+        include '../app/views/includes/nav.php';
     ?> 
             <div class="home-title">Where Home Feels Like an Escape </div>
         <video autoplay muted loop class="background-video">
-            <source src="../videos/cover.mp4" type="video/mp4">
+            <source src="<?php echo URLROOT ?>/public/videos/cover.mp4" type="video/mp4">
             Your browser does not support the video element.
         </video>
         
@@ -39,19 +39,19 @@
             </div>
             <div class="description-grid">
                 <div class="class-one reveal">
-                    <img src="../images/Why.jpg" alt="">
+                    <img src="<?php echo URLROOT ?>/public/images/Why.jpg" alt="">
                     <div class="title">Why RoadStar Collection? </div>
                     <p>Wherever in the world you’re exploring, if there’s RoadStar’s name on the door, you can expect our signature services and exceptionally high standards.</p>
 
                 </div>
                 <div class="class-two reveal">
-                    <img src="../images/Our_Roots.jpg" alt="">
+                    <img src="<?php echo URLROOT ?>/public/images/Our_Roots.jpg" alt="">
                     <div class="title">Our Roots </div>
                     <p>Many of you will know us from our beginnings at RoadStar Gstaad: our award-winning, 5-star superior hotel in Switzerland. Now, we’re found in exclusive destinations across Europe.</p>
 
                 </div>
                 <div class="class-three reveal">
-                    <img src="../images/Sustainable_Living.jpg" alt="">
+                    <img src="<?php echo URLROOT ?>/public/images/Sustainable_Living.jpg" alt="">
                     <div class="title"> Sustainable Living </div>
                     <p>A tree is planted for every night you stay with us. Plus, you will find biodegradable and sustainable materials used throughout. RoadStar’s properties enhance natural habitats and never disrupt them.</p>
 
@@ -84,19 +84,19 @@
             </div>
             <div class="description-grid">
                 <div class="class-one reveal">
-                    <img src="../images/Private_Concierge.jpg" alt="">
+                    <img src="<?php echo URLROOT ?>/public/images/Private_Concierge.jpg" alt="">
                     <div class="title">Private Concierge                     </div>
                     <p>Helicopter transfers, Michelin star chefs and 24/7 service staff can be arranged by our in-house teams to personalise each experience. Consider it handled, however spontaneous the idea.</p>
 
                 </div>
                 <div class="class-two reveal">
-                    <img src="../images/Health__Wellness.jpg "alt="">
+                    <img src="<?php echo URLROOT ?>/public/images/Health__Wellness.jpg "alt="">
                     <div class="title">Health & Wellness  </div>
                     <p>Indulge in personalised treatments with state-of-the-art amenities and lifestyle wellness treatments at our leading Swiss clinic and renowned spas. </p>
 
                 </div>
                 <div class="class-three reveal">
-                    <img src="../images/Personalised_Experiences.jpg" alt="">
+                    <img src="<?php echo URLROOT ?>/public/images/Personalised_Experiences.jpg" alt="">
                     <div class="title">Personalised Experiences & Events                     </div>
                     <p>We can map-out the perfect day for your group based on your interests. Be it for business or pleasure. After all, no-one knows these locations like we do.</p>
 
@@ -143,8 +143,8 @@
     <div class="product awards"> 
         <div class="container">
         <div class="product-category reveal">Awards <br><span>RoadStar Collection</span></div>
-        <button class="pre-btn "><img src="../images/arrow.png" alt=""></button>
-        <button class="nxt-btn "><img src="../images/arrow.png" alt=""></button>
+        <button class="pre-btn "><img src="<?php echo URLROOT ?>/public/images/arrow.png" alt=""></button>
+        <button class="nxt-btn "><img src="<?php echo URLROOT ?>/public/images/arrow.png" alt=""></button>
         <div class="product-container reveal">
 
 
@@ -210,13 +210,13 @@
     <div class="product press reveal"> 
         <div class="container">
         <div class="product-category">In The <span>Press</span></div>
-        <button class="pre-btn"><img src="../images/arrow.png" alt=""></button>
-        <button class="nxt-btn"><img src="../images/arrow.png" alt=""></button>
+        <button class="pre-btn"><img src="<?php echo URLROOT ?>/public/images/arrow.png" alt=""></button>
+        <button class="nxt-btn"><img src="<?php echo URLROOT ?>/public/images/arrow.png" alt=""></button>
         <div class="product-container press">
 
             <div class="product-card">
                 <div>
-                    <img src="../images/press1.jpg" alt="">
+                    <img src="<?php echo URLROOT ?>/public/images/press1.jpg" alt="">
                     <p>RoadStar Hotel</p>
                 </div>
                 <p>"The Ultima Group is at the forefront of several major trends that are currently reshaping the sector in the high-end alternative accommodation market"</p>
@@ -224,7 +224,7 @@
 
             <div class="product-card">
                 <div>
-                    <img src="../images/press2.jpg" alt="">
+                    <img src="<?php echo URLROOT ?>/public/images/press2.jpg" alt="">
                     <p>RoadStar Hotel</p>
                 </div>
                 <p>"The Epitome of Luxury Travel"</p>
@@ -232,7 +232,7 @@
 
             <div class="product-card">
                 <div>
-                    <img src="../images/press3.jpg" alt="">
+                    <img src="<?php echo URLROOT ?>/public/images/press3.jpg" alt="">
                     <p>RoadStar Hotel</p>
                 </div>
                 <p>"Ultima Collection is reshaping luxury travel with exclusive-use chalets, villas and properties that have been designed to bridge the gap between luxury hotels and real estate through their combination of service, privacy and comfort"</p>
@@ -244,14 +244,14 @@
     <!--------------------------------------------------In The Press---------------------------------------------->
     <!-------------------------------------------------Start Footer--------------------------------------------->
     <?php
-        include "../Source/footer.php"
+        include '../app/views/includes/footer.php';
     ?>
     <!------------------------------------------------------End Footer-------------------------------------------------->
     <?php
-        include "go-to-top.php"
+        include '../app/views/includes/go-to-top.php';
     ?>
 
-    <script src="../js/main-script.js"></script>
-    <script src="../js/Reveal-On-Scroll.js"></script>
+    <script src="<?php echo URLROOT ?>/public/js/main-script.js"></script>
+    <script src="<?php echo URLROOT ?>/public/js/Reveal-On-Scroll.js"></script>
 </body>
 </html>

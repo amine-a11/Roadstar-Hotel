@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="../Style/main-style.css">
-    <link rel="stylesheet" href="../Style/book-style.css">
-    <link rel="stylesheet" href="../Style/all.min.css">
-    <link rel="stylesheet" href="../Style/normalize.css">
-    <script src="../js/book-script.js" defer></script>
+    <link rel="shortcut icon" href="<?php echo URLROOT ?>/public/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/main-style.css">
+    <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/book-style.css">
+    <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/all.min.css">
+    <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/normalize.css">
+    <script src="<?php echo URLROOT ?>/public/js/book-script.js" defer></script>
     <title>Book Your Room</title>
 </head>
 
@@ -20,7 +20,7 @@
                 <a href="#"><i class="fa-solid fa-phone"></i></a>
             </div>
         </nav>
-        <div class="logo"><a href="main.php"><img src="../images/logo.png" alt="logo"></a></div>
+        <div class="logo"><a href="main.php"><img src="<?php echo URLROOT ?>/public/images/logo.png" alt="logo"></a></div>
     </header>
     <!-- from contains :
         -check-in check-out date ✅
@@ -386,7 +386,7 @@
                     <span id="secure">SECURE CHECKOUT  <i class="fa-solid fa-lock"></i></span>
                 </div>
                 <div class="cards">
-                    <img src="../images/cards_logo.jpg" alt="cards" width="250px">
+                    <img src="<?php echo URLROOT ?>/public/images/cards_logo.jpg" alt="cards" width="250px">
                 </div>
                 <div class="container7">
                     <div class="one-data">
@@ -448,12 +448,12 @@
 
 <!-------------------------------------------------Start Footer--------------------------------------------->
 <?php
-    include "../Source/footer.php"
+    include "../app/views/includes/footer.php"
 ?>
 <!------------------------------------------------------End Footer-------------------------------------------------->
 
 <?php
-    include "go-to-top.php"
+    include "../app/views/includes/go-to-top.php"
 ?>
 </body>
 
