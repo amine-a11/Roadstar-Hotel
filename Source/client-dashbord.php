@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="../Style/client-dashbord-style.css">
     <!-- script -->
     <script src="../js/Reveal-On-Scroll.js" defer></script>
-    <!---->
 </head>
 <body>
     <!------------------------------------------------Start Header---------------------------------------------------------------------->
