@@ -47,5 +47,4 @@ window.onscroll = () => {
         homeTitle.classList.remove("hide");
         homeTitle.classList.add("show");
     }
-
 }
