@@ -14,10 +14,39 @@
     <!-- script -->
     <script src="<?php echo URLROOT ?>/public/js/Reveal-On-Scroll.js" defer></script>
     <!---->
-    <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/client-dashbord-claim-style.css.css">
+    <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/client-dashbord-claim-style.css">
 <body>
-    <php?
-    include "client_dashbord.php";
-    ?>
+<body>
+
+<?php
+    include "../Source/client-dashbord.php";
+?>
+
+<div class="claiming-space">
+    <div class="heading">
+        <div class="left-part">
+            <i class="fa-solid fa-bell-exclamation"></i>
+        </div>
+        <div class="right-part">
+            <div class="title">complaint space</div>
+            <div class="description">Express yourself</div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="profil">
+            <button class="picture" >
+                <i class="fa-solid fa-user"></i>
+            </button>
+            <div class="information">
+                Mehrez Bey
+            </div>
+        </div>
+        <form action="" method="post">
+            <textarea name="" id="" cols="30" rows="10" placeholder="Express yourself!" autofocus  style="resize: none;"></textarea>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+</div>
 </body>
 </html>
