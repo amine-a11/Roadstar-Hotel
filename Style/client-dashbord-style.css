@@ -192,7 +192,7 @@ aside .button-aside i{
     color: var(--prim-background-color);
 }
 
-aside .button-aside button.button-aside-content , aside .button-aside button.child-button-aside-content{
+aside .button-aside a.button-aside-content , aside .button-aside a.child-button-aside-content{
     border: 0px;
     color: var(--prim-background-color);
     font-size: 25px;
@@ -203,6 +203,7 @@ aside .button-aside button.button-aside-content , aside .button-aside button.chi
     -o-transition: var(--main-duration);
     background-color: transparent;
     cursor: pointer;
+    text-decoration: none;
 }
 aside .button-aside button.child-button-aside-content{
     transition: 0.5s;
@@ -211,7 +212,7 @@ aside .button-aside button.child-button-aside-content{
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
 }
-aside button.button-aside-content:hover,aside .button-aside button.child-button-aside-content:hover{
+aside a.button-aside-content:hover,aside .button-aside button.child-button-aside-content:hover{
     transform: translate(15px);
     -webkit-transform: translate(15px);
     -moz-transform: translate(15px);

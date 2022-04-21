@@ -48,22 +48,22 @@
             <span></span>
         </div>
         <aside>
-                <div class="button-aside"><button class="button-aside-content">Book now</button></div>
-                <div class="button-aside"><button class="button-aside-content">Cancel reservation</button></div>
-                <div class="button-aside"><button class="button-aside-content">Claim</button></div>
-                <div class="button-aside drop">
-                    <button class="button-aside-content">History</button>
-                    <button class="drop-down"><i class="fa-solid fa-plus"></i></button>    
-                </div>
+                <div class="button-aside"><a href="claim.php"  class="button-aside-content">Book now</a></div>
+                    <div class="button-aside"><a href="claim.php"  class="button-aside-content">Cancel reservation</a></div>
+                    <div class="button-aside"><a href="claim.php"  class="button-aside-content">Claim</a></div>
+                    <div class="button-aside drop">
+                        <a href="claim.php"  class="button-aside-content">History</a>
+                        <button class="drop-down"><i class="fa-solid fa-plus"></i></button>    
+                    </div>
+                    
                 <div class="button-aside-hide ">
                     <div class="button-aside">
-                        <button class="child-button-aside-content">Booking History</button>
+                        <a href="claim.php"  class="button-aside-content">Booking history</a>
                     </div>
                     <div class="button-aside">
-                        <button class="child-button-aside-content">claims history</button>
+                        <a href="claim.php"  class="button-aside-content">Claims history</a>
                     </div>
                 </div>
-
             </aside>
         <!------------------------------------------------end side bar---------------------------------------------------------------------->
 
