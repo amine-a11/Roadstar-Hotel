@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="../style/sign-up-style.css">
+    <link rel="shortcut icon" href="<?php echo URLROOT ?>/public/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/sign-up-style.css">
     <title>Sign Up</title>
 </head>
 <body>
@@ -13,12 +13,12 @@
         <div class="welcom">
             A few clicks away from Roadstar-hotel
         </div>
-        <img src="../images/undraw_travel_booking.svg" alt="">
+        <img src="<?php echo URLROOT ?>/public/images/undraw_travel_booking.svg" alt="">
     </div>
     <div class="right-container">
         <div class="title">Register</div>
         <div class="text">Let's get you all set up so you can verify your personal account and begin setting up your profile.</div>
-        <form action="">
+        <form action="<?php echo URLROOT ?>/users/sign_up" method="POST">
             <div class="user-details">
                 <div class="input-box">
                     <label for="firstName">First Name</label>
@@ -70,7 +70,7 @@
                 <input type="submit" value="Create Account">
             </div>
             <div class="have-account">
-                Already have an account?<a href="sign-in.php">Log in</a>
+                Already have an account?<a href="<?php echo URLROOT ?>/users/sign_in">Log in</a>
             </div>
         </form>
     </div>

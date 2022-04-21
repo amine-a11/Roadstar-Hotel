@@ -4,26 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo URLROOT ?>/public/images/logo.png" type="image/x-icon">
     <title>About Us | RoadStar Hotel</title>
     <!--Web Icons -->
-    <link rel="stylesheet" href="../Style/all.min.css">
+    <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/all.min.css">
     <!--Main CSS File-->
-    <link rel="stylesheet" href="../Style/main-style.css">
+    <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/main-style.css">
     <!--Normalize the elements-->
-    <link rel="stylesheet" href="../Style/normalize.css">
+    <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/normalize.css">
     <!--About-us Style File-->
-    <link rel="stylesheet" href="../Style/about-us-style.css">
+    <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/about-us-style.css">
     <!-- script -->
-    <script src="../js/about-us-script.js" defer></script>
-    <script src="../js/Reveal-On-Scroll.js" defer></script>
+    <script src="<?php echo URLROOT ?>/public/js/about-us-script.js" defer></script>
+    <script src="<?php echo URLROOT ?>/public/js/Reveal-On-Scroll.js" defer></script>
 </head>
 <body>
     <!---------------------------------------------------------Start Header---------------------------------------->
+
     <header>
-        <img src="../images/about-us.jpg" alt="" class="background-video">
+        <img src="<?php echo URLROOT ?>/public/images/about-us.jpg" alt="" class="background-video">
         <?php
-        include "../Source/nav.php"
+        include "../app/views/includes/nav.php"
         ?>
         <div class="home-title">About Us<div>Multi-Award-Winning Luxury Hospitality Brand </div></div>
     </header>
@@ -48,7 +49,7 @@
 <div class="description-grid">
     <div class="container">
         <div class="mission reveal">
-            <img src="../images/mission.jpeg" alt="mission">
+            <img src="<?php echo URLROOT ?>/public/images/mission.jpeg" alt="mission">
             <div class="description">
                 <div class="title">Mission</div>
                 <p>We are on a mission to continuously elevate the traditional hospitality sector and set the trend in tailored, luxury living. It’s the service of a 5-star superior hotel, served to you in utter privacy.           
@@ -63,12 +64,12 @@
   Plus, our commitment to sustainability starts at the beginning. We use local resources to thoughtfully create each of our properties, such as woods in high supply from nearby forests, produce from locally owned businesses and solar panels for renewable energy.
                 </p>
             </div>
-            <img src="../images/vision.jpg" alt="vision">
+            <img src="<?php echo URLROOT ?>/public/images/vision.jpg" alt="vision">
 
         </div>
 
         <div class="values reveal">
-            <img src="../images/values.png" alt="values">
+            <img src="<?php echo URLROOT ?>/public/images/values.png" alt="values">
             <div class="description">
                 <div class="title"> Values </div>
                 <p>Authenticity, sustainability, and a personalised service lie at the core of our identity.
@@ -92,68 +93,68 @@
         <div class="hotels">
             <div class="hotel reveal">
                 <div class="hotel-pic">
-                    <img src="../images/hotel1.jpg" alt="">
+                    <img src="<?php echo URLROOT ?>/public/images/hotel1.jpg" alt="">
                 </div>
                 <div class="hotel-prop">
                     <div>
                         Switzerland
                     </div>
                     <div>
-                        <img src="../images/icons/Chalet.svg" alt="">
-                        <img src="../images/icons/Bedrooms_16.svg" alt="">
-                        <img src="../images/icons/Spa_1000.svg" alt="">
-                        <img src="../images/icons/Ski.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/Chalet.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/Bedrooms_16.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/Spa_1000.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/Ski.svg" alt="">
                     </div>
                 </div>
                 <div class="hotel-name">Ultima Crans-Montana</div>
             </div>
             <div class="hotel reveal">
                 <div class="hotel-pic">
-                    <img src="../images/hotel2.png" alt="">
+                    <img src="<?php echo URLROOT ?>/public/images/hotel2.png" alt="">
                 </div>
                 <div class="hotel-prop">
                     <div>
                         Greece
                     </div>
                     <div>
-                        <img src="../images/icons/home-icon.svg" alt="">
-                        <img src="../images/icons/Bedrooms_6.svg" alt="">
-                        <img src="../images/icons/Spa_60.svg" alt="">
-                        <img src="../images/icons/water.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/home-icon.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/Bedrooms_6.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/Spa_60.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/water.svg" alt="">
                     </div>
                 </div>
                 <div class="hotel-name">Ultima Corfu</div>
             </div>
             <div class="hotel reveal">
                 <div class="hotel-pic">
-                    <img src="../images/hotel3.jpg" alt="">
+                    <img src="<?php echo URLROOT ?>/public/images/hotel3.jpg" alt="">
                 </div>
                 <div class="hotel-prop">
                     <div>
                         France
                     </div>
                     <div>
-                        <img src="../images/icons/Chalet.svg" alt="">
-                        <img src="../images/icons/Bedrooms_8.svg" alt="">
-                        <img src="../images/icons/Space_156.svg" alt="">
-                        <img src="../images/icons/Helipad.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/Chalet.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/Bedrooms_8.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/Space_156.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/Helipad.svg" alt="">
                     </div>
                 </div>
                 <div class="hotel-name">Ultima Megeve</div>
             </div>
             <div class="hotel reveal">
                 <div class="hotel-pic">
-                    <img src="../images/hotel4.jpg" alt="">
+                    <img src="<?php echo URLROOT ?>/public/images/hotel4.jpg" alt="">
                 </div>
                 <div class="hotel-prop">
                     <div>
                         Switzerland
                     </div>
                     <div>
-                        <img src="../images/icons/home-icon.svg" alt="">
-                        <img src="../images/icons/bed-icon-1-4.svg" alt="">
-                        <img src="../images/icons/Spa_1000.svg" alt="">
-                        <img src="../images/icons/people-icon.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/home-icon.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/bed-icon-1-4.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/Spa_1000.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/people-icon.svg" alt="">
                     </div>
                 </div>
                 <div class="hotel-name">Ultima Gstaad</div>
@@ -165,15 +166,15 @@
 <!-------------------------------------------------End Home-------------------------------------------------->
 <!-------------------------------------------------Start Footer--------------------------------------------->
 <?php
-    include "../Source/footer.php"
+    include "../app/views/includes/footer.php"
 ?>
 <!------------------------------------------------------End Footer-------------------------------------------------->
 
 <?php
-    include "go-to-top.php"
+    include "../app/views/includes/go-to-top.php"
 ?>
 
 </body>
-<script src="../js/main-script.js"></script>
+<script src="<?php echo URLROOT ?>/public/js/main-script.js"></script>
 
 </html>

@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo URLROOT ?>/public/images/logo.png" type="image/x-icon">
     <!--Web Icons -->
-    <link rel="stylesheet" href="../Style/all.min.css">
+    <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/all.min.css">
     <!--Main CSS File-->
-    <link rel="stylesheet" href="../Style/main-style.css">
+    <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/main-style.css">
     <!--Normalize the elements-->
-    <link rel="stylesheet" href="../Style/normalize.css">   
+    <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/normalize.css">   
      <!-- services CSS file -->
-     <link rel="stylesheet" href="../Style/services-style.css">
-     <script src="../js/services-script.js" defer></script>
-     <script src="../js/Reveal-On-Scroll.js" defer></script>
+     <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/services-style.css">
+     <script src="<?php echo URLROOT ?>/public/js/services-script.js" defer></script>
+     <script src="<?php echo URLROOT ?>/public/js/Reveal-On-Scroll.js" defer></script>
     <title>RoadStar Signature Services</title>
 </head>
 <body>
     <!---------------------------------------------------------Start Header---------------------------------------->
     <header>
         <?php
-            include "../Source/nav.php"
+            include "../app/views/includes/nav.php"
         ?>
         <div class="background-image">
                 <h1>RoadStar Signature Services</h1>
@@ -46,13 +46,13 @@
     <div class="slider">
         <div class="slides" id="slides">
             <span class="slider-img active-img">
-                <img src="../images/slide_img1.jpg" alt=""> 
+                <img src="<?php echo URLROOT ?>/public/images/slide_img1.jpg" alt=""> 
             </span>
             <span class="slider-img">
-                <img src="../images/slide_img2.jpg" alt=""> 
+                <img src="<?php echo URLROOT ?>/public/images/slide_img2.jpg" alt=""> 
             </span>
             <span class="slider-img">
-                <img src="../images/slide_img3.jpg" alt=""> 
+                <img src="<?php echo URLROOT ?>/public/images/slide_img3.jpg" alt=""> 
             </span>
         </div>
         <div class="move">
@@ -82,7 +82,7 @@
                 <span>Private Fitness Coach & Physiotherapist</span><br><br>
             </div>
             <div class="class-2">
-                <img src="../images/signature_services_img.jpeg" alt="">
+                <img src="<?php echo URLROOT ?>/public/images/signature_services_img.jpeg" alt="">
             </div>
         </div>
 
@@ -99,68 +99,68 @@
         <div class="hotels">
             <div class="hotel reveal">
                 <div class="hotel-pic">
-                    <img src="../images/hotel1.jpg" alt="">
+                    <img src="<?php echo URLROOT ?>/public/images/hotel1.jpg" alt="">
                 </div>
                 <div class="hotel-prop">
                     <div>
                         Switzerland
                     </div>
                     <div>
-                        <img src="../images/icons/Chalet.svg" alt="">
-                        <img src="../images/icons/Bedrooms_16.svg" alt="">
-                        <img src="../images/icons/Spa_1000.svg" alt="">
-                        <img src="../images/icons/Ski.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/Chalet.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/Bedrooms_16.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/Spa_1000.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/Ski.svg" alt="">
                     </div>
                 </div>
                 <div class="hotel-name">RoadStar Crans-Montana</div>
             </div>
             <div class="hotel reveal">
                 <div class="hotel-pic">
-                    <img src="../images/hotel2.png" alt="">
+                    <img src="<?php echo URLROOT ?>/public/images/hotel2.png" alt="">
                 </div>
                 <div class="hotel-prop"> 
                     <div>
                         Greece
                     </div>
                     <div>
-                        <img src="../images/icons/home-icon.svg" alt="">
-                        <img src="../images/icons/Bedrooms_6.svg" alt="">
-                        <img src="../images/icons/Spa_60.svg" alt="">
-                        <img src="../images/icons/water.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/home-icon.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/Bedrooms_6.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/Spa_60.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/water.svg" alt="">
                     </div>
                 </div>
                 <div class="hotel-name">RoadStar Corfu</div>
             </div>
             <div class="hotel reveal">
                 <div class="hotel-pic">
-                    <img src="../images/hotel3.jpg" alt="">
+                    <img src="<?php echo URLROOT ?>/public/images/hotel3.jpg" alt="">
                 </div>
                 <div class="hotel-prop">
                     <div>
                         France
                     </div>
                     <div>
-                        <img src="../images/icons/Chalet.svg" alt="">
-                        <img src="../images/icons/Bedrooms_8.svg" alt="">
-                        <img src="../images/icons/Space_156.svg" alt="">
-                        <img src="../images/icons/Helipad.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/Chalet.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/Bedrooms_8.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/Space_156.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/Helipad.svg" alt="">
                     </div>
                 </div>
                 <div class="hotel-name">RoadStar Megeve</div>
             </div>
             <div class="hotel reveal">
                 <div class="hotel-pic">
-                    <img src="../images/hotel4.jpg" alt="">
+                    <img src="<?php echo URLROOT ?>/public/images/hotel4.jpg" alt="">
                 </div>
                 <div class="hotel-prop">
                     <div>
                         Switzerland
                     </div>
                     <div>
-                        <img src="../images/icons/home-icon.svg" alt="">
-                        <img src="../images/icons/bed-icon-1-4.svg" alt="">
-                        <img src="../images/icons/Spa_1000.svg" alt="">
-                        <img src="../images/icons/people-icon.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/home-icon.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/bed-icon-1-4.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/Spa_1000.svg" alt="">
+                        <img src="<?php echo URLROOT ?>/public/images/icons/people-icon.svg" alt="">
                     </div>
                 </div>
                 <div class="hotel-name">RoadStar Gstaad</div>
@@ -170,11 +170,11 @@
 </div>
 <!-------------------------------------------------Start Footer--------------------------------------------->
 <?php
-    include "../Source/footer.php"
+    include "../app/views/includes/footer.php"
 ?>
 <!------------------------------------------------------End Footer-------------------------------------------------->
 <?php
-    include "go-to-top.php"
+    include "../app/views/includes/go-to-top.php"
 ?>
 
 </body>

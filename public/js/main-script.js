@@ -37,8 +37,9 @@ productContainers.forEach((item, i) => {
     })
 })
 // Remove the home-title on scroll
-console.log("hii");
 const homeTitle = document.querySelector(".home-title");
+//back to top
+let backToTop = document.querySelector(".back-to-top");
 window.onscroll = () => {
     if (this.scrollY >= 100) {
         homeTitle.classList.remove("show");
@@ -47,4 +48,9 @@ window.onscroll = () => {
         homeTitle.classList.remove("hide");
         homeTitle.classList.add("show");
     }
+    this.scrollY >= 1000 ? backToTop.classList.add("show-back-to-top") : backToTop.classList.remove("show-back-to-top");
+}
+
+backToTop.onclick = () => {
+    window.scrollTo(0, 0);
 }
