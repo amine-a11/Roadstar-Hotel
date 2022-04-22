@@ -25,7 +25,7 @@
             $this->db->bind(':phone_number',$data['PhoneNumber']);
             $this->db->bind(':age',20);
             $this->db->bind(':password',$data['Password']);
-            $this->db->bind(':sexe','unknown');
+            $this->db->bind(':sexe','u');
             $this->db->bind(':role','client');
 
             if($this->db->execute()){

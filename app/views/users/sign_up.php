@@ -43,7 +43,7 @@
                 </div>
                 <div class="input-box">
                     <label for="PhoneNumber">PhoneNumber</label>
-                    <input type="tel" name="PhoneNumber" id="PhoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" Required>
+                    <input type="tel" name="PhoneNumber" id="PhoneNumber"  Required>
                 </div>
                 <div class="input-box">
                     <label for="Email">Email</label>

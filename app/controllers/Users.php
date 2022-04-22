@@ -61,9 +61,9 @@ class Users extends Controller{
                 'pwdError'=>''    
             ];    
             //check if email exists.
-            if($this->userModel->findUserByEmail($data['Email'])){
-                $data['emailError']='email mawjoud';
-            }
+            // if($this->userModel->findUserByEmail($data['Email'])){
+            //     $data['emailError']='email mawjoud';
+            // }
             //validate password
             if($data['Password']!=$data['Cpassword']){
                 $data['pwdError']='passwords do not match';
