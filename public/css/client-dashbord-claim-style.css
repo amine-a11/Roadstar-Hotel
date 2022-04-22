@@ -53,9 +53,120 @@ body {
 }
 /* --------------------------------------------------End Global Rules & Variables---------------------------------------------*/
 .claiming-space{
-    width: calc(100vw - 330px) ;
+    width: calc(100vw - calc(max(20vw,300px))) ;
     position: absolute;
     top: 10vh;
     right: 0;
-    background-color: beige;
+    background-color: var(--prim-background-color);
+    height: 90vh;
 }
+.claiming-space .heading{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+.claiming-space .heading .left-part{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.claiming-space .heading .left-part i{
+    font-size: 30px;
+    color: var(--primary-color);
+}
+.claiming-space .heading .right-part{
+    margin-left: 20px;
+}
+.claiming-space .heading .right-part .title{
+    font-size: 30px;
+    font-weight: bold;
+}
+.claiming-space .content{
+    margin: 50px;
+    background-color: white;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    padding: 20px 0px;
+}
+.claiming-space .content .profil{
+    display: flex;
+    border-bottom: 1px solid var(--sec-background-color);
+    text-align: center;
+    padding-bottom: 20px;
+
+}
+.claiming-space .profil .picture{
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+.claiming-space .profil .picture i{
+    font-size: 30px;
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    color: var(--sec-background-color);
+    padding: 10px;
+}
+.claiming-space .profil .information{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin-left:20px ;
+}
+.claiming-space .content form{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.claiming-space .content form textarea{
+    width: 100%;
+    padding: 20px;
+
+}
+.claiming-space .content form input{
+        background-color: rgb(0 128 255 / 80%);
+        border: none;
+        width: 100px;
+        padding: 5px;
+        color: white;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        cursor: pointer;    
+        margin-top: 20px;    
+    }
+    .claiming-space .content form input:hover{
+        background-color: rgb(0 128 255);
+    }
+
+    @media (max-width: 992px) {
+        .claiming-space{
+            width: calc(100vw - 200px);
+        }
+    }
+    @media (max-width: 768px){
+        .heading{
+            margin: 80px 50px;
+        }
+        .claiming-space{
+            width: 100vw;
+            z-index: -1;
+            /* margin: 50px 10px; */
+        }
+        .claiming-space .content{
+            margin: 50px 10px;
+        }
+
+
+    }

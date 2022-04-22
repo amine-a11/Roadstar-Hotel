@@ -6,4 +6,4 @@
     define('DB_NAME','hotel_db');
 
     
-    define('URLROOT','http://localhost/mvcframework');
+    define('URLROOT','http://localhost/Roadstar-Hotel');

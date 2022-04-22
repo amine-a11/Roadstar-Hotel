@@ -1,6 +1,6 @@
 <!---------------------------------------------------------Start nav---------------------------------------->
 <div class="fixed-nav change-status">
-                <a href="<?php echo URLROOT ?>/index/main" class="logo">
+                <a href="<?php echo URLROOT ?>/public/main" class="logo">
                     <img src="<?php echo URLROOT ?>/public/images/logo.png" alt="Logo">
                     <div>RoadStar <br> Hotel</div>
                 </a>

@@ -13,18 +13,14 @@
     <!--client-dashbord Style File-->
     <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/client-dashbord-style.css">
     <!-- script -->
-<<<<<<< HEAD:Source/client-dashbord.php
-    <script src="../js/Reveal-On-Scroll.js" defer></script>
-=======
     <script src="<?php echo URLROOT ?>/public/js/Reveal-On-Scroll.js" defer></script>
     <!---->
->>>>>>> eafac8ac3c14ec2358c9b2323504722f4eaa18fd:app/views/client_account/client_dashbord.php
 </head>
 <body>
     <!------------------------------------------------Start Header---------------------------------------------------------------------->
     <header>
         <div class="left-column">
-            <a href="main.php" class="logo">RoadStar Hotel</a>
+            <a href="<?php echo URLROOT ?>/pages/main" class="logo">RoadStar Hotel</a>
         </div>
         <div class="right-column">
             <div class="profil-content">
@@ -52,11 +48,11 @@
             <span></span>
         </div>
         <aside>
-                <div class="button-aside"><a href="claim.php"  class="button-aside-content">Book now</a></div>
-                    <div class="button-aside"><a href="claim.php"  class="button-aside-content">Cancel reservation</a></div>
-                    <div class="button-aside"><a href="claim.php"  class="button-aside-content">Claim</a></div>
+                <div class="button-aside"><a href=""  class="button-aside-content">Book now</a></div>
+                    <div class="button-aside"><a href=""  class="button-aside-content">Cancel reservation</a></div>
+                    <div class="button-aside"><a href="<?php echo URLROOT ?>/client_account/claim" class="button-aside-content">Claim</a></div>
                     <div class="button-aside drop">
-                        <a href="claim.php"  class="button-aside-content">History</a>
+                        <a href=""  class="button-aside-content">History</a>
                         <button class="drop-down"><i class="fa-solid fa-plus"></i></button>    
                     </div>
                     
@@ -104,7 +100,7 @@
 <!-----------------------------------End Settings--------------------------------------------->
 
 
-<script src=".<?php echo URLROOT ?>/public/js/client-dashbord-script.js"></script>
+<!-- <script src="<?php echo URLROOT ?>/public/js/client-dashbord-script.js"></script> -->
 
 </body>
 </html>

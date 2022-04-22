@@ -19,17 +19,16 @@
 <body>
 
 <?php
-    include "../Source/client-dashbord.php";
+    include "client_dashbord.php";
 ?>
 
 <div class="claiming-space">
     <div class="heading">
         <div class="left-part">
-            <i class="fa-solid fa-bell-exclamation"></i>
+            <i class="fa-solid fa-file-circle-exclamation"></i>
         </div>
         <div class="right-part">
             <div class="title">complaint space</div>
-            <div class="description">Express yourself</div>
         </div>
     </div>
 
@@ -43,10 +42,13 @@
             </div>
         </div>
         <form action="" method="post">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Express yourself!" autofocus  style="resize: none;"></textarea>
+            <textarea name="claim"  rows="10" placeholder="Express yourself !" autofocus  style="resize: none;"></textarea>
             <input type="submit" value="Send">
         </form>
     </div>
 </div>
+
+<script src="<?php echo URLROOT ?>/public/js/client-dashbord-script.js"></script>
+
 </body>
 </html>

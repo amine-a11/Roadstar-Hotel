@@ -235,6 +235,7 @@ button.settings{
     right: 20px;
     border: 0;
     background-color: transparent;
+    z-index: 99999;
 }
 .settings i{
     display: block;
@@ -279,7 +280,7 @@ button.settings{
     aside .button-aside i{
         font-size: 15px;
     }
-    aside .button-aside button.button-aside-content , aside .button-aside button.child-button-aside-content{
+    aside .button-aside a.button-aside-content , aside .button-aside a.child-button-aside-content{
         font-size: 17px;
     }
 
@@ -342,6 +343,7 @@ button.settings{
     -moz-transition: 1s;
     -ms-transition: 1s;
     -o-transition: 1s;
+    z-index: 99;
 }
 .profil-settings .heading{
     /* background-color: var(--sec-background-color); */
