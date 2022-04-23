@@ -17,16 +17,19 @@ class Users extends Controller{
             if($loggedInUser){
                 $this->createUserSession($loggedInUser);
                 if($loggedInUser->role=='client'){
-                    header('location:' . URLROOT .'/client_account/client_dashbord');
+                    // header('location:' . URLROOT .'/client_account/client_dashbord');
+                    $this->view("client_account/client_dashbord");
                 }else{
                     header('location:' . URLROOT .'/admin_account/admin_dashbord');
                 }
             }else{
                 $data['loginError']='(email|phoneNumber) incorrect. please try again.';
+                $this->view('users/sign_in',$data);
             }
             
+        }else{
+            $this->view('users/sign_in',$data);
         }
-        $this->view('users/sign_in',$data);
     }
 
     public function sign_up(){
@@ -40,6 +43,9 @@ class Users extends Controller{
             'Password'=>'',
             'Cpassword'=>'',
             'Address'=>'',
+            'Age'=>'',
+            'ZipCode'=>'',
+            'Gender'=>'',
             'Role'=>'',
             'emailError'=>'',
             'pwdError'=>''
@@ -56,14 +62,17 @@ class Users extends Controller{
                 'Password'=>trim($_POST['Password']),
                 'Cpassword'=>trim($_POST['Cpassword']),
                 'Address'=>trim($_POST['Address']),
+                'Age'=>trim($_POST['Age']),
+                'ZipCode'=>trim($_POST['ZipCode']),
+                'Gender'=>trim($_POST['Gender']),
                 'Role'=>'client',
                 'emailError'=>'',
                 'pwdError'=>''    
             ];    
             //check if email exists.
-            // if($this->userModel->findUserByEmail($data['Email'])){
-            //     $data['emailError']='email mawjoud';
-            // }
+            if($this->userModel->findUserByEmail($data['Email'])){
+                $data['emailError']='email mawjoud';
+            }
             //validate password
             if($data['Password']!=$data['Cpassword']){
                 $data['pwdError']='passwords do not match';
@@ -85,5 +94,27 @@ class Users extends Controller{
         $_SESSION['user_id']=$user->user_id;
         $_SESSION['user_fname']=$user->user_fname;
         $_SESSION['user_lname']=$user->user_lname;
+        $_SESSION['country']=$user->country;
+        $_SESSION['city']=$user->city;
+        $_SESSION['email']=$user->email;
+        $_SESSION['address']=$user->address;
+        $_SESSION['zipcode']=$user->zipcode;
+        $_SESSION['phone_number']=$user->phone_number;
+        $_SESSION['age']=$user->age;
+        $_SESSION['gender']=$user->sexe;
+    }
+    public function logout(){
+        unset($_SESSION['user_id']);
+        unset($_SESSION['user_fname']);
+        unset($_SESSION['user_lname']);
+        unset($_SESSION['country']);
+        unset($_SESSION['city']);
+        unset($_SESSION['email']);
+        unset($_SESSION['address']);
+        unset($_SESSION['zipcode']);
+        unset($_SESSION['phone_number']);
+        unset($_SESSION['age']);
+        unset($_SESSION['gender']);
+        header(URLROOT);
     }
 }

@@ -21,11 +21,11 @@
             $this->db->bind(':city',$data['City']);
             $this->db->bind(':email',$data['Email']);
             $this->db->bind(':address',$data['Address']);
-            $this->db->bind(':zipcode',1234);
+            $this->db->bind(':zipcode',$data['ZipCode']);
             $this->db->bind(':phone_number',$data['PhoneNumber']);
-            $this->db->bind(':age',20);
+            $this->db->bind(':age',$data['Age']);
             $this->db->bind(':password',$data['Password']);
-            $this->db->bind(':sexe','u');
+            $this->db->bind(':sexe',$data['Gender']);
             $this->db->bind(':role','client');
 
             if($this->db->execute()){
