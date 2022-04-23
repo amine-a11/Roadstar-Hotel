@@ -100,7 +100,7 @@
 <!-----------------------------------End Settings--------------------------------------------->
 
 
-<!-- <script src="<?php echo URLROOT ?>/public/js/client-dashbord-script.js"></script> -->
+<script src="<?php echo URLROOT ?>/public/js/client-dashbord-script.js"></script>
 
 </body>
 </html>

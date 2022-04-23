@@ -179,7 +179,7 @@ aside{
 }
 aside .button-aside{
     display: flex;
-    padding: 30px;
+    padding:20px 30px;
     border-bottom: 1px solid var(--prim-background-color);
     width: 100%;
     align-items: center;
@@ -273,9 +273,6 @@ button.settings{
     }
     aside{
         width: 200px;
-    }
-    aside .button-aside{
-        padding: 30px 20px;
     }
     aside .button-aside i{
         font-size: 15px;
