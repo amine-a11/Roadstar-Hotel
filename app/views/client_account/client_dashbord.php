@@ -33,11 +33,11 @@
 
                 </div>
                 <div class="information">
-                    <div class="name">Mehrez Bey</div>
-                    <div class="country">Tunisia</div>
+                    <div class="name"><?php echo $_SESSION["user_fname"]." ".$_SESSION["user_lname"] ;?></div>
+                    <div class="country"><?php echo $_SESSION['country'] ?></div>
                 </div>
             </div>
-            <button class="log-out"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+            <button  class="log-out"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
         </div>
     </header>
         <!------------------------------------------------Start Header---------------------------------------------------------------------->
@@ -61,7 +61,7 @@
                         <a href="claim.php"  class="button-aside-content">Booking history</a>
                     </div>
                     <div class="button-aside">
-                        <a href="claim.php"  class="button-aside-content">Claims history</a>
+                        <a href="<?php echo URLROOT ?>/client_account/history_claims"  class="button-aside-content">Claims history</a>
                     </div>
                 </div>
             </aside>
@@ -76,15 +76,19 @@
             <i class="fa-solid fa-user"></i>
         </button>
         <div class="information">
-            <div class="name">Mehrez Bey</div>
+            <div class="name"><?php echo $_SESSION["user_fname"]." ".$_SESSION["user_lname"] ;?></div>
         </div>
     </div>
+    <?php $tab = array($_SESSION["user_fname"]);?>
     <form action="" method="post" class="form-content">
-        <input type="text" name="first-name" class="first-name" value="Mehrez" readonly>
-        <input type="text" name="last-name" class="last-name" value="Bey" readonly>
-        <input type="tel" name="phone-number" class="phone-number" value="99999999" readonly>
-        <input type="email" name="email" class="email" value="mehrezbey@gmail.com" readonly>
-        <input type="password" name="password" class="password" value="motdepasse" readonly>
+        <!-- <input type="text" name="first-name" class="first-name" value="<?php echo $_SESSION["user_fname"];?>" readonly>
+        <input type="text" name="last-name" class="last-name" value="<?php echo $_SESSION["user_lname"];?>" readonly> -->
+        <input type="tel" name="phone-number" class="phone-number" value="<?php echo $_SESSION["phone_number"];?>" >
+        <input type="email" name="email" class="email" value="<?php echo $_SESSION["email"];?>" >
+        <input type="password" name="oldpassword" class="password" value=""  placeholder="Old password">
+        <input type="password" name="newpassword" class="password" value=""  placeholder="New password">
+        <input type="password" name="cnewpassword" class="password" value=""  placeholder="Confirm new password">
+
         <div class="buttons">
             <button class="update">Update</button>
             <button type="submit" class="save">Save</button>

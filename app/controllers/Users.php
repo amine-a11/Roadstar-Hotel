@@ -102,6 +102,7 @@ class Users extends Controller{
         $_SESSION['phone_number']=$user->phone_number;
         $_SESSION['age']=$user->age;
         $_SESSION['gender']=$user->sexe;
+        $_SESSION['password']=$user->password;
     }
     public function logout(){
         unset($_SESSION['user_id']);
@@ -115,6 +116,7 @@ class Users extends Controller{
         unset($_SESSION['phone_number']);
         unset($_SESSION['age']);
         unset($_SESSION['gender']);
+        unset($_SESSION['password']);
         header(URLROOT);
     }
 }
