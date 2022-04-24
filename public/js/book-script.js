@@ -4,11 +4,11 @@ TO DO:
 - refactor the fillBookingSummary function and fillBookingInfo function
 */
 let today = new Date();
-// let tomorrow = new Date(today);
-// tomorrow.setDate(tomorrow.getDate() + 1);
-// document.getElementById("check-in-calender").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+let tomorrow = new Date(today);
+tomorrow.setDate(tomorrow.getDate() + 1);
+document.getElementById("check-in-calender").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
 document.getElementById("check-in-calender").setAttribute("min", today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2));
-// document.getElementById("check-out-calender").value = tomorrow.getFullYear() + '-' + ('0' + (tomorrow.getMonth() + 1)).slice(-2) + '-' + ('0' + tomorrow.getDate()).slice(-2);
+document.getElementById("check-out-calender").value = tomorrow.getFullYear() + '-' + ('0' + (tomorrow.getMonth() + 1)).slice(-2) + '-' + ('0' + tomorrow.getDate()).slice(-2);
 /* handlecid(handle check-in-date) : add a max date to the check out calender 
    handlecod(handle check-out-date): add a min date to the check in calender
 */
@@ -269,3 +269,20 @@ const info = document.getElementsByClassName("bookingInfo")[0];
 togglebutton.addEventListener('click', () => {
     info.classList.toggle("active");
 })
+
+
+
+// rooms
+
+function getAvailableRooms() {
+    // console.log(document.getElementById("check-in-calender").value);
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+            document.querySelector('.rooms').innerHTML = this.responseText;
+        }
+    };
+    xmlhttp.open("GET", "http://localhost/Roadstar-Hotel/pages/getRooms?test=hellommmm", true);
+    xmlhttp.send();
+}

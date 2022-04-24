@@ -380,7 +380,7 @@ input::-webkit-inner-spin-button {
         z-index: 1;
     }
 }
-
+/* 2nd form step */
 
 /* prev button to go back to the 1st step */
 .prev-button {
@@ -460,7 +460,29 @@ h2 {
     transform: translateY(0);
     pointer-events: auto;
 }
-
+/* hotel images */
+.roomsFromDatabase{
+    width:100%;
+}
+.roomFromDatabase{
+    width:50%;
+    border:2px solid rgba(0, 0, 0, 0.1);
+    transform: translateX(50%);
+    margin:20px;
+}
+.hotel-images > img{
+    width:100%;
+    height:20rem;
+}
+.view,.size,.occupancy,.cost_per_night{
+    margin:10px 30px;
+    
+}
+.roomFromDatabase-info{
+    width:100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
 /* 3rd step in the form  */
 
 .page-title {

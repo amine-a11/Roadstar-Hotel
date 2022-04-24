@@ -116,7 +116,7 @@
 
             </div>
             <hr>
-            <button type="button" class="next-button">FIND A ROOM</button>
+            <button type="button" class="next-button" onclick="getAvailableRooms()">FIND A ROOM</button>
         </div>
 
 
@@ -168,11 +168,8 @@
             </div>
             <hr>
             <div class="rooms">
-                <div class="norooms">
-                    THERE IS NO AVAILABILITY, PLEASE SELECT MODIFY TO CHANGE YOUR DATES.
-                </div>
-                <button type="button" class="next-button" onclick="fillBookingSummary()">this button is just to pass to the next step for now</button>
-                
+            </div>
+            <input type="hidden">      
             </div>
         </div>
 
