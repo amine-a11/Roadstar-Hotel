@@ -64,6 +64,7 @@
                         <a href="<?php echo URLROOT ?>/client_account/history_claims"  class="button-aside-content">Claims history</a>
                     </div>
                 </div>
+                <div class="button-aside"><a href="<?php echo URLROOT ?>/client_account/client_dashbord"  class="button-aside-content">Back to menu</a></div>
             </aside>
         <!------------------------------------------------end side bar---------------------------------------------------------------------->
 
@@ -80,7 +81,7 @@
         </div>
     </div>
     <?php $tab = array($_SESSION["user_fname"]);?>
-    <form action="" method="post" class="form-content">
+    <form action="" method="POST" class="form-content">
         <!-- <input type="text" name="first-name" class="first-name" value="<?php echo $_SESSION["user_fname"];?>" readonly>
         <input type="text" name="last-name" class="last-name" value="<?php echo $_SESSION["user_lname"];?>" readonly> -->
         <input type="tel" name="phone-number" class="phone-number" value="<?php echo $_SESSION["phone_number"];?>" >
@@ -91,7 +92,7 @@
 
         <div class="buttons">
             <button class="update">Update</button>
-            <button type="submit" class="save">Save</button>
+            <button type="submit" class="save" onclick=updatepswd()>Save</button>
         </div>
 
     </form>

@@ -19,6 +19,7 @@
     <style>
         .content{
             overflow: auto;
+            max-height:500px;
 
         }
         .container-item{
@@ -31,6 +32,7 @@
             font-size:18px;
             display:flex;
             justify-content:flex-end;
+            text-decoration:underline;
         }
         .container-item .content-claim{
             margin-top:10px;

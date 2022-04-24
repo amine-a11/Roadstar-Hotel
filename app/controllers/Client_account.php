@@ -11,8 +11,47 @@ class Client_account extends Controller{
         if(session_status() == PHP_SESSION_NONE){
             session_start();
         }
+        $data = [
+            'user_id' =>'',
+            'oldpassword' =>'',
+            'newpassword' =>'',
+            'cnewpassword' =>'',
+            'error' =>''
+        ];
+
+        
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            $data = [
+                'user_id' => $_SESSION['user_id'],
+                'oldpassword' => trim($_POST['oldpassword']),
+                'newpassword' => trim($_POST['newpassword']),
+                'cnewpassword' =>trim($_POST['cnewpassword'])
+            ];
+
+            if(empty($data['oldpassword']) or empty($data['newpassword']) or empty($data['cnewpassword'])){
+                $data['error']="Complete all the fields !";
+            }
+            if( strcmp($data['newpassword'],$data['cnewpassword']) != 0){
+                $data['error']="not the same password !";
+            }
+
+            var_dump($data);
+            if(empty($data['error'])){
+
+                if($this->userModel->updatePassword($data)){
+                    header('location:' . URLROOT .'/client_account/client_dashbord');
+                }
+                else{
+                    die("something went wrong, please try again");
+                }
+            }
+        }
+        
         $this->view('client_account/client_dashbord');
     }
+
+
     #history-claim....
     public function history_claims(){
         if(session_status() == PHP_SESSION_NONE){
@@ -29,9 +68,9 @@ class Client_account extends Controller{
         if(session_status() == PHP_SESSION_NONE){
             session_start();
         }
-        if(session_status() == PHP_SESSION_NONE){
-            session_start();
-        }
+        // if(session_status() == PHP_SESSION_NONE){
+        //     session_start();
+        // }
         $data = [
             'content' =>'',
             'user_id' =>'',

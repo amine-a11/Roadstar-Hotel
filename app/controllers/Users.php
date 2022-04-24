@@ -17,8 +17,8 @@ class Users extends Controller{
             if($loggedInUser){
                 $this->createUserSession($loggedInUser);
                 if($loggedInUser->role=='client'){
-                    // header('location:' . URLROOT .'/client_account/client_dashbord');
-                    $this->view("client_account/client_dashbord");
+                    header('location:' . URLROOT .'/client_account/client_dashbord');
+                    // $this->view("client_account/client_dashbord");
                 }else{
                     header('location:' . URLROOT .'/admin_account/admin_dashbord');
                 }

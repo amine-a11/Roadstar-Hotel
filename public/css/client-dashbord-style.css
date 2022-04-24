@@ -227,6 +227,22 @@ aside .button-aside button.drop-down{
 }
 aside .button-aside button.drop-down:hover i{
     color: var(--secondary-color);
+
+}
+aside .button-aside button.drop-down i{
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+aside .button-aside button.drop-down i:hover {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    
 }
 button.settings{
     cursor: pointer;
