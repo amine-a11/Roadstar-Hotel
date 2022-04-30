@@ -36,7 +36,7 @@ class Client_account extends Controller{
                 $data['error']="not the same password !";
             }
 
-            var_dump($data);
+            // var_dump($data);
             if(empty($data['error'])){
 
                 if($this->userModel->updatePassword($data)){
@@ -48,7 +48,7 @@ class Client_account extends Controller{
             }
         }
         
-        $this->view('client_account/client_dashbord');
+        $this->view('client_account/client_dashbord',$data);
     }
 
 

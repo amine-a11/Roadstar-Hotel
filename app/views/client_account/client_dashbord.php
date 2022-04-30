@@ -58,7 +58,7 @@
                     
                 <div class="button-aside-hide ">
                     <div class="button-aside">
-                        <a href="claim.php"  class="button-aside-content">Booking history</a>
+                        <a href="<?php echo URLROOT ?>/client_account/history_booking"  class="button-aside-content">Booking history</a>
                     </div>
                     <div class="button-aside">
                         <a href="<?php echo URLROOT ?>/client_account/history_claims"  class="button-aside-content">Claims history</a>
@@ -80,11 +80,16 @@
             <div class="name"><?php echo $_SESSION["user_fname"]." ".$_SESSION["user_lname"] ;?></div>
         </div>
     </div>
+    <?php if (!empty($data['error'])){?>
+
+        <div class="error"><?php echo "aa";?></div>
+        <?php } ?>
+
     <?php $tab = array($_SESSION["user_fname"]);?>
     <form action="" method="POST" class="form-content">
         <!-- <input type="text" name="first-name" class="first-name" value="<?php echo $_SESSION["user_fname"];?>" readonly>
         <input type="text" name="last-name" class="last-name" value="<?php echo $_SESSION["user_lname"];?>" readonly> -->
-        <input type="tel" name="phone-number" class="phone-number" value="<?php echo $_SESSION["phone_number"];?>" >
+        <!-- <input type="tel" name="phone-number" class="phone-number" value="<?php echo $_SESSION["phone_number"];?>" > -->
         <input type="email" name="email" class="email" value="<?php echo $_SESSION["email"];?>" >
         <input type="password" name="oldpassword" class="password" value=""  placeholder="Old password">
         <input type="password" name="newpassword" class="password" value=""  placeholder="New password">
@@ -92,17 +97,21 @@
 
         <div class="buttons">
             <button class="update">Update</button>
-            <button type="submit" class="save" onclick=updatepswd()>Save</button>
+            <a href="<?php echo URLROOT ?>/client_account/client_dashbord" class="save">Save</a>
+            <!-- <button type="submit" class="save">Save</button> -->
         </div>
 
     </form>
-
-
 </div>
 <button class="settings">
     <i class="fa-solid fa-gear"></i>
 </button>
 <!-----------------------------------End Settings--------------------------------------------->
+
+<!-- Welcoming Part -->
+<!-- <div class="welcoming-part">
+    Welcome Back <?php echo $_SESSION['user_fname'] .' '.$_SESSION['user_lname']?>
+</div> -->
 
 
 <script src="<?php echo URLROOT ?>/public/js/client-dashbord-script.js"></script>

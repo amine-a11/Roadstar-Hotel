@@ -126,11 +126,21 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
 }
 .claiming-space .content form textarea{
-    width: 100%;
+    width: 90%;
     padding: 20px;
-
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.claiming-space .content form textarea:focus{
+    border:2px solid var(--secondary-color);
+    outline: none;
 }
 .claiming-space .content form input{
         background-color: rgb(0 128 255 / 80%);
@@ -167,6 +177,7 @@ body {
         .claiming-space .content{
             margin: 50px 10px;
         }
-
-
+        .claiming-space .content form textarea{
+            width: 100%;
+        }
     }

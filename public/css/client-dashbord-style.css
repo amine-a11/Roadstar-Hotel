@@ -357,6 +357,7 @@ button.settings{
     -ms-transition: 1s;
     -o-transition: 1s;
     z-index: 99;
+    overflow: auto;
 }
 .profil-settings .heading{
     /* background-color: var(--sec-background-color); */
@@ -425,7 +426,7 @@ button.settings{
     justify-content: center;
     width: 100%;
 }
-.profil-settings .form-content button{
+.profil-settings .form-content button ,.profil-settings .form-content a{
     padding: 15px;
     margin: 10px;
     width: 100px;
@@ -440,8 +441,11 @@ button.settings{
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
     text-align: center;
+    /* display: block; */
+    text-decoration: none;
+    color: black;
 }
-.profil-settings .form-content button:hover{
+.profil-settings .form-content button:hover , .profil-settings .form-content a:hover{
     background-color: var(--prim-background-color);
 }
 @media (max-width: 600px) {
@@ -452,3 +456,21 @@ button.settings{
 
     }
 }
+.profil-settings .error{
+    text-align: center;
+    color: var(--prim-background-color);
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+/* ---------------------------------Welcoming part */
+/* .welcoming-part{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: calc(100vw - max(20vw , 300px));
+    top: 10vh;
+    right: 0;
+    height: 90vh;
+} */
+/*------------------------------------------------*/

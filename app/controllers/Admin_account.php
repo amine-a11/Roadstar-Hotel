@@ -7,5 +7,5 @@ class Admin_account extends Controller{
     public function client_dashbord(){
         $this->view('admin_account/admin_dashbord');
     }
-    
+        
 }
