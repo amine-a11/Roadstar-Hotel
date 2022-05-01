@@ -1,0 +1,174 @@
+/* --------------------------------------------------Start Global Rules & Variables---------------------------------------------*/
+:root {
+    --primary-color: #4a4a49;
+    --secondary-color: #b89535;
+    --prim-background-color: #f0ebe5;
+    --sec-background-color: #212121;
+    --third-background-color: rgb(253, 244, 230);
+    --margin-between-sections: 50px;
+    --main-padding: 30px;
+    --main-duration: 0.5s;
+    --main-letter-spacing-for-paragraphs: 1.3px;
+    --intern-margin: 30px;
+    --arrow-margin: 20px;
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    scroll-behavior: smooth;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* --------------------------------------------------End Global Rules & Variables---------------------------------------------*/
+/*--------------------------------------------clients------------------------------------*/
+.clients{
+    position: absolute;
+    width: min(calc(100vw - 300px), 80vw);
+    left: max(20vw , 300px);
+    top: 10vh;
+    height: 90vh;
+    background-color: var(--prim-background-color);
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(400px,1fr));
+    gap: 20px 20px;
+    overflow: auto;
+}
+.clients .client{
+    background-color: var(--sec-background-color);
+    height: fit-content;
+
+}
+.clients .client .heading{
+    background-color: var(--secondary-color);
+    height: 100px;
+    width: 100%;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.clients .client .picture{
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clients .client .picture i{
+    font-size: 40px;
+    border: 1px solid var(--prim-background-color);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    color: var(--prim-background-color);
+    padding: 12px;
+}
+.clients .client .information{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.clients .client .information div,.clients .client .information a.mail{
+    text-align: center;
+    color: var(--prim-background-color);
+    text-decoration: none;
+    margin-top: 20px;
+    font-size: 22px;
+}
+.clients .client .information div.name{
+    font-weight: bold;
+    text-decoration: underline;
+}
+.clients .client .information a.mail{
+    margin-bottom: 20px;
+    cursor: pointer;
+    color:var(--secondary-color);
+    font-weight: bold;
+}
+.clients .client .buttons{
+    display: flex;
+    margin: 30px 0px;
+    justify-content: space-evenly;
+}
+.clients .client .buttons a , .clients .client .buttons input {
+    text-decoration: none;
+    font-size: 22px;
+    color: var(--prim-background-color);
+    background-color:#4a4a49b7;
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    width: 100px;
+    text-align: center;
+    transition: var(--main-duration);
+    -webkit-transition: var(--main-duration);
+    -moz-transition: var(--main-duration);
+    -ms-transition: var(--main-duration);
+    -o-transition: var(--main-duration);
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+.clients .client .buttons a:hover , .clients .client .buttons input:hover{
+    background-color:#4a4a49;
+}
+@media (max-width: 992px) {
+    .clients{
+        width: calc(100vw - 200px);
+        left: 200px;
+        grid-template-columns: 80%;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        width: 750px;
+    }
+    .clients{
+        left: 0;
+        width: 100vw;
+        z-index: -1;
+    }
+}

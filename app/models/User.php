@@ -60,5 +60,31 @@
                 return false;
             }
         }
+        
+        public function findAllClients(){
+            $this->db->query("select * from user where role = 'client'");
+            $results = $this->db->resultSet();
+            return $results;
+        }
+        public function findClientById($id) {
+            $this->db->query('SELECT * FROM user WHERE user_id = :id');
+    
+            $this->db->bind(':id', $id);
+    
+            $row = $this->db->single();
+    
+            return $row;
+        }
+        public function deleteClient($id) {
+            $this->db->query('DELETE FROM user WHERE user_id = :id');
+    
+            $this->db->bind(':id', $id);
+    
+            if ($this->db->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
 
     }

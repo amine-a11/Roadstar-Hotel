@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/normalize.css">
     <!--client-dashbord Style File-->
     <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/client-dashbord-style.css">
+    <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/client-dashbord-include-style.css">
     <!-- script -->
     <script src="<?php echo URLROOT ?>/public/js/Reveal-On-Scroll.js" defer></script>
     <!---->
@@ -106,13 +107,9 @@
 <button class="settings">
     <i class="fa-solid fa-gear"></i>
 </button>
+<!-- ----------------------------The include---------------------- -->
+<?php include "client_dashbord_include.php"?>
 <!-----------------------------------End Settings--------------------------------------------->
-
-<!-- Welcoming Part -->
-<!-- <div class="welcoming-part">
-    Welcome Back <?php echo $_SESSION['user_fname'] .' '.$_SESSION['user_lname']?>
-</div> -->
-
 
 <script src="<?php echo URLROOT ?>/public/js/client-dashbord-script.js"></script>
 
