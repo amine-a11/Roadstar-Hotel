@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html> 
 <html lang="en">
 <head>
@@ -27,12 +28,11 @@
         -number of adults and children in each room ✅
         -next page button ✅ 
     -->
-    <form action="#">
+    <form action="<?php echo URLROOT ?>/pages/bookroom" method="POST">
         <div class="progressbar">
             <div class="progress-step progress-step-active" data-title="intro"></div>
             <div class="progress-step" data-title="select Room"></div>
             <div class="progress-step" data-title="your deatails"></div>
-            <div class="progress-step" data-title="confirmation"></div>
         </div>
 <!-------------------------------form step-1  ------------------------------------------------------------------>
         <div class="form-step form-step-active">
@@ -53,7 +53,7 @@
                         CHECK-IN <span>DATE</span>
                     </div>
                     <div class="cid">
-                        <input type="date" id="check-in-calender" onchange="handlecod()" required>
+                        <input type="date" name="check-in-calender" id="check-in-calender" onchange="handlecod()" required>
                     </div>
                 </div>
 
@@ -63,7 +63,7 @@
                         CHECK-OUT <span>DATE</span>
                     </div>
                     <div class="cod">
-                        <input type="date" id="check-out-calender" onchange="handlecid()" required>
+                        <input type="date" name="check-out-calender" id="check-out-calender" onchange="handlecid()" required>
                     </div>
                 </div>
 
@@ -76,11 +76,11 @@
 
             <!-- container2 for the number of adults and children in each room-->
             <div class="container2">
-                <button type="button" class="show" id="add-new-room" onclick="addRoom()">+ ADD ANOTHER ROOM</button>
-                <button type="button" class="hide" id="remove-room" onclick="removeRoom()">- REMOVE ROOM</button>
+                <!-- <button type="button" class="show" id="add-new-room" onclick="addRoom()">+ ADD ANOTHER ROOM</button>
+                <button type="button" class="hide" id="remove-room" onclick="removeRoom()">- REMOVE ROOM</button> -->
                 <!-- class room represents one room -->
                 <div class="room" id="room1">
-                    <span id="room-nb">ROOM 1</span>
+                    <span id="room-nb">ROOM</span>
 
                     <!-- adults -->
                     <div class="adult">
@@ -91,7 +91,7 @@
                         <div class="nb-of-adu">
                             <button class="decrease" id="room1-decrease" type='button'
                                 onclick="stepper(this)">-</button>
-                            <input type="number" id="room1-nb-of-adu-value" value="1" min="1" max="8" readonly>
+                            <input type="number" id="room1-nb-of-adu-value" value="1" min="1" max="4" readonly>
                             <button class="increase" id="room1-increase" type='button'
                                 onclick="stepper(this)">+</button>
                         </div>
@@ -115,6 +115,10 @@
                 </div>
 
             </div>
+            <input type="hidden" name="nb_of_adult" id="nb_of_adult" value="1">
+            <input type="hidden" name="nb_of_children" id="nb_of_children" value="1">
+            <input type="hidden" name="nb_of_rooms" id="nb_of_rooms" value="1">
+
             <hr>
             <button type="button" class="next-button" onclick="getAvailableRooms()">FIND A ROOM</button>
         </div>
@@ -169,7 +173,7 @@
             <hr>
             <div class="rooms">
             </div>
-            <input type="hidden">      
+            <input type="hidden" id="room_number_hidden" name="room_number" value="-1">    
             </div>
         </div>
 
@@ -182,11 +186,10 @@
             <div class="container5">
                 <div class="info-row">
                     <span>BOOKING SUMMARY</span>
-
                 </div>
                 <div class="info-row">
                     <span>DATE</span>
-                    <span class="date-span">test</span>
+                    <span class="date-span"></span>
                 </div>
                 <div class="info-row">
                     <span>NUMBER OF NIGHTS</span>
@@ -200,13 +203,13 @@
                     <span>ROOMS</span>
                     <span class="room-info-span">-</span>
                 </div>
-                <div class="info-row">
+                <!-- <div class="info-row">
                     <span>PACKAGE</span>
                     <span>-</span>
-                </div>
+                </div> -->
                 <div class="info-row">
                     <span>TOTAL PRICE INCL. TAX</span>
-                    <span>free for now</span>
+                    <span class="total_price">free for now</span>
                 </div>
             </div>
             <hr>
@@ -239,27 +242,47 @@
                         </div>
                         <div class="one-data">
                             <label for="firstName">FIRST NAME*</label>
-                            <input name="firstName" id="firstName" type="text" required>
-                        
+                            <?php if(isset($_SESSION['user_id'])): ?>
+                                <input name="firstName" id="firstName" type="text" value="<?php echo $_SESSION['user_fname']; ?>" required>
+                            <?php else : ?>
+                                <input name="firstName" id="firstName" type="text"  required>
+                            <?php endif; ?>
+
                         </div>
                         <div class="one-data">
                             <label for="city">CITY*</label>
-                            <input name="city" id="city" type="text" required>
+                            <?php if(isset($_SESSION['user_id'])): ?>
+                                <input name="city" id="city" type="text" value="<?php echo $_SESSION['city'];  ?>" required>
+                            <?php else : ?>
+                                <input name="city" id="city" type="text" required>
+                            <?php endif; ?>
                         
                         </div>
                         <div class="one-data">
                             <label for="lastName">LAST NAME*</label>
-                            <input name="lastName" id="lastName" type="text" required>
+                            <?php if(isset($_SESSION['user_id'])): ?>
+                                <input name="lastName" id="lastName" type="text" value="<?php echo $_SESSION['user_lname']; ?>" required>
+                            <?php else : ?>
+                                <input name="lastName" id="lastName" type="text" required>
+                            <?php endif; ?>
                         
                         </div>
                         <div class="one-data">
                             <label for="address1">ADDRESS1*</label>
-                            <input name="address1" id="address1" type="text" required>
+                            <?php if(isset($_SESSION['user_id'])): ?>
+                                <input name="address1" id="address1" type="text" value="<?php echo $_SESSION['address'] ?>" required>
+                            <?php else : ?>
+                                <input name="address1" id="address1" type="text" required>
+                            <?php endif; ?>
                         
                         </div>
                         <div class="one-data">
                             <label for="email">EMAIL*</label>
-                            <input name="email" id="email" type="email" required>
+                            <?php if(isset($_SESSION['user_id'])): ?>
+                                <input name="email" id="email" type="email" value="<?php echo $_SESSION['email'] ?>" required>
+                            <?php else : ?>
+                                <input name="email" id="email" type="email" required>
+                            <?php endif; ?>
                         
                         </div>
                         <div class="one-data">
@@ -269,19 +292,41 @@
                         </div>
                         <div class="one-data">
                             <label for="confirmEmail">CONFIRM EMAIL*</label>
-                            <input name="confirmEmail" id="confirmEmail" type="text" required>
+                            <?php if(isset($_SESSION['user_id'])): ?>
+                                <input name="confirmEmail" id="confirmEmail" value="<?php echo $_SESSION['email'] ?>" type="text" required>
+                            <?php else : ?>
+                                <input name="confirmEmail" id="confirmEmail" type="text" required>
+                            <?php endif; ?>
                         
                         </div>
                         <div class="one-data">
                             <label for="zipCode">ZIP CODE OR POST CODE</label>
-                            <input name="zipCode" id="zipCode" type="text">
+                            <?php if(isset($_SESSION['user_id'])): ?>
+                                <input name="zipCode" id="zipCode" value=<?php echo $_SESSION['zipcode'];  ?> type="text">
+                            <?php else : ?>
+                                <input name="zipCode" id="zipCode"  type="text">
+                            <?php endif; ?>
                         
                         </div>
                         <div class="one-data">
                             <label for="phone">TELEPHONE NUMBER*</label>
-                            <input name="phone" id="phone" type="text" required>
+                            <?php if(isset($_SESSION['user_id'])): ?>
+                                <input name="phone" id="phone" type="text" value=<?php echo $_SESSION['phone_number']; ?> required>
+                            <?php else : ?>
+                                <input name="phone" id="phone" type="text"  required>
+                            <?php endif; ?>
                         
                         </div>
+                        <div class="one-data">
+                            <label for="age">Age*</label>
+                            <?php if(isset($_SESSION['user_id'])): ?>
+                                <input name="age" id="age" type="number" value=<?php echo $_SESSION['age']; ?> required>
+                            <?php else : ?>
+                                <input name="age" id="age" type="number" required>
+                            <?php endif; ?>
+                        
+                        </div>
+
                     </div>
                 </div>
 
@@ -365,14 +410,15 @@
                     <span>ROOMS</span>
                     <span class="room-info-span"></span>
                 </div>
-                <div class="info-row">
+                <!-- <div class="info-row">
                     <span>PACKAGE</span>
                     <span></span>
-                </div>
+                </div> -->
                 <div class="info-row">
                     <span>TOTAL PRICE INCL. TAX</span>
-                    <span>free for now</span>
+                    <span class="total_price">free for now</span>
                 </div>
+                <input type="hidden" name="price" id="price">
             </div>
 
             <hr>
@@ -436,10 +482,7 @@
                 </div>
             </div>
             <hr>
-            <button type="button" class="next-button">CONFIRM BOOKING</button>
-        </div>
-        <div class="form-step">
-            <h1 style="margin:500px;">something</h1>
+            <button type="submit" class="next-button">CONFIRM BOOKING</button>
         </div>
     </form>
 

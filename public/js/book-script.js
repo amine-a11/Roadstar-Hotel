@@ -55,60 +55,60 @@ function stepper(btn) {
 //this funtion add a new room
 let nb_of_rooms = 1;
 
-function addRoom() {
-    let room = document.getElementById("room1");
-    let newRoom = room.cloneNode(true);
-    nb_of_rooms++;
-    let newId = "room" + nb_of_rooms.toString();
-    newRoom.id = newId;
+// function addRoom() {
+//     let room = document.getElementById("room1");
+//     let newRoom = room.cloneNode(true);
+//     nb_of_rooms++;
+//     let newId = "room" + nb_of_rooms.toString();
+//     newRoom.id = newId;
 
-    let decrease_buttons = [...newRoom.querySelectorAll(".decrease")];
-    decrease_buttons.forEach(ele => {
-        ele.id = "room" + nb_of_rooms.toString() + "-decrease";
-    });
-    let increase_buttons = [...newRoom.querySelectorAll(".increase")];
-    increase_buttons.forEach(ele => {
-        ele.id = "room" + nb_of_rooms.toString() + "-increase";
-    });
-    let input_adu = newRoom.querySelector("#room1-nb-of-adu-value");
-    input_adu.id = "room" + nb_of_rooms.toString() + "-nb-of-adu-value";
-    input_adu.value = "1";
-    let input_chi = newRoom.querySelector("#room1-nb-of-chi-value");
-    input_chi.id = "room" + nb_of_rooms.toString() + "-nb-of-chi-value";
-    input_chi.value = "0";
-    newRoom.querySelector("#room-nb").textContent = "ROOM" + nb_of_rooms.toString();
-    document.querySelector(".container2").appendChild(newRoom);
-    if (nb_of_rooms === 4) {
-        let butn = document.getElementById("add-new-room");
-        butn.classList.remove("show");
-        butn.classList.add("hide");
-    }
-    if (nb_of_rooms >= 1) {
-        let butn = document.getElementById("remove-room");
-        butn.classList.remove("hide");
-        butn.classList.add("show");
-    }
+//     let decrease_buttons = [...newRoom.querySelectorAll(".decrease")];
+//     decrease_buttons.forEach(ele => {
+//         ele.id = "room" + nb_of_rooms.toString() + "-decrease";
+//     });
+//     let increase_buttons = [...newRoom.querySelectorAll(".increase")];
+//     increase_buttons.forEach(ele => {
+//         ele.id = "room" + nb_of_rooms.toString() + "-increase";
+//     });
+//     let input_adu = newRoom.querySelector("#room1-nb-of-adu-value");
+//     input_adu.id = "room" + nb_of_rooms.toString() + "-nb-of-adu-value";
+//     input_adu.value = "1";
+//     let input_chi = newRoom.querySelector("#room1-nb-of-chi-value");
+//     input_chi.id = "room" + nb_of_rooms.toString() + "-nb-of-chi-value";
+//     input_chi.value = "0";
+//     newRoom.querySelector("#room-nb").textContent = "ROOM" + nb_of_rooms.toString();
+//     document.querySelector(".container2").appendChild(newRoom);
+//     if (nb_of_rooms === 4) {
+//         let butn = document.getElementById("add-new-room");
+//         butn.classList.remove("show");
+//         butn.classList.add("hide");
+//     }
+//     if (nb_of_rooms >= 1) {
+//         let butn = document.getElementById("remove-room");
+//         butn.classList.remove("hide");
+//         butn.classList.add("show");
+//     }
 
-}
+// }
 
 
 //this function remove the last room
-function removeRoom() {
+// function removeRoom() {
 
-    let elem = document.getElementById("room" + nb_of_rooms.toString());
-    elem.remove();
-    nb_of_rooms--;
-    if (nb_of_rooms === 1) {
-        let butn = document.getElementById("remove-room");
-        butn.classList.remove("show");
-        butn.classList.add("hide");
-    }
-    if (nb_of_rooms < 4) {
-        let butn = document.getElementById("add-new-room");
-        butn.classList.remove("hide");
-        butn.classList.add("show");
-    }
-}
+//     let elem = document.getElementById("room" + nb_of_rooms.toString());
+//     elem.remove();
+//     nb_of_rooms--;
+//     if (nb_of_rooms === 1) {
+//         let butn = document.getElementById("remove-room");
+//         butn.classList.remove("show");
+//         butn.classList.add("hide");
+//     }
+//     if (nb_of_rooms < 4) {
+//         let butn = document.getElementById("add-new-room");
+//         butn.classList.remove("hide");
+//         butn.classList.add("show");
+//     }
+// }
 
 
 
@@ -123,14 +123,27 @@ let formStepNum = 0;
 
 function stepValid() {
     const inputsValid = [...formSteps[formStepNum].querySelectorAll("input")].every(input => input.reportValidity());
-    return inputsValid;
+    if (formStepNum === 2) {
+        e1 = document.getElementById('email').value;
+        e2 = document.getElementById('confirmEmail').value;
+        if (e1 !== e2) {
+            alert("email and confirm email are not the same");
+            return false;
+        } else {
+            return inputsValid;
+        }
+    } else {
+        return inputsValid;
+    }
 }
 //move between the diffrente form steps 
 
 nextBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
         if (stepValid()) {
+
             formStepNum++;
+            console.log(formStepNum);
             if (formStepNum === 1) {
                 fillBookingInfo();
             }
@@ -217,7 +230,7 @@ document.addEventListener('click', e => {
 
 //this function fills the booking summarry
 
-function fillBookingSummary() {
+function fillBookingSummary(price, type) {
     const cid = document.getElementById("check-in-calender").value;
     const cod = document.getElementById("check-out-calender").value;
     let num_of_adu = 0;
@@ -228,6 +241,10 @@ function fillBookingSummary() {
     for (let i = 1; i <= nb_of_rooms; i++) {
         num_of_child += parseInt(document.getElementById("room" + i.toString() + "-nb-of-chi-value").value);
     }
+    document.getElementById("nb_of_children").value = num_of_child;
+    document.getElementById("nb_of_adult").value = num_of_adu;
+    document.getElementById("nb_of_rooms").value = nb_of_rooms;
+
 
     let cod1;
     let cid1;
@@ -237,22 +254,31 @@ function fillBookingSummary() {
         const diffdays = Math.ceil(cod1 - cid1) / (1000 * 60 * 60 * 24);
         document.querySelectorAll(".nb-of-nights-span").forEach(ele => {
             ele.innerHTML = diffdays;
-        })
+        });
     }
     document.querySelectorAll(".date-span").forEach(ele => {
         ele.innerHTML = cid + " - " + cod;
-    })
+    });
     document.querySelectorAll(".guests-span").forEach(ele => {
         ele.innerHTML = num_of_adu.toString() + " ADULTS" + (num_of_child === 0 ? " " : " & " + num_of_child.toString() + " CHILDREN");
-    })
+    });
     document.querySelectorAll(".room-info-span").forEach(ele => {
         ele.innerHTML = nb_of_rooms.toString();
-    })
+    });
+    if (price) {
+        document.querySelectorAll(".total_price").forEach(ele => {
+            ele.innerHTML = price * nb_of_rooms.toString();
+        });
+        document.getElementById("price").value = price;
+    }
+    if (type) {
+        document.querySelectorAll(".room-info-span").forEach(ele => {
+            ele.innerHTML = nb_of_rooms.toString() + "&times;" + type;
+        });
+    }
+
 
 }
-
-
-
 //this part is for the accordion 
 document.querySelectorAll(".accordion-header").forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -279,10 +305,25 @@ function getAvailableRooms() {
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText);
+            // console.log(this.responseText);
             document.querySelector('.rooms').innerHTML = this.responseText;
         }
     };
     xmlhttp.open("GET", "http://localhost/Roadstar-Hotel/pages/getRooms?test=hellommmm", true);
     xmlhttp.send();
+}
+
+
+function get_booking_room_number(btn, price, type) {
+    inpu = document.getElementById("room_number_hidden");
+    inpu.value = btn.id;
+    console.log(type);
+    fillBookingSummary(price, type);
+    formStepNum++;
+    updateFormStep();
+    if (formStepNum !== 3) {
+        updateProgressSteps();
+    }
+    window.scrollTo(0, 0);
+
 }

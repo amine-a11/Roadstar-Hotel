@@ -71,7 +71,7 @@ h1 {
     top: 50%;
     transform: translate(0%);
     height: 2px;
-    width: 75%;
+    width: 70%;
     background-color: gray;
 }
 
@@ -195,16 +195,18 @@ cod=check-out-date
     /* border: 2px solid red; */
     width: 80%;
     margin-top: 3em;
-    display: block;
+    /* display: flex;
+    justify-content: center; 
+    align-items: center; */
     margin-left: auto;
     margin-right: auto;
     /* min-width: 420px; */
 }
-
 .room {
-    display: inline-block;
-    /* margin: 15px; */
-    width:45%;
+    /* display: inline-block; */
+    margin: 15px;
+    margin-left:30%;
+    /* width:100%; */
 }
 @media (max-width:750px) {
     .room{
@@ -218,6 +220,7 @@ cod=check-out-date
     justify-content: space-around;
     width:20rem;
     padding: 0.8125rem 0;
+    /* border: 2px solid red; */
 }
 
 .increase,
@@ -275,7 +278,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* new room button */
-#add-new-room,
+/* #add-new-room,
 #remove-room {
     margin-left: 0;
     margin-right: auto;
@@ -290,7 +293,7 @@ input::-webkit-inner-spin-button {
 #add-new-room,
 #remove-room:hover {
     cursor: pointer;
-}
+} */
 
 /* to show and hide the add-new-room button and remove-room */
 .show {
@@ -460,7 +463,7 @@ h2 {
     transform: translateY(0);
     pointer-events: auto;
 }
-/* hotel images */
+/* Room images and buttons and .. */
 .roomsFromDatabase{
     width:100%;
 }
@@ -482,6 +485,21 @@ h2 {
     width:100%;
     display: grid;
     grid-template-columns: 50% 50%;
+}
+
+.book_room_btn{
+    background: #000;
+    color:#fff;
+    cursor:pointer;
+    outline: none;
+    border:1px solid #000;
+    font-size:1rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    padding:10px;
+    margin-top:1rem !important;
+    margin-bottom:1rem !important;
+
 }
 /* 3rd step in the form  */
 

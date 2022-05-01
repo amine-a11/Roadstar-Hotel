@@ -210,6 +210,14 @@ header .fixed-nav nav {
 header .fixed-nav nav li {
     list-style: none;
 }
+/* logout */
+.logout{
+    text-decoration: none;
+    font-size: 20px;
+    color:white;
+    padding:10px;
+}
+/* logout */
 header .fixed-nav nav a{
     text-decoration: none;
     color: var(--prim-background-color);

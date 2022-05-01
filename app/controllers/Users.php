@@ -72,6 +72,7 @@ class Users extends Controller{
             //check if email exists.
             if($this->userModel->findUserByEmail($data['Email'])){
                 $data['emailError']='email mawjoud';
+                echo '<script>alert("email mawjoud")</script>';
             }
             //validate password
             if($data['Password']!=$data['Cpassword']){
@@ -105,6 +106,7 @@ class Users extends Controller{
         $_SESSION['password']=$user->password;
     }
     public function logout(){
+        session_start();
         unset($_SESSION['user_id']);
         unset($_SESSION['user_fname']);
         unset($_SESSION['user_lname']);
@@ -117,6 +119,7 @@ class Users extends Controller{
         unset($_SESSION['age']);
         unset($_SESSION['gender']);
         unset($_SESSION['password']);
-        header(URLROOT);
+        session_destroy();
+        header('location:' . URLROOT);
     }
 }

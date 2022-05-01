@@ -38,7 +38,7 @@
                     <div class="country"><?php echo $_SESSION['country'] ?></div>
                 </div>
             </div>
-            <button  class="log-out"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+            <a href="<?php echo URLROOT ?>/users/logout" class="log-out"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </div>
     </header>
         <!------------------------------------------------Start Header---------------------------------------------------------------------->

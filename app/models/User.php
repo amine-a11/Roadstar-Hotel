@@ -6,9 +6,9 @@
         }
 
         public function findUserByEmail($email){
-            $this->db->query('select * from user where email =:email');
+            $this->db->query('select count(*) from user where email =:email');
             $this->db->bind(':email',$email);
-            return $this->db->rowCount>0;
+            return json_decode(json_encode($this->db->single()), true)['count(*)']>0;
         }
 
         public function register($data){
@@ -86,5 +86,31 @@
                 return false;
             }
         }
+        public function add_client($data){
+            $this->db->query('insert into user (user_fname,user_lname,country,city,email,address,zipcode,phone_number,age,sexe,role) values (:user_fname,:user_lname,:country,:city,:email,:address,:zipcode,:phone_number,:age,:sexe,:role)');
+            $this->db->bind(':user_fname',$data['fname']);
+            $this->db->bind(':user_lname',$data['lname']);
+            $this->db->bind(':country',$data['country']);
+            $this->db->bind(':city',$data['city']);
+            $this->db->bind(':email',$data['email']);
+            $this->db->bind(':address',$data['address']);
+            $this->db->bind(':zipcode',$data['zipcode']);
+            $this->db->bind(':phone_number',$data['phone_number']);
+            $this->db->bind(':age',$data['age']);
+            $this->db->bind(':sexe',$data['gender']);
+            $this->db->bind(':role',$data['role']);
+            if($this->db->execute()){
+                return true;
+            }else{
+                return false;
+            }
+
+        }
+        public function findUserIdByEmail($email){
+            $this->db->query('select user_id from user where email =:email');
+            $this->db->bind(':email',$email);
+            return json_decode(json_encode($this->db->single()), true)['user_id'];
+        }
+
 
     }
