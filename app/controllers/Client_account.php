@@ -57,7 +57,7 @@ class Client_account extends Controller{
         if(session_status() == PHP_SESSION_NONE){
             session_start();
         }
-        $complaints=$this->complaintModel->findAllComplaint($_SESSION["user_id"]);
+        $complaints=$this->complaintModel->findAllComplaintById($_SESSION["user_id"]);
         $data=[
             'complaint' => $complaints
         ];

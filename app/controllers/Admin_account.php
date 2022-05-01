@@ -2,6 +2,7 @@
 class Admin_account extends Controller{
     public function __construct(){
         $this->userModel=$this->model('User');
+        $this->complaintModel=$this->model('complaint');
     }
     public function main(){
         $this->view('pages/main');
@@ -45,5 +46,17 @@ class Admin_account extends Controller{
                die('Something went wrong!');
             }
         }
+    }
+    public function claims(){
+        if(session_status() == PHP_SESSION_NONE){
+            session_start();
+        }
+
+        $complaints=$this->complaintModel->findAllComplaints();
+        $data=[
+            'complaint' => $complaints
+        ];
+
+        $this->view('admin_account/claims',$data);
     }
 }

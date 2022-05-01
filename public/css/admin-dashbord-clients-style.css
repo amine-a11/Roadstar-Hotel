@@ -69,8 +69,15 @@ body {
 .clients .client{
     background-color: var(--sec-background-color);
     height: fit-content;
-
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    animation: border 1s linear 0s infinite ;
+    -webkit-animation: border 1s linear 0s infinite ;
 }
+
 .clients .client .heading{
     background-color: var(--secondary-color);
     height: 100px;

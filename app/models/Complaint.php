@@ -5,7 +5,7 @@
             $this->db=new Database();
         }
 
-        public function findAllComplaint($id){
+        public function findAllComplaintById($id){
             $this->db->query('select * from complaint where id_user =:id');
             $this->db->bind(':id',$_SESSION['user_id']);
             $results = $this->db->resultSet();
@@ -24,4 +24,9 @@
             }
         }
 
+        public function findAllComplaints(){
+            $this->db->query('select * from complaint');
+            $results = $this->db->resultSet();
+            return $results;
+        }
     }
