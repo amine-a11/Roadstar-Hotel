@@ -170,9 +170,7 @@ body {
     }
 }
 @media (max-width: 768px) {
-    .container {
-        width: 750px;
-    }
+
     .clients{
         left: 0;
         width: 100vw;

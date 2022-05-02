@@ -25,8 +25,19 @@
         }
 
         public function findAllComplaints(){
-            $this->db->query('select * from complaint');
+            $this->db->query('select * from complaint inner join user on complaint.id_user = user.user_id');
             $results = $this->db->resultSet();
             return $results;
+        }
+        public function deleteComplaint($id) {
+            $this->db->query('DELETE FROM complaint WHERE id_complaint = :id');
+    
+            $this->db->bind(':id', $id);
+    
+            if ($this->db->execute()) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }

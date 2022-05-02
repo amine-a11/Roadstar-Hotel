@@ -30,7 +30,6 @@ class Admin_account extends Controller{
         if(session_status() == PHP_SESSION_NONE){
             session_start();
         }
-        print($id);
         $client = $this->userModel->findClientById($id);
 
         $data = [
@@ -52,11 +51,31 @@ class Admin_account extends Controller{
             session_start();
         }
 
-        $complaints=$this->complaintModel->findAllComplaints();
+        $complaint=$this->complaintModel->findAllComplaints();
         $data=[
-            'complaint' => $complaints
+            'complaint' => $complaint
         ];
 
         $this->view('admin_account/claims',$data);
+    }
+    public function deleteComplaint($id){
+        if(session_status() == PHP_SESSION_NONE){
+            session_start();
+        }
+        $complaint = $this->complaintModel->findAllComplaintById($id);
+
+        $data = [
+            'complaint' => $complaint
+        ];
+
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            if($this->complaintModel->deleteComplaint($id)) {
+                header("Location: " . URLROOT . "/admin_account/claims");
+            } else {
+               die('Something went wrong!');
+            }
+        }
     }
 }

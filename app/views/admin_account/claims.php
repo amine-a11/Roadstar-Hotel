@@ -20,32 +20,33 @@
 <body>
 
 <?php
-// if(session_status() == PHP_SESSION_NONE){
-//     session_start();
-// }
     include "admin_dashbord.php";
 ?>
 <div class="complaints">
-    <?php foreach($data['complaints'] as $complaints) : ?>
-        <div class="complaint">
-            <div class="heading">
-                <div class="picture">
-                    <i class="fa-solid fa-user"></i>
+        <?php foreach($data['complaint'] as $complaint) : ?>
+            <div class="complaint">
+                <div class="user">
+                    <div class="picture">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="details">
+                            <div class="name"><?php echo $complaint->user_fname ." ".$complaint->user_lname?></div>
+                            <div class="date"><?php echo $complaint->Date?></div>
+                    </div>
+                </div>
+                <div class="content">
+                    <?php echo $complaint->content?>
+                </div>
+                <div class="buttons">
+                    <form action="<?php echo URLROOT . "/admin_account/deleteComplaint/" . $complaint->id_complaint ?>" method="POST">
+                        <input type="submit" name="delete" value='&times;' class="delete">
+                    </form>
+                    <a href="mailto:<?php echo $complaint->email?>"><i class="fa-solid fa-reply"></i></a>
                 </div>
             </div>
-            <div class="information">
-                <div class="name"><?php echo $client->user_fname ." ". $client->user_lname?></div>
-                <div class="country"><?php echo $client->country?></div>
-                <a class="mail" href="mailto:<?php echo $client->email?>"><?php echo $client->email?></a>
-            </div>
-            <div class="buttons">
-                <a href="" class="update">Update</a>
-                <form action="<?php echo URLROOT . "/admin_account/delete/" . $client->user_id ?>" method="POST">
-                    <input type="submit" name="delete" value="Delete" class="delete">
-                </form>
-            </div>
-        </div>
+            <hr>
         <?php endforeach; ?>
 </div>
+
 </body>
 </html>
