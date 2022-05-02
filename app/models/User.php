@@ -79,13 +79,17 @@
             $this->db->query('DELETE FROM user WHERE user_id = :id');
     
             $this->db->bind(':id', $id);
-    
-            if ($this->db->execute()) {
-                return true;
-            } else {
+            try{
+                if ($this->db->execute()) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }catch(Exception $e){
                 return false;
             }
         }
+        
         public function add_client($data){
             $this->db->query('insert into user (user_fname,user_lname,country,city,email,address,zipcode,phone_number,age,sexe,role) values (:user_fname,:user_lname,:country,:city,:email,:address,:zipcode,:phone_number,:age,:sexe,:role)');
             $this->db->bind(':user_fname',$data['fname']);

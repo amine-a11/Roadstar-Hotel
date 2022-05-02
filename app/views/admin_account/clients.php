@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/admin-dashbord-clients-style.css">
     <!-- script -->
     <script src="<?php echo URLROOT ?>/public/js/Reveal-On-Scroll.js" defer></script>
+    <script src="<?php echo URLROOT ?>/public/js/sweetalert2@11.js" defer></script>
+    <script src="<?php echo URLROOT ?>/public/js/admin-client.js" defer></script>
     <!---->
 <body>
 <body>
@@ -40,7 +42,7 @@
             </div>
             <div class="buttons">
                 <a href="" class="update">Update</a>
-                <form action="<?php echo URLROOT . "/admin_account/delete/" . $client->user_id ?>" method="POST">
+                <form class="myform" action="<?php echo URLROOT . "/admin_account/delete/" . $client->user_id ?>" >
                     <input type="submit" name="delete" value="Delete" class="delete">
                 </form>
             </div>

@@ -49,7 +49,7 @@
             <span></span>
         </div>
         <aside>
-                <div class="button-aside"><a href=""  class="button-aside-content">Book now</a></div>
+                <div class="button-aside"><a href="<?php echo URLROOT ?>/pages/book"  class="button-aside-content">Book now</a></div>
                     <div class="button-aside"><a href=""  class="button-aside-content">Cancel reservation</a></div>
                     <div class="button-aside"><a href="<?php echo URLROOT ?>/client_account/claim" class="button-aside-content">Claim</a></div>
                     <div class="button-aside drop">
