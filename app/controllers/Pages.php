@@ -69,6 +69,9 @@ class Pages extends Controller{
         }
     }
     public function bookroom(){
+        if(session_status() == PHP_SESSION_NONE){
+            session_start();
+        }
         $data=[];
         if($_SERVER['REQUEST_METHOD']=='POST'){
             $_POST=filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);

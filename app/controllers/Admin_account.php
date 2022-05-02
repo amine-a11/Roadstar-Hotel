@@ -30,7 +30,7 @@ class Admin_account extends Controller{
         if(session_status() == PHP_SESSION_NONE){
             session_start();
         }
-        print($id);
+        // print($id);
         $client = $this->userModel->findClientById($id);
 
         $data = [
@@ -41,12 +41,16 @@ class Admin_account extends Controller{
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
             if($this->userModel->deleteClient($id)) {
-                header("Location: " . URLROOT . "/admin_account/clients");
+                echo "true";
+                // header("Location: " . URLROOT . "/admin_account/clients");
             } else {
-               die('Something went wrong!');
+                echo "false";
+                // die('Something went wrong!');
+                // header("Location: " . URLROOT . "/admin_account/clients");
             }
         }
     }
+
     public function claims(){
         if(session_status() == PHP_SESSION_NONE){
             session_start();
