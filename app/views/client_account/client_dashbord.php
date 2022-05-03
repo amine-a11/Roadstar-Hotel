@@ -26,9 +26,10 @@
         <div class="right-column">
             <div class="profil-content">
                 <div class="profil-picture">
-                    <button class="picture" >
+                    <!-- <button class="picture" >
                         <i class="fa-solid fa-user"></i>
-                    </button>
+                    </button> -->
+                    <a href="<?php echo URLROOT ?>/client_account/client_dashbord"><img style="border-radius:50%;width:9vh;" src="<?php echo URLROOT ?>/public/images/clientsImages/<?php echo $_SESSION['user_id'] ?>.jpg" alt=""></a>
                     <!-- <button><i class="fa-solid fa-angle-down"></i></button> -->
                     <!--The profil information-->
 

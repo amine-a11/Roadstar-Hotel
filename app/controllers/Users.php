@@ -67,7 +67,8 @@ class Users extends Controller{
                 'Gender'=>trim($_POST['Gender']),
                 'Role'=>'client',
                 'emailError'=>'',
-                'pwdError'=>''    
+                'pwdError'=>'' ,
+                'fileError'=>''   
             ];    
             //check if email exists.
             if($this->userModel->findUserByEmail($data['Email'])){
@@ -78,9 +79,24 @@ class Users extends Controller{
             if($data['Password']!=$data['Cpassword']){
                 $data['pwdError']='passwords do not match';
             }
+
             if(empty($data['emailError'])&&empty($data['pwdError'])){
                 $data['Password']=password_hash($data['Password'],PASSWORD_DEFAULT);
                 if($this->userModel->register($data)){
+                    if(isset($_FILES)){
+                        print_r($_FILES);
+                        $fileName=$_FILES['imageFile']['name'];
+                        $fileTmpName=$_FILES['imageFile']['tmp_name'];
+                        $fileSize=$_FILES['imageFile']['size'];
+                        $fileError=$_FILES['imageFile']['error'];
+                        $fileType=$_FILES['imageFile']['type'];
+
+                        $Last_User_Id=$this->userModel->getLastUserId();
+                        $fileExt=strtolower(end(explode('.',$fileName)));
+                        $fileNameNew=$Last_User_Id.'.'.$fileExt;
+                        $fileDes=$_SERVER['DOCUMENT_ROOT'].'/Roadstar-Hotel/public/images/clientsImages/'.$fileNameNew;
+                        move_uploaded_file($fileTmpName,$fileDes);
+                    }
                     header('location:' . URLROOT);
                 }else{
                     die("Sonething went wrong");
@@ -104,6 +120,7 @@ class Users extends Controller{
         $_SESSION['age']=$user->age;
         $_SESSION['gender']=$user->sexe;
         $_SESSION['password']=$user->password;
+        $_SESSION['role']=$user->role;
     }
     public function logout(){
         session_start();

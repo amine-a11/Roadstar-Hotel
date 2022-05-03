@@ -1,6 +1,5 @@
-
-const Dmyforms = [...document.getElementsByClassName("Dmyform")];
-Dmyforms.forEach(form => {
+const Dforms = [...document.getElementsByClassName("Dforms")];
+Dforms.forEach((form) => {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         Swal.fire({
@@ -11,8 +10,8 @@ Dmyforms.forEach(form => {
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
+        }).then((res) => {
+            if (res.isConfirmed) {
                 fetch(form.action, {
                     method: 'POST'
                 }).then((response) => {
@@ -30,34 +29,14 @@ Dmyforms.forEach(form => {
                         Swal.fire({
                             icon: 'error',
                             title: 'Oops...',
-                            text: 'foreign key problem!',
+                            text: 'Something went wrong!',
                         }).then(() => {
                             window.location.reload();
                         })
                     }
-                }).catch((e) => {
-                    console.error(e);
-                })
+                });
+
             }
-        });
-    })
+        })
+    });
 });
-
-const Imyforms = [...document.getElementsByClassName("Imyform")];
-Imyforms.forEach(form => {
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        fetch(form.action, {
-            method: 'POST'
-        }).then((response) => {
-            return response.text();
-        }).then((text) => {
-            Swal.fire({
-                title: '<strong>user Info</strong>',
-                icon: 'info',
-                html: text
-            });
-        });
-
-    })
-})

@@ -117,4 +117,11 @@
         }
 
 
+        public function getLastUserId(){
+            $this->db->query('select LAST_INSERT_ID()');
+            return json_decode(json_encode($this->db->single()), true)['LAST_INSERT_ID()'];
+        }
+
+
+
     }
