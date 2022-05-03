@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/admin-dashbord-complaints-style.css">
     <!-- script -->
     <script src="<?php echo URLROOT ?>/public/js/Reveal-On-Scroll.js" defer></script>
+    <script src="<?php echo URLROOT ?>/public/js/sweetalert2@11.js" defer></script>
+    <script src="<?php echo URLROOT ?>/public/js/admin-claims.js" defer></script>
     <!---->
 <body>
 <body>
@@ -27,7 +29,13 @@
             <div class="complaint">
                 <div class="user">
                     <div class="picture">
-                        <i class="fa-solid fa-user"></i>
+                    <?php if(file_exists("C:/wamp64/www/Roadstar-Hotel/public/images/clientsImages/".$complaint->user_id.".jpg")): ?>
+                        <a class="picture" href="<?php echo URLROOT ?>/admin_account/clients"><img style="border-radius:50%;width:10vh;" src="<?php echo URLROOT ?>/public/images/clientsImages/<?php echo $complaint->user_id?>.jpg" alt=""></a>
+                    <?php else : ?>
+                        <div class="picture">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                    <?php endif; ?>
                     </div>
                     <div class="details">
                             <div class="name"><?php echo $complaint->user_fname ." ".$complaint->user_lname?></div>
@@ -38,7 +46,7 @@
                     <?php echo $complaint->content?>
                 </div>
                 <div class="buttons">
-                    <form action="<?php echo URLROOT . "/admin_account/deleteComplaint/" . $complaint->id_complaint ?>" method="POST">
+                    <form class="Dforms" action="<?php echo URLROOT . "/admin_account/deleteComplaint/" . $complaint->id_complaint ?>" method="POST">
                         <input type="submit" name="delete" value='&times;' class="delete">
                     </form>
                     <a href="mailto:<?php echo $complaint->email?>"><i class="fa-solid fa-reply"></i></a>

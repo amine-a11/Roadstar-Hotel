@@ -31,9 +31,13 @@
     <?php foreach($data['client'] as $client) : ?>
         <div class="client">
             <div class="heading">
-                <div class="picture">
-                    <i class="fa-solid fa-user"></i>
-                </div>
+            <?php if(file_exists("C:/wamp64/www/Roadstar-Hotel/public/images/clientsImages/".$client->user_id.".jpg")): ?>
+                <a class="picture" href="<?php echo URLROOT ?>/client_account/client_dashbord"><img style="border-radius:50%;width:15vh;" src="<?php echo URLROOT ?>/public/images/clientsImages/<?php echo $client->user_id?>.jpg" alt=""></a>
+            <?php else : ?>
+                    <div class="picture">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+            <?php endif; ?>
             </div>
             <div class="information">
                 <div class="name"><?php echo $client->user_fname ." ". $client->user_lname?></div>
@@ -41,8 +45,11 @@
                 <a class="mail" href="mailto:<?php echo $client->email?>"><?php echo $client->email?></a>
             </div>
             <div class="buttons">
-                <a href="" class="update">Update</a>
-                <form class="myform" action="<?php echo URLROOT . "/admin_account/delete/" . $client->user_id ?>" >
+                
+                <form class="Imyform" action="<?php echo URLROOT . "/admin_account/getUserInfo/" . $client->user_id ?>" >
+                    <input type="submit" name="userinfo" value="userInfo" class="userInfo">
+                </form>
+                <form class="Dmyform" action="<?php echo URLROOT . "/admin_account/delete/" . $client->user_id ?>" >
                     <input type="submit" name="delete" value="Delete" class="delete">
                 </form>
             </div>
