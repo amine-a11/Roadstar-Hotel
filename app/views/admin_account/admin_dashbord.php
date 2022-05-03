@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="<?php echo URLROOT ?>/public/images/logo.png" type="image/x-icon">
-    <title>Client space</title>
+    <title>Admin Dashbord</title>
     <!--Web Icons -->
     <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/all.min.css">
     <!--Normalize the elements-->
@@ -33,8 +33,8 @@
 
                 </div>
                 <div class="information">
-                    <!-- <div class="name"><?php echo $_SESSION["user_fname"]." ".$_SESSION["user_lname"] ;?></div>
-                    <div class="country"><?php echo $_SESSION['country'] ?></div> -->
+                    <div class="name"><?php echo $_SESSION["user_fname"]." ".$_SESSION["user_lname"] ;?></div>
+                    <div class="country"><?php echo $_SESSION['country'] ?></div> 
                 </div>
             </div>
             <a href="<?php echo URLROOT ?>/users/logout" class="log-out"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
@@ -49,8 +49,8 @@
         </div>
         <aside>
                 <div class="button-aside"><a href="<?php echo URLROOT ?>/admin_account/clients"  class="button-aside-content">Clients</a></div>
-                <div class="button-aside"><a href=""  class="button-aside-content">Rooms</a></div>
-                <div class="button-aside"><a href="" class="button-aside-content">Reservations</a></div>
+                <div class="button-aside"><a href="<?php echo URLROOT ?>/admin_account/rooms"  class="button-aside-content">Rooms</a></div>
+                <div class="button-aside"><a href="<?php echo URLROOT ?>/admin_account/reservations" class="button-aside-content">Reservations</a></div>
                 <div class="button-aside"><a href="<?php echo URLROOT ?>/admin_account/claims" class="button-aside-content">Claims</a></div>
                 <div class="button-aside"><a href="" class="button-aside-content">Statistics</a></div>
                 <div class="button-aside"><a href="<?php echo URLROOT ?>/admin_account/admin_dashbord"  class="button-aside-content">Back to menu</a></div>
