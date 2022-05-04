@@ -100,6 +100,7 @@ class Pages extends Controller{
             }
             $cli_id=$this->userModel->findUserIdByEmail($data['email']);
             $this->reservationModel->addReseration($cli_id,$data);
+            
             $nb=$this->billModel->getLastReservation();
             $this->billModel->addBill($data['price'],$nb);
             $this->roomsModel->updateStatus($data['room_nb'],"not_available");

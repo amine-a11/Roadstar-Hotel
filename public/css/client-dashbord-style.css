@@ -472,14 +472,5 @@ button.settings{
     
 }
 /* ---------------------------------Welcoming part */
-/* .welcoming-part{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: calc(100vw - max(20vw , 300px));
-    top: 10vh;
-    right: 0;
-    height: 90vh;
-} */
+
 /*------------------------------------------------*/

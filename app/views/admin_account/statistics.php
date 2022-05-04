@@ -59,7 +59,6 @@ labelRoom.push('<?php echo $l ;?>');
 valuesRoom.push(<?php echo $l ;?>);
 <?php endforeach; ?>
 
-
 function to_month(n){
     list=['January','February','March','April','May','June','July','August','September','October','November','December'];
     return list[n-1];

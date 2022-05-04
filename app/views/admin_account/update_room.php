@@ -39,6 +39,9 @@
                     <option value="single">Single</option>
                     <option value="double">Double</option>
                     <option value="double-double">Double-Double</option>
+                    <option value="triple">Triple</option>
+                    <option value="twin">Twin</option>
+                    <option value="quad">Quad</option>
                 </optgroup>
             </select>
         </div>

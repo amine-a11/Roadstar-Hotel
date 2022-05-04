@@ -64,5 +64,14 @@ body {
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 50px;
+    color: var(--sec-background-color);
+    animation: shadow 1s linear infinite;
+    -webkit-animation: shadow 1s linear infinite;
+}
+@keyframes shadow {
+    50%{
+        text-shadow: 2px 2px 2px var(--secondary-color);
+    }
+    
 }

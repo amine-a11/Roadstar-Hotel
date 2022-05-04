@@ -14,7 +14,7 @@
 
          */
         public function addReseration($id,$data){
-            $this->db->query('insert into reservation (checkin_date,checkout_date,nb_of_adult,nb_of_children,user_id,room_nb) values (:checkin_date,:checkout_date,:nb_of_adult,:nb_of_children,:user_id,:room_nb)');
+            $this->db->query('insert into reservation (checkin_date,checkout_date,nb_of_adult,nb_of_children,nb_of_rooms,user_id,room_nb) values (:checkin_date,:checkout_date,:nb_of_adult,:nb_of_children,:nb_of_rooms,:user_id,:room_nb)');
             
             $this->db->bind(':checkin_date',$data['check_in_date']);
             $this->db->bind(':checkout_date',$data['check_out_date']);
@@ -22,6 +22,7 @@
             $this->db->bind(':nb_of_children',$data['nb_of_children']);
             $this->db->bind(':user_id',$id);
             $this->db->bind(':room_nb',$data['room_nb']);
+            $this->db->bind(':nb_of_rooms',0);
             if($this->db->execute()){
                 return true;
             }else{
@@ -85,7 +86,7 @@
         }
 
         public function get_cid(){
-            $this->db->query('SELECT month(checkin_date),sum(price) FROM reservation,bill where bill.reservation_id=reservation.reservation_id group by month(checkin_date) ');
+            $this->db->query('SELECT month(checkin_date),sum(price) FROM reservation,bill where bill.reservation_id=reservation.reservation_id group by month(checkin_date) order by reservation.checkin_date asc ');
             $res=$this->db->resultSet();
             return $res;
         }
