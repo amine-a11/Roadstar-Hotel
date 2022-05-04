@@ -70,6 +70,9 @@
                 <?php echo $_SESSION["user_fname"]." ".$_SESSION["user_lname"] ;?>
             </div>
         </div>
+        <?php if(empty($data['complaint'])) {?>
+            <div class="not-found"><i class="fa-solid fa-circle-exclamation"></i> No Claims Found</div>
+        <?php } ?>
             <?php foreach($data['complaint'] as $complaint): ?>
                 <div class="container-item">
                     <div class="date-claim">

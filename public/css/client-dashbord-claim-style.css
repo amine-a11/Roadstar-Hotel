@@ -181,3 +181,16 @@ body {
             width: 100%;
         }
     }
+    .not-found{
+        text-align: center;
+        font-size: 40px ;
+        margin: 30px;
+        color: var(--secondary-color);
+        animation: shadow-black 2s linear  infinite;
+        -webkit-animation: shadow-black 2s linear  infinite;
+}
+    @keyframes shadow-black {
+        50%{
+            text-shadow: 1px 1px 0px var(--sec-background-color);
+        }
+    }
