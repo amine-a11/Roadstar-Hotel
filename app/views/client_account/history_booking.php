@@ -40,6 +40,9 @@
     </tr>
 </thead>
 <tbody>
+    <?php if(empty($data['reservation'])) { ?>
+        <td colspan="6"><div class="not-found"><i class="fa-solid fa-circle-exclamation"></i> No Reservations Found</div></td>
+    <?php }?>
     <?php foreach($data['reservation'] as $reservation) : ?>
         
         <tr class="is<?php echo(date("Y-m-d") >= $reservation->checkout_date);?>">
