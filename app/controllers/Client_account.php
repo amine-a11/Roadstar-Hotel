@@ -33,13 +33,15 @@ class Client_account extends Controller{
             if(empty($data['oldpassword']) or empty($data['newpassword']) or empty($data['cnewpassword'])){
                 $data['error']=" Complete all the fields !";
             }
+
+            if(!password_verify($data['oldpassword'],$_SESSION['password'])){
+                $data['error']=" not the right password !";
+            }
+
             if( strcmp($data['newpassword'],$data['cnewpassword']) != 0){
                 $data['error']=" not the same password !";
             }
 
-            if(strcmp($data['oldpassword'],$_SESSION['password'])){
-                $data['error']=" not the right password !";
-            }
             if(empty($data['error'])){
 
                 if($this->userModel->updatePassword($data)){

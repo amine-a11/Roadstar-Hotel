@@ -49,11 +49,9 @@
         }
 
         public function updatePassword($data){
-            var_dump($data);
-            $this->db->query('update user set password = :newpassword where user_id = :user_id and password = :password');
+            $this->db->query('update user set password = :newpassword where user_id = :user_id');
             $this->db->bind(':newpassword',password_hash($data['newpassword'],PASSWORD_DEFAULT));
             $this->db->bind(':user_id',$data['user_id']);
-            $this->db->bind(':password',$_SESSION['password']);
             if ($this->db->execute()) {
                 return true;
             }
