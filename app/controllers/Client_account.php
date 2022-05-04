@@ -86,7 +86,7 @@ class Client_account extends Controller{
             ];
             
             if(empty($data['content'])){
-                $data['error']="The content of claim can't be empty";
+                $data['error']="No Complaints Found";
             }
 
             if(empty($data['error'])){
@@ -102,6 +102,10 @@ class Client_account extends Controller{
         }
         $this->view('client_account/claim',$data);
 
+    }
+    public function history_booking(){
+        $data=[];
+        $this->view('client_account/claim',$data);
     }
 
 }

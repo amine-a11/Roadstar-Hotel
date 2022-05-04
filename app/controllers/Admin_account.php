@@ -4,6 +4,7 @@ class Admin_account extends Controller{
         $this->userModel=$this->model('User');
         $this->complaintModel=$this->model('complaint');
         $this->roomModel = $this->model('room');
+        $this->reservationModel = $this->model('Reservation');
     }
     public function main(){
         $this->view('pages/main');
@@ -268,12 +269,10 @@ class Admin_account extends Controller{
                     session_start();
                 }
         
-                $reservation=$this->roomModel->findAllRooms();
+                $reservation=$this->reservationModel->findAllReservations();
                 $data=[
                     'reservation' => $reservation
-                ];
-                print("hey");
-        
+                ];        
                 $this->view('admin_account/reservations',$data);
             }
     }

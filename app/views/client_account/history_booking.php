@@ -12,7 +12,7 @@
     <!--client-dashbord Style File-->
     <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/client-dashbord-style.css">
     <!-- main style -->
-    <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/admin-dashbord-reservations-style.css">
+    <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/client-dashbord-reservations-style.css">
     <!-- script -->
     <script src="<?php echo URLROOT ?>/public/js/Reveal-On-Scroll.js" defer></script>
     <script src="<?php echo URLROOT ?>/public/js/sweetalert2@11.js" defer></script>
@@ -21,7 +21,7 @@
 <body>
 
 <?php
-    include "admin_dashbord.php";
+    include "client_dashbord.php";
 ?>
 <div class="reservations">
 <table>
@@ -29,7 +29,6 @@
 <thead>
     <tr>
         <th> Number</th>
-        <th> Name</th>
         <th> Checkin Date</th>
         <th>Checkout Date</th>
         <th>Number Of Adults</th>
@@ -46,13 +45,12 @@
         
         <tr class="is<?php echo(date("Y-m-d") >= $reservation->checkout_date);?>">
             <td><?php echo $reservation->room_nb?></td>
-            <td><?php echo $reservation->user_fname ." ".$reservation->user_lname?></td>
             <td><?php echo $reservation->checkin_date?></td>
             <td><?php echo $reservation->checkout_date?></td>
             <td><?php echo $reservation->nb_of_adult?></td>
             <td><?php echo $reservation->nb_of_children?></td>
             <td><?php echo $reservation->price?>$</td>
-            <td><a href="<?php echo URLROOT."/admin_account/update_room/" .$reservation->room_nb?>"><i class="fa-solid fa-wrench"></i></a></td>
+            <td><i class="fa-solid fa-wrench"></i></td>
 
         </tr>
     <?php endforeach; ?>
