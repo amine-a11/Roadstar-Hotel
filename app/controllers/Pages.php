@@ -19,8 +19,8 @@ class Pages extends Controller{
         $this->view('pages/services');
     }
 
-    public function getRooms(){
-        $var = $this->roomsModel->allAvailableRooms();
+    public function getRooms($nb_adu){
+        $var = $this->roomsModel->allAvailableRooms($nb_adu);
         // $types=array();
         // print_r($var);
         foreach($var as $room){
@@ -116,6 +116,45 @@ class Pages extends Controller{
         $this->view('pages/sustainability');
     }
 
+    public function reservation_exists(){
+        if($_SERVER['REQUEST_METHOD']=='POST'){
+            $_POST=filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
+            $data=[
+                'cid'=>$_POST['cid'],
+                'cod'=>$_POST['cod'],
+                'children_nb'=>$_POST['children_nb'],
+                'adult_nb'=>$_POST['adult_nb'],
+                'email'=>$_POST['email']
+            ];
+            if($this->reservationModel->is_reservation_exists($data)){
+                echo "true";
+            }else{
+                echo "false";
+            }
+        }
+    }
+
+
+    public function delete_the_reservation(){
+        if($_SERVER['REQUEST_METHOD']=='POST'){
+            $_POST=filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
+            $data=[
+                'cid'=>$_POST['cid'],
+                'cod'=>$_POST['cod'],
+                'children_nb'=>$_POST['children_nb'],
+                'adult_nb'=>$_POST['adult_nb'],
+                'email'=>$_POST['email']
+            ];
+            $res_id=$this->reservationModel->get_reservation_id($data);
+            $this->billModel->delete_bill($res_id);
+            if($this->reservationModel->deleteReservation($res_id)){
+                echo "true";
+            }else{
+                echo "false";
+            }
+
+        }
+    }
 
 
 

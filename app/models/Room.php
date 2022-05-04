@@ -4,8 +4,8 @@
         public function __construct(){
             $this->db=new Database();
         }
-        public function allAvailableRooms(){
-            $this->db->query('select * from room , room_type where type=room_type and status="available"');
+        public function allAvailableRooms($nb){
+            $this->db->query("select * from room , room_type where type=room_type and status=\"available\" and room.occupancy>=$nb");
             $results = $this->db->resultSet();
             return $results;
         }

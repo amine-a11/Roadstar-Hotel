@@ -120,7 +120,6 @@ let formSteps = document.querySelectorAll(".form-step");
 let formStepNum = 0;
 
 //function stepValid()
-
 function stepValid() {
     const inputsValid = [...formSteps[formStepNum].querySelectorAll("input")].every(input => input.reportValidity());
     if (formStepNum === 2) {
@@ -137,21 +136,27 @@ function stepValid() {
     }
 }
 //move between the diffrente form steps 
-
+let test = true;
 nextBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
+        test = true;
         if (stepValid()) {
-
-            formStepNum++;
-            console.log(formStepNum);
-            if (formStepNum === 1) {
-                fillBookingInfo();
+            if (formStepNum === 2) {
+                check_if_reservation_exists();
+                console.log(test);
             }
-            updateFormStep();
-            if (formStepNum !== 3) {
-                updateProgressSteps();
+            if (test) {
+                formStepNum++;
+                // console.log(formStepNum);
+                if (formStepNum === 1) {
+                    fillBookingInfo();
+                }
+                updateFormStep();
+                if (formStepNum !== 3) {
+                    updateProgressSteps();
+                }
+                window.scrollTo(0, 0);
             }
-            window.scrollTo(0, 0);
         }
     });
 });
@@ -262,14 +267,15 @@ function fillBookingSummary(price, type) {
     document.querySelectorAll(".guests-span").forEach(ele => {
         ele.innerHTML = num_of_adu.toString() + " ADULTS" + (num_of_child === 0 ? " " : " & " + num_of_child.toString() + " CHILDREN");
     });
-    document.querySelectorAll(".room-info-span").forEach(ele => {
-        ele.innerHTML = nb_of_rooms.toString();
-    });
+    // document.querySelectorAll(".room-info-span").forEach(ele => {
+    //     ele.innerHTML = nb_of_rooms.toString();
+    // });
     if (price) {
         document.querySelectorAll(".total_price").forEach(ele => {
-            ele.innerHTML = price * nb_of_rooms.toString();
+            console.log(parseInt(document.getElementById("nb-of-nights").innerHTML));
+            ele.innerHTML = price * parseInt(document.getElementById("nb-of-nights").innerHTML);
         });
-        document.getElementById("price").value = price;
+        document.getElementById("price").value = price * document.getElementById("nb-of-nights").value;
     }
     if (type) {
         document.querySelectorAll(".room-info-span").forEach(ele => {
@@ -302,6 +308,7 @@ togglebutton.addEventListener('click', () => {
 
 function getAvailableRooms() {
     // console.log(document.getElementById("check-in-calender").value);
+    nb_of_ad = document.getElementById("room1-nb-of-adu-value").value;
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -309,7 +316,7 @@ function getAvailableRooms() {
             document.querySelector('.rooms').innerHTML = this.responseText;
         }
     };
-    xmlhttp.open("GET", "http://localhost/Roadstar-Hotel/pages/getRooms?test=hellommmm", true);
+    xmlhttp.open("GET", "http://localhost/Roadstar-Hotel/pages/getRooms/" + nb_of_ad, true);
     xmlhttp.send();
 }
 
@@ -326,4 +333,70 @@ function get_booking_room_number(btn, price, type) {
     }
     window.scrollTo(0, 0);
 
+}
+
+
+function check_if_reservation_exists() {
+    const cid_con = document.getElementById("check-in-calender").value;
+    const cod_con = document.getElementById("check-out-calender").value;
+    const chinb_con = document.getElementById("nb_of_children").value;
+    const adunb_con = document.getElementById("nb_of_adult").value;
+    const email_con = document.getElementById("email").value;
+
+
+    let pass = false;
+
+    let data = new FormData();
+    data.append('cid', cid_con);
+    data.append('cod', cod_con);
+    data.append('children_nb', chinb_con);
+    data.append('adult_nb', adunb_con);
+    data.append('email', email_con);
+    fetch('http://localhost/Roadstar-Hotel/pages/reservation_exists', {
+        method: 'POST',
+        body: data
+    }).then((response) => {
+        return response.text();
+    }).then((text) => {
+        if (text === "true") {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "you have already a reservation with this informations",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    fetch('http://localhost/Roadstar-Hotel/pages/delete_the_reservation', {
+                        method: 'POST',
+                        body: data
+                    }).then((res) => {
+                        return res.text();
+                    }).then((text) => {
+                        if (text === "true") {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your reservation has been deleted.',
+                                'success'
+                            ).then(() => {
+                                window.location.href = 'http://localhost/Roadstar-Hotel/';
+                            })
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Something went wrong!',
+                            })
+                        }
+                    })
+                } else {
+                    window.location.href = 'http://localhost/Roadstar-Hotel/';
+                }
+            });
+        } else {
+            test = true;
+        }
+    })
 }

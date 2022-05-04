@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/book-style.css">
     <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/all.min.css">
     <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/normalize.css">
+    <script src="<?php echo URLROOT ?>/public/js/sweetalert2@11.js" defer></script>
     <script src="<?php echo URLROOT ?>/public/js/book-script.js" defer></script>
     <title>Book Your Room</title>
 </head>
@@ -622,7 +623,7 @@
                 <hr>
 
             </div>
-            <button type="button" class="next-button" onclick="fillBookingSummary()">CREDIT CARD DETAILS</button>
+            <button type="button" class="next-button" >CREDIT CARD DETAILS</button>
 
         </div>
 <!------------------------------------------ form-step-3 ---------------------------------------------->

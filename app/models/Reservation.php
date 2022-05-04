@@ -47,7 +47,7 @@
         public function deleteReservation($id) {
             $this->db->query('DELETE FROM reservation WHERE reservation_id = :id');
     
-            $this->db->bind(':id', $id);
+            $this->db->bind(':id', $id);            
             try{
                 if ($this->db->execute()) {
                     return true;
@@ -58,4 +58,30 @@
                 return false;
             }
         }
+
+
+
+        public function is_reservation_exists($data){
+            $this->db->query('SELECT count(*) FROM reservation,user WHERE reservation.user_id=user.user_id and checkin_date=:checkin_date and checkout_date=:checkout_date and nb_of_adult=:nb_of_adult and nb_of_children=:nb_of_children and user.email=:email');
+            
+            $this->db->bind(':checkin_date', $data['cid']);
+            $this->db->bind(':checkout_date', $data['cod']);
+            $this->db->bind(':nb_of_children', $data['children_nb']);
+            $this->db->bind(':nb_of_adult', $data['adult_nb']);
+            $this->db->bind(':email', $data['email']);
+            
+            return json_decode(json_encode($this->db->single()), true)['count(*)']>0;
+        }
+        public function get_reservation_id($data){
+            $this->db->query('SELECT reservation_id FROM reservation,user WHERE reservation.user_id=user.user_id and checkin_date=:checkin_date and checkout_date=:checkout_date and nb_of_adult=:nb_of_adult and nb_of_children=:nb_of_children and user.email=:email');
+
+            $this->db->bind(':checkin_date', $data['cid']);
+            $this->db->bind(':checkout_date', $data['cod']);
+            $this->db->bind(':nb_of_children', $data['children_nb']);
+            $this->db->bind(':nb_of_adult', $data['adult_nb']);
+            $this->db->bind(':email', $data['email']);
+
+            return json_decode(json_encode($this->db->single()), true)['reservation_id'];
+        }
+
     }

@@ -17,4 +17,15 @@
 
         }
 
+        public function delete_bill($res_id){
+            $this->db->query('DELETE FROM bill WHERE reservation_id = :id');
+            $this->db->bind(':id', $res_id);
+            if ($this->db->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+
     }
