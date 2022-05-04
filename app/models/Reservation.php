@@ -29,4 +29,17 @@
             }
 
         }
+        public function findAllReservations(){
+            $this->db->query('select * from reservation , room , bill , user where 
+            reservation.user_id = user.user_id and reservation.reservation_id = bill.reservation_id
+            and reservation.room_nb = room.room_nb');
+            $results = $this->db->resultSet();
+            return $results;
+        }
+        public function findReservationByid($id){
+            $this->db->query('select * from reservation where id_user =:id');
+            $this->db->bind(':id',$_SESSION['user_id']);
+            $results = $this->db->resultSet();
+            return $results;
+        }
     }

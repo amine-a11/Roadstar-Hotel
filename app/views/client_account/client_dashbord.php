@@ -99,7 +99,10 @@
 
         <div class="buttons">
             <button class="update">Update</button>
-            <a href="<?php echo URLROOT ?>/client_account/client_dashbord" class="save">Save</a>
+            <a href="<?php echo URLROOT ?>/client_account/client_dashbord/updatePassword" class="save">Save</a>
+            <form class="Dmyform" action="<?php echo URLROOT . "/client_account/update/" . $client->user_id ?>" >
+                    <input type="submit" name="delete" value="Delete" class="delete">
+            </form>
             <!-- <button type="submit" class="save">Save</button> -->
         </div>
 

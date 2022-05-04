@@ -26,7 +26,8 @@
 // }
     include "admin_dashbord.php";
 ?>
-    <table class="rooms">
+<div class="rooms">
+    <table >
 
             <thead>
                 <tr>
@@ -54,6 +55,7 @@
             </tbody>
         
     </table>
+    </div>
     <button class="settings" >
        <a href="<?php echo URLROOT."/admin_account/add_room"?>"><i class="fa-solid fa-plus"></i></a> 
     </button>
