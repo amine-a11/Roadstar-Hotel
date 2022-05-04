@@ -32,7 +32,7 @@
         <div class="client">
             <div class="heading">
             <?php if(file_exists("C:/wamp64/www/Roadstar-Hotel/public/images/clientsImages/".$client->user_id.".jpg")): ?>
-                <a class="picture" href="<?php echo URLROOT ?>/client_account/client_dashbord"><img style="border-radius:50%;width:15vh;" src="<?php echo URLROOT ?>/public/images/clientsImages/<?php echo $client->user_id?>.jpg" alt=""></a>
+                <a class="picture" href="<?php echo URLROOT ?>/admin_account/clients"><img style="border-radius:50%;width:min(10vw,80px);" src="<?php echo URLROOT ?>/public/images/clientsImages/<?php echo $client->user_id?>.jpg" alt=""></a>
             <?php else : ?>
                     <div class="picture">
                         <i class="fa-solid fa-user"></i>

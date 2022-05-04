@@ -39,6 +39,7 @@
             $this->db->query('select * from user where email = :username');
             $this->db->bind(':username',$username);
             $row=$this->db->single();
+            if(!$row)return false;
             $hashedPassword=$row->password;
             if(password_verify($password,$hashedPassword)){
                 return $row;

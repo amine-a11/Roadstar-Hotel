@@ -56,13 +56,12 @@
                         
         }
         public function addRoom($data){
-            $this->db->query('insert into room values(:room_nb ,:room_type, :status,:cost_per_night,:view,:occupancy)');
+            $this->db->query('insert into room(room_type,status,cost_per_night,view,occupancy) values(:room_type,:status,:cost_per_night,:view,:occupancy)');
             $this->db->bind(':room_type',$data['type']);
             $this->db->bind(':status',$data['status']);
             $this->db->bind(':cost_per_night',$data['cost']);
             $this->db->bind(':view',$data['view']);
             $this->db->bind(':occupancy',$data['occupancy']);
-            $this->db->bind(':room_nb',$data['number']);
             if($this->db->execute()){
                 return true;
             }
@@ -71,5 +70,9 @@
             }
 
                         
+        }
+        public function getIdLastAddedRoom(){
+            $this->db->query('select LAST_INSERT_ID()');
+            return json_decode(json_encode($this->db->single()), true)['LAST_INSERT_ID()'];
         }
     }

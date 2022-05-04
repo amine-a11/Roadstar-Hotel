@@ -218,7 +218,6 @@ class Admin_account extends Controller{
                 if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
                     $data = [
-                        'number' => trim($_POST['number']),
                         'type' => trim($_POST['type']),
                         'status' => trim($_POST['status']),
                         'cost' => trim($_POST['cost']),
@@ -229,12 +228,29 @@ class Admin_account extends Controller{
                     ];
                     var_dump($data);
     
-        
+
                     if(empty($data['cost'])) {
                         $data['error'] = 'The cost of the room cannot be empty';
                     }
                     if (empty($data['error']) ) {
                         if ($this->roomModel->addRoom($data)) {
+                            if(isset($_FILES)){
+                                print_r($_FILES);
+                                $fileName=$_FILES['roomImage']['name'];
+                                $fileTmpName=$_FILES['roomImage']['tmp_name'];
+                                $fileSize=$_FILES['roomImage']['size'];
+                                $fileError=$_FILES['roomImage']['error'];
+                                $fileType=$_FILES['roomImage']['type'];
+        
+                                $Last_Room_Id=$this->roomModel->getIdLastAddedRoom();
+
+                                $fileExt=strtolower(end(explode('.',$fileName)));
+                                $fileNameNew=$Last_Room_Id.'.'.$fileExt;
+                                mkdir($_SERVER['DOCUMENT_ROOT'].'/Roadstar-Hotel/public/images/roomImages/room'.$Last_Room_Id,0700);
+                                $fileDes=$_SERVER['DOCUMENT_ROOT'].'/Roadstar-Hotel/public/images/roomImages/room'.$Last_Room_Id.'/room'.$fileNameNew;
+                                move_uploaded_file($fileTmpName,$fileDes);
+                            }
+        
                             header("Location: " . URLROOT . "/admin_account/rooms");
                         } else {
                             die("Something went wrong, please try again!");

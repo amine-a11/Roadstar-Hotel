@@ -14,8 +14,18 @@
     <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/main-style.css">
     <!--CSS File-->
     <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/sign-in-style.css">
+    <!-- js -->
+    <script src="<?php echo URLROOT ?>/public/js/sweetalert2@11.js"></script>
 </head>
 <body>
+     <?php
+     if($data){
+         if($data['loginError']!=''){
+             $e=$data['loginError'];
+             echo "<script>Swal.fire({icon: 'error',title: 'Oops...',text:'$e'});</script>";
+         }
+     }
+     ?>
     <div class="sign-in">
         <div class="container">
             <div class="aside-image .image">

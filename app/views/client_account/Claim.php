@@ -37,9 +37,15 @@
 
     <div class="content">
         <div class="profil">
-            <button class="picture" >
+            <?php if(file_exists("C:/wamp64/www/Roadstar-Hotel/public/images/clientsImages/".$_SESSION['user_id'].".jpg")): ?>
+                <a href="<?php echo URLROOT ?>/client_account/client_dashbord"><img style="border-radius:50%;width:9vh;margin-left:10px;" src="<?php echo URLROOT ?>/public/images/clientsImages/<?php echo $_SESSION['user_id'] ?>.jpg" alt=""></a>
+            <?php else :?>
+                <a class="picture" href="<?php echo URLROOT ?>/client_account/client_dashbord"><i class="fa-solid fa-user"></i></a>
+            <?php endif; ?>
+
+            <!-- <button class="picture" >
                 <i class="fa-solid fa-user"></i>
-            </button>
+            </button> -->
             <div class="information">
                 <?php echo $_SESSION["user_fname"]." ".$_SESSION["user_lname"] ;?>
             </div>

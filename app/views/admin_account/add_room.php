@@ -27,10 +27,10 @@
 <div class="add">
     <div class="heading">add room</div>
     <form
-    action="<?php echo URLROOT; ?>/admin_account/add_room" method="POST">
+    action="<?php echo URLROOT; ?>/admin_account/add_room" method="POST" enctype="multipart/form-data">
         <div class="row">
-        <div class="label"><label for="roomnb">Room number</label></div>
-            <input type="number" name="number" id="roomnb" ?>
+        <div class="label"><label for="roomnb">Room Image</label></div>
+            <input type="file" name="roomImage" id="roomImage" required>
         </div>
         <div class="row">
             <div class="label"><label for="roomtype">Room type</label></div>
@@ -54,15 +54,15 @@
 
         <div class="row">
             <div class="label"><label for="roomcost">Cost per night</label></div>
-            <input type="number" name="cost" id="roomcost" >
+            <input type="number" name="cost" id="roomcost" required>
         </div>
         <div class="row">
             <div class="label"><label for="roomview">Room view</label></div>
-            <input type="text" name="view" id="roomview" >
+            <input type="text" name="view" id="roomview" required>
         </div>
         <div class="row">
             <div class="label"><label for="roomocc">Room occupancy</label></div>
-            <input type="number" name="occupancy" id="roomocc" max="4" min="1">
+            <input type="number" name="occupancy" id="roomocc" max="4" min="1" required>
         </div>
 
         <button class="submit" name="submit" type="submit">Submit</button>

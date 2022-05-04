@@ -72,8 +72,7 @@ class Users extends Controller{
             ];    
             //check if email exists.
             if($this->userModel->findUserByEmail($data['Email'])){
-                $data['emailError']='email mawjoud';
-                echo '<script>alert("email mawjoud")</script>';
+                $data['emailError']='This email is currently in use';
             }
             //validate password
             if($data['Password']!=$data['Cpassword']){
@@ -97,10 +96,12 @@ class Users extends Controller{
                         $fileDes=$_SERVER['DOCUMENT_ROOT'].'/Roadstar-Hotel/public/images/clientsImages/'.$fileNameNew;
                         move_uploaded_file($fileTmpName,$fileDes);
                     }
-                    header('location:' . URLROOT);
+                    header('location:' . URLROOT.'?accountcreated=true');
                 }else{
                     die("Sonething went wrong");
                 }
+            }else{
+                $this->view('users/sign_up',$data);        
             }
         }
         $this->view('users/sign_up',$data);

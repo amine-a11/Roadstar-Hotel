@@ -12,9 +12,18 @@
     <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/main-style.css">
     <!--Normalize the elements-->
     <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/normalize.css">
+    <!-- sweet alert -->
+    <script src="<?php echo URLROOT ?>/public/js/sweetalert2@11.js"></script>
     
 </head>
 <body>
+    <?php
+    if(isset($_GET['accountcreated'])){
+        if($_GET['accountcreated']=='true'){
+            echo "<script>Swal.fire('Good job!','Congratulations, your account has been successfully created.','success')</script>";
+        }
+    }
+    ?>
     <!---------------------------------------------------------Start Header---------------------------------------->
     <header>
     <?php

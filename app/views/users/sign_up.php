@@ -6,9 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="<?php echo URLROOT ?>/public/images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/sign-up-style.css">
+    <script src="<?php echo URLROOT ?>/public/js/sweetalert2@11.js"></script>
     <title>Sign Up</title>
 </head>
 <body>
+   <?php
+   if($data){
+      if($data['emailError']){
+         $e=$data['emailError'];
+         echo "<script>Swal.fire({icon: 'error',title: 'Oops...',text: '$e'});</script>";
+      }else if($data['pwdError']){
+         $e=$data['pwdError'];
+         echo "<script>Swal.fire({icon: 'error',title: 'Oops...',text: '$e'});</script>";
+      }
+   }
+   ?>
 <div class="container">
          <header>Signup Form</header>
          <div class="progress-bar">
@@ -19,7 +31,7 @@
                <div class="check fas fa-check"></div>
             </div>
             <div class="step">
-               <div class="bullet">
+               <div class="bullet"> 
                   <span>2</span>
                </div>
                <div class="check fas fa-check"></div>
