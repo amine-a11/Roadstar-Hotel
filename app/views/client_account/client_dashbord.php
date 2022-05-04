@@ -90,35 +90,28 @@
     </div>
     <?php if (!empty($data['error'])){?>
 
-        <div class="error"><?php echo "aa";?></div>
+        <div class="error"><i class="fa-solid fa-circle-exclamation"></i><?php echo $data['error'];?></div>
         <?php } ?>
 
     <?php $tab = array($_SESSION["user_fname"]);?>
-    <form action="" method="POST" class="form-content">
-        <!-- <input type="text" name="first-name" class="first-name" value="<?php echo $_SESSION["user_fname"];?>" readonly>
-        <input type="text" name="last-name" class="last-name" value="<?php echo $_SESSION["user_lname"];?>" readonly> -->
-        <!-- <input type="tel" name="phone-number" class="phone-number" value="<?php echo $_SESSION["phone_number"];?>" > -->
-        <input type="email" name="email" class="email" value="<?php echo $_SESSION["email"];?>" >
+    <form action="<?php echo URLROOT . "/Client_account/client_dashbord"?>" method="POST" class="form-content">
+        <input type="email" name="email" class="email" value="<?php echo $_SESSION["email"];?>" readonly>
         <input type="password" name="oldpassword" class="password" value=""  placeholder="Old password">
         <input type="password" name="newpassword" class="password" value=""  placeholder="New password">
         <input type="password" name="cnewpassword" class="password" value=""  placeholder="Confirm new password">
-
         <div class="buttons">
-            <button class="update">Update</button>
-            <a href="<?php echo URLROOT ?>/client_account/client_dashbord/updatePassword" class="save">Save</a>
-            <form class="Dmyform" action="<?php echo URLROOT . "/client_account/update/" . $client->user_id ?>" >
-                    <input type="submit" name="delete" value="Delete" class="delete">
-            </form>
-            <!-- <button type="submit" class="save">Save</button> -->
+            <button class="save">Update</button>
+            <!-- <a href="<?php echo URLROOT ?>/client_account/client_dashbord/updatePassword" class="save">Save</a> -->
+            <input type="submit" name="save" value="Save" class="save">
         </div>
-
     </form>
+
 </div>
 <button class="settings">
     <i class="fa-solid fa-gear"></i>
 </button>
 <!-- ----------------------------The include---------------------- -->
-<?php include "client_dashbord_include.php"?>
+<!-- <?php include "client_dashbord_include.php"?> -->
 <!-----------------------------------End Settings--------------------------------------------->
 
 <script src="<?php echo URLROOT ?>/public/js/client-dashbord-script.js"></script>

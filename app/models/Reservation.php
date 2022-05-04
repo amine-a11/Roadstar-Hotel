@@ -37,9 +37,25 @@
             return $results;
         }
         public function findReservationByid($id){
-            $this->db->query('select * from reservation where id_user =:id');
-            $this->db->bind(':id',$_SESSION['user_id']);
+            $this->db->query('select * from reservation , room , bill , user where 
+            reservation.user_id = user.user_id and reservation.reservation_id = bill.reservation_id
+            and reservation.room_nb = room.room_nb and reservation.user_id =:id');
+            $this->db->bind(':id',$id);
             $results = $this->db->resultSet();
             return $results;
+        }
+        public function deleteReservation($id) {
+            $this->db->query('DELETE FROM reservation WHERE reservation_id = :id');
+    
+            $this->db->bind(':id', $id);
+            try{
+                if ($this->db->execute()) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }catch(Exception $e){
+                return false;
+            }
         }
     }

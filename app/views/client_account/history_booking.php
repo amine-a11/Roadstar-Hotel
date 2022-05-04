@@ -34,7 +34,6 @@
         <th>Number Of Adults</th>
         <th>Number Of children</th>
         <th>Price</th>
-        <th>Action</th>
 
         
         
@@ -50,7 +49,6 @@
             <td><?php echo $reservation->nb_of_adult?></td>
             <td><?php echo $reservation->nb_of_children?></td>
             <td><?php echo $reservation->price?>$</td>
-            <td><i class="fa-solid fa-wrench"></i></td>
 
         </tr>
     <?php endforeach; ?>

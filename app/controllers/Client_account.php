@@ -3,6 +3,7 @@ class Client_account extends Controller{
     public function __construct(){
         $this->userModel=$this->model('User');
         $this->complaintModel=$this->model('Complaint');
+        $this->reservationModel=$this->model('reservation');
     }
     public function main(){
         $this->view('pages/main');
@@ -30,13 +31,15 @@ class Client_account extends Controller{
             ];
 
             if(empty($data['oldpassword']) or empty($data['newpassword']) or empty($data['cnewpassword'])){
-                $data['error']="Complete all the fields !";
+                $data['error']=" Complete all the fields !";
             }
             if( strcmp($data['newpassword'],$data['cnewpassword']) != 0){
-                $data['error']="not the same password !";
+                $data['error']=" not the same password !";
             }
 
-            // var_dump($data);
+            if(strcmp($data['oldpassword'],$_SESSION['password'])){
+                $data['error']=" not the right password !";
+            }
             if(empty($data['error'])){
 
                 if($this->userModel->updatePassword($data)){
@@ -104,8 +107,36 @@ class Client_account extends Controller{
 
     }
     public function history_booking(){
+        if(session_status() == PHP_SESSION_NONE){
+            session_start();
+        }
         $data=[];
-        $this->view('client_account/claim',$data);
+        $reservation=$this->reservationModel->findReservationById($_SESSION['user_id']);
+        $data=[
+            'reservation' => $reservation
+        ]; 
+        $this->view('client_account/history_booking',$data);
     }
 
+    public function delete_reservation($id) {
+        if(session_status() == PHP_SESSION_NONE){
+            session_start();
+        }
+        $reservation = $this->reservationModel->findReservationById($id);
+
+        $data = [
+            'reservation' => $reservation
+        ];
+
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            if($this->reservationModel->deleteReservation($id)) {
+                header("Location: " . URLROOT . "/client_account/history_claims");
+            } else {
+                die('Something went wrong!');
+                // header("Location: " . URLROOT . "/admin_account/clients");
+            }
+        }
+    }
 }

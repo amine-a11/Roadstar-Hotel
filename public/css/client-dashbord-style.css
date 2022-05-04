@@ -426,7 +426,7 @@ button.settings{
     justify-content: center;
     width: 100%;
 }
-.profil-settings .form-content button ,.profil-settings .form-content a{
+.profil-settings .form-content button ,.profil-settings .form-content input.save{
     padding: 15px;
     margin: 10px;
     width: 100px;
@@ -445,7 +445,7 @@ button.settings{
     text-decoration: none;
     color: black;
 }
-.profil-settings .form-content button:hover , .profil-settings .form-content a:hover{
+.profil-settings .form-content button:hover , .profil-settings .form-content input.save:hover{
     background-color: var(--prim-background-color);
 }
 @media (max-width: 600px) {
@@ -461,6 +461,15 @@ button.settings{
     color: var(--prim-background-color);
     text-transform: uppercase;
     text-decoration: underline;
+    font-weight: bold;
+    animation: shadowerror 1s linear infinite;
+    -webkit-animation: shadowerror 1s linear infinite;
+}
+@keyframes shadowerror {
+    50%{
+        text-shadow: 2px 2px 2px red;
+    }
+    
 }
 /* ---------------------------------Welcoming part */
 /* .welcoming-part{
