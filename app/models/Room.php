@@ -75,4 +75,10 @@
             $this->db->query('select LAST_INSERT_ID()');
             return json_decode(json_encode($this->db->single()), true)['LAST_INSERT_ID()'];
         }
+        
+        public function get_types_data(){
+            $this->db->query('select room_type,count(*) from room group by room_type');
+            $res=$this->db->resultSet();
+            return $res;
+        }
     }

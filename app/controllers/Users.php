@@ -20,7 +20,7 @@ class Users extends Controller{
                     header('location:' . URLROOT .'/client_account/client_dashbord');
                     // $this->view("client_account/client_dashbord");
                 }else{
-                    header('location:' . URLROOT .'/admin_account/admin_dashbord');
+                    header('location:' . URLROOT .'/admin_account/statistics');
                 }
             }else{
                 $data['loginError']='(email|phoneNumber) incorrect. please try again.';

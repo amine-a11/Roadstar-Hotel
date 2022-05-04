@@ -52,8 +52,7 @@
                 <div class="button-aside"><a href="<?php echo URLROOT ?>/admin_account/rooms"  class="button-aside-content">Rooms</a></div>
                 <div class="button-aside"><a href="<?php echo URLROOT ?>/admin_account/reservations" class="button-aside-content">Reservations</a></div>
                 <div class="button-aside"><a href="<?php echo URLROOT ?>/admin_account/claims" class="button-aside-content">Claims</a></div>
-                <div class="button-aside"><a href="" class="button-aside-content">Statistics</a></div>
-                <div class="button-aside"><a href="<?php echo URLROOT ?>/admin_account/admin_dashbord"  class="button-aside-content">Back to menu</a></div>
+                <div class="button-aside"><a href="<?php echo URLROOT ?>/admin_account/statistics" class="button-aside-content">Statistics</a></div>
             </aside>
         <!------------------------------------------------end side bar---------------------------------------------------------------------->
 

@@ -84,4 +84,10 @@
             return json_decode(json_encode($this->db->single()), true)['reservation_id'];
         }
 
+        public function get_cid(){
+            $this->db->query('SELECT month(checkin_date),sum(price) FROM reservation,bill where bill.reservation_id=reservation.reservation_id group by month(checkin_date) ');
+            $res=$this->db->resultSet();
+            return $res;
+        }
+
     }

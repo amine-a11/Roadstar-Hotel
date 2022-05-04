@@ -6,6 +6,43 @@ class Admin_account extends Controller{
         $this->roomModel = $this->model('room');
         $this->reservationModel = $this->model('Reservation');
     }
+    public function getMonth($pdate) {
+        $list=['January','February','March','April','May','June','July','August','September','October','November','December'];
+        return $list[$pdate-1];
+    }
+    public function statistics(){
+        if(session_status() == PHP_SESSION_NONE){
+            session_start();
+        }
+        $data=[
+            'label' =>[],
+            'values'=>[],
+            'labelRooms'=>[],
+            'valueRooms'=>[]
+        ];
+        
+        $labels=$this->reservationModel->get_cid();
+        // print_r($labels);
+        foreach($labels as $label){
+            array_push($data['label'],json_decode(json_encode($label), true)['month(checkin_date)']);
+            array_push($data['values'],json_decode(json_encode($label), true)['sum(price)']);
+        }
+        $room_types=$this->roomModel->get_types_data();
+        // print_r($room_types);
+        foreach($room_types as $label){
+            array_push($data['labelRooms'],json_decode(json_encode($label), true)['room_type']);
+            array_push($data['valueRooms'],json_decode(json_encode($label), true)['count(*)']);
+        }
+
+        
+
+
+
+        
+        
+
+        $this->view('admin_account/statistics',$data);
+    }
     public function main(){
         $this->view('pages/main');
     }

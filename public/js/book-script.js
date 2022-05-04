@@ -7,7 +7,7 @@ let today = new Date();
 let tomorrow = new Date(today);
 tomorrow.setDate(tomorrow.getDate() + 1);
 document.getElementById("check-in-calender").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
-document.getElementById("check-in-calender").setAttribute("min", today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2));
+// document.getElementById("check-in-calender").setAttribute("min", today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2));
 document.getElementById("check-out-calender").value = tomorrow.getFullYear() + '-' + ('0' + (tomorrow.getMonth() + 1)).slice(-2) + '-' + ('0' + tomorrow.getDate()).slice(-2);
 /* handlecid(handle check-in-date) : add a max date to the check out calender 
    handlecod(handle check-out-date): add a min date to the check in calender
@@ -275,7 +275,7 @@ function fillBookingSummary(price, type) {
             console.log(parseInt(document.getElementById("nb-of-nights").innerHTML));
             ele.innerHTML = price * parseInt(document.getElementById("nb-of-nights").innerHTML);
         });
-        document.getElementById("price").value = price * document.getElementById("nb-of-nights").value;
+        document.getElementById("price").value = price * parseInt(document.getElementById("nb-of-nights").innerHTML);
     }
     if (type) {
         document.querySelectorAll(".room-info-span").forEach(ele => {
