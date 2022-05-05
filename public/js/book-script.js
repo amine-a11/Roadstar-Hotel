@@ -126,7 +126,11 @@ function stepValid() {
         e1 = document.getElementById('email').value;
         e2 = document.getElementById('confirmEmail').value;
         if (e1 !== e2) {
-            alert("email and confirm email are not the same");
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: "email and confirm email are not the same"
+            })
             return false;
         } else {
             return inputsValid;
@@ -313,7 +317,7 @@ function getAvailableRooms() {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             // console.log(this.responseText);
-            document.querySelector('.rooms').innerHTML = this.responseText;
+            document.querySelector('.rooms').innerHTML = this.responseText ? this.responseText : "<p style=\"font-size:40px\">NO ROOM FOUND<p>";
         }
     };
     xmlhttp.open("GET", "http://localhost/Roadstar-Hotel/pages/getRooms/" + nb_of_ad, true);

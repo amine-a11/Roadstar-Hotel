@@ -43,7 +43,7 @@ class Pages extends Controller{
                 if($x=="cost_per_night"){
                     echo "<div class=\"cost_per_night\">";
                     echo "<span>price per night:</span><br>";
-                    echo "<span>".$y."DTN</span>";
+                    echo "<span>".$y."$</span>";
                     echo "</div>";
                 }else if($x=="view"){
                     echo "<div class=\"view\">";

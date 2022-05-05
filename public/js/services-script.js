@@ -48,7 +48,7 @@ observer.observe(header)
 
 
 // Remove the home-title on scroll
-const homeTitle = document.querySelector(".title");
+const homeTitle = document.querySelector(".home-title");
 //back to top
 let backToTop = document.querySelector(".back-to-top");
 window.onscroll = () => {

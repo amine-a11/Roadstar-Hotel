@@ -23,7 +23,7 @@ class Users extends Controller{
                     header('location:' . URLROOT .'/admin_account/statistics');
                 }
             }else{
-                $data['loginError']='(email|phoneNumber) incorrect. please try again.';
+                $data['loginError']='(email|password) incorrect. please try again.';
                 $this->view('users/sign_in',$data);
             }
             

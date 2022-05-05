@@ -56,7 +56,7 @@
                             <!-- still Control-->
                             <div class="user-name-field field">
                                 <label for="user-name" class="user-name">Username</label>
-                                <input type="text" placeholder="Email or Phone Number" id="user-name" required name="user-name">
+                                <input type="text" placeholder="Email" id="user-name" required name="user-name">
                             </div>
 
                             <div class="password-field field">

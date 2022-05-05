@@ -18,8 +18,7 @@
         <!-- logo mail call -->
         <nav>
             <div class="icons">
-                <a href="mailto:mohamedaminehajji11@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-                <a href="#"><i class="fa-solid fa-phone"></i></a>
+                <a></a>
             </div>
         </nav>
         <div class="logo"><a href="main.php"><img src="<?php echo URLROOT ?>/public/images/logo.png" alt="logo"></a></div>
@@ -72,7 +71,7 @@
 
             <!-- number of nights ((check-out)-(check-in)) -->
             <div class="nights">
-                YOUR ARE BOOKING <span id="nb-of-nights">0</span> NIGHTS
+                YOUR ARE BOOKING <span id="nb-of-nights">1</span> NIGHTS
             </div>
 
             <!-- container2 for the number of adults and children in each room-->
@@ -152,10 +151,10 @@
             </div>
             <div class="container4">
                 <div class="room-found">
-                    <h2>SELECT ROOM</h2>
-                    <span>Found <span id="nb-of-room-found">N</span> ROOMS</span>
+                    <h2>SELECT ROOM PLEASE:</h2>
+                    <!-- <span>Found <span id="nb-of-room-found">N</span> ROOMS</span> -->
                 </div>
-                <div class="edit-order-of-rooms">
+                <!-- <div class="edit-order-of-rooms">
 
                     <div class="dropdown" data-dropdown>
                         <button class="link" type="button" data-dropdown-button>FILTER BY<i class="fa-solid fa-filter"></i></button>
@@ -169,7 +168,7 @@
                             empty for now
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <hr>
             <div class="rooms">

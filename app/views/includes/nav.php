@@ -21,9 +21,9 @@
                 <!-- <i class="fa-solid fa-user"></i> -->
                 <?php if(isset($_SESSION['user_id'])): ?>
                     <?php if(file_exists("C:/wamp64/www/Roadstar-Hotel/public/images/clientsImages/".$_SESSION['user_id'].".jpg")): ?>
-                        <a href="<?php echo URLROOT ?>/<?php echo ($_SESSION['role']=='client')?"client_account/client_dashbord":"admin_account/admin_dashbord" ; ?>"><img style="border-radius:50%;width:10vh;" src="<?php echo URLROOT ?>/public/images/clientsImages/<?php echo $_SESSION['user_id'] ?>.jpg" alt=""></a>
+                        <a href="<?php echo URLROOT ?>/<?php echo ($_SESSION['role']=='client')?"client_account/client_dashbord":"admin_account/statistics" ; ?>"><img style="border-radius:50%;width:10vh;height:10vh;overflow:hidden" src="<?php echo URLROOT ?>/public/images/clientsImages/<?php echo $_SESSION['user_id'] ?>.jpg" alt=""></a>
                     <?php else :?>
-                        <a href="<?php echo URLROOT ?>/<?php echo ($_SESSION['role']=='client')?"client_account/client_dashbord":"admin_account/admin_dashbord" ; ?>"><i class="fa-solid fa-user"></i></a>
+                        <a href="<?php echo URLROOT ?>/<?php echo ($_SESSION['role']=='client')?"client_account/client_dashbord":"admin_account/statistics" ; ?>"><i class="fa-solid fa-user"></i></a>
                     <?php endif; ?>
                 <?php else : ?>
                     <a href="<?php echo URLROOT ?>/users/sign_in"><i class="fa-solid fa-user"></i></a>

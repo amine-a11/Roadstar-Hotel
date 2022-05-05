@@ -24,7 +24,7 @@
             include "../app/views/includes/nav.php"
         ?>
         <div class="background-image">
-                <h1>RoadStar Signature Services</h1>
+                <h1 class="home-title">RoadStar Signature Services</h1> 
             </div>
 
 </header>
