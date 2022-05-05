@@ -97,9 +97,14 @@ const myChart = new Chart(ctx, {
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-            
             y: {
-                beginAtZero: true
+                beginAtZero: true,
+                ticks:{
+                    callback:function(value,index,values){
+                        return value+' $';
+                    }
+                }
+
             }
         },
         plugins: {
@@ -109,6 +114,9 @@ const myChart = new Chart(ctx, {
                 font: {
                         size: 40
                 }
+            },
+            legend:{
+                display:false
             }
         }
 
